@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "brief-ku": {
+      "source": "adytm404/skills",
+      "sourceType": "github",
+      "skillPath": "skills/brief-ku/SKILL.md",
+      "computedHash": "0493853c91a9631aa63610927e51e8f05503e4a93d3de478a336e1267b6c3faa"
+    }
+  }
+}

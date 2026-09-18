@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Halaman Beranda (Homepage) -->
+  <url>
+    <loc>https://cobanrondo.web.id/</loc>
+    <lastmod>2026-09-18T00:00:00+07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&amp;fit=crop&amp;w=1920&amp;q=80</image:loc>
+      <image:title>Kawasan Outbound Hutan Pinus Coban Rondo Malang</image:title>
+      <image:caption>Wisata Outbound &amp; Petualangan Alam Coban Rondo Pujon Malang</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Halaman Paket & Wahana Outbound -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket</loc>
+    <lastmod>2026-09-18T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:title>Paket Corporate Gathering Team Building Coban Rondo</image:title>
+      <image:caption>Simulasi game outbound dan team building di Coban Rondo Malang</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:title>Paket Paintball War Game Coban Rondo</image:title>
+      <image:caption>Arena simulasi pertempuran taktis paintball di hutan pinus Coban Rondo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:title>Paket Camping Ground Hutan Pinus Coban Rondo</image:title>
+      <image:caption>Perkemahan dan api unggun di bumi perkemahan Coban Rondo Malang</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 3. Halaman Galeri Dokumentasi -->
+  <url>
+    <loc>https://cobanrondo.web.id/galeri</loc>
+    <lastmod>2026-09-18T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:title>Air Terjun Coban Rondo 84 Meter</image:title>
+      <image:caption>Dokumentasi keindahan air terjun dan kegiatan outbound Coban Rondo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 4. Halaman Tentang Kami (Profil & Safety K3) -->
+  <url>
+    <loc>https://cobanrondo.web.id/tentang-kami</loc>
+    <lastmod>2026-09-18T00:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 5. Halaman Artikel, Tips & Edukasi Outbound -->
+  <url>
+    <loc>https://cobanrondo.web.id/artikel</loc>
+    <lastmod>2026-09-18T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,43 @@
+# ==============================================================================
+# ROBOTS.TXT — COBAN RONDO OUTBOUND & CAMPING
+# Optimized for Traditional Search Engines & AI Search Crawlers (AEO / GEO)
+# Website: https://cobanrondo.web.id
+# ==============================================================================
+
+# Allow all major search engines and AI crawlers
+User-agent: *
+Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Disallow: /assets/img/README_ASSETS.txt
+
+# AI & LLM Search Crawlers explicitly allowed for AEO / GEO Indexing
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Canonical XML Sitemap Location
+Sitemap: https://cobanrondo.web.id/sitemap.xml
