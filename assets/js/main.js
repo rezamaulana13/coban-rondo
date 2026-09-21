@@ -208,25 +208,39 @@
   }
 
   /* --------------------------------------------------------------------------
-     5. LIGHTBOX MODAL PREVIEW
+     5. LIGHTBOX MODAL PREVIEW & DETAIL VIEWER
      -------------------------------------------------------------------------- */
   function initGalleryLightbox() {
-    const galleryItems = document.querySelectorAll(".gallery-grid-item");
+    const galleryItems = Array.from(document.querySelectorAll(".gallery-grid-item"));
     if (!galleryItems.length) return;
 
     let lightboxModal = document.getElementById("galleryLightboxModal");
     if (!lightboxModal) {
       const modalHtml = `
-        <div class="modal fade modal-glass" id="galleryLightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="galleryLightboxModal" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-0">
-              <div class="modal-header">
-                <h5 class="modal-title font-heading text-white" id="lightboxTitle">Preview Foto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content bg-dark text-white border-0 overflow-hidden shadow-2xl" style="border-radius: 16px;">
+              <div class="modal-header border-0 pb-0 position-absolute top-0 end-0 p-3" style="z-index: 10;">
+                <button type="button" class="btn-close btn-close-white bg-dark bg-opacity-75 p-2 rounded-circle" data-bs-dismiss="modal" aria-label="Tutup"></button>
               </div>
-              <div class="modal-body p-0 text-center bg-dark">
-                <img id="lightboxImage" src="" class="img-fluid w-100" style="max-height: 75vh; object-fit: contain;" alt="Preview">
-                <div class="p-3 text-white-50 text-start bg-dark" id="lightboxCaption"></div>
+              <div class="modal-body p-0 text-center position-relative">
+                <img id="lightboxImg" src="" class="w-100" style="max-height: 75vh; object-fit: contain; background: #070a0d;" alt="Detail Foto Coban Rondo">
+                <div class="p-4 text-start" style="background: linear-gradient(180deg, #0f172a 0%, #070a0d 100%);">
+                  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+                    <h3 class="font-heading text-white fw-bold fs-4 mb-0" id="lightboxTitle">Judul Foto</h3>
+                    <span class="badge bg-aqua text-dark font-heading px-3 py-2 rounded-pill" id="lightboxCategoryBadge">Dokumentasi</span>
+                  </div>
+                  <p class="text-slate-300 small mb-3" id="lightboxDesc">Deskripsi kegiatan outbound di Coban Rondo.</p>
+                  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 pt-2 border-top border-secondary border-opacity-25">
+                    <div class="d-flex gap-2">
+                      <button type="button" class="btn btn-outline-light btn-sm px-3" id="lightboxPrevBtn"><i class="fa-solid fa-chevron-left me-1"></i> Sebelumnya</button>
+                      <button type="button" class="btn btn-outline-light btn-sm px-3" id="lightboxNextBtn">Berikutnya <i class="fa-solid fa-chevron-right ms-1"></i></button>
+                    </div>
+                    <a href="#" class="btn btn-aqua btn-sm px-3" id="lightboxWaBtn" target="_blank" rel="noopener">
+                      <i class="fa-brands fa-whatsapp me-1"></i> Tanya Info Foto Ini
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -236,23 +250,68 @@
     }
 
     const bsModal = new bootstrap.Modal(lightboxModal);
-    const imgElem = document.getElementById("lightboxImage");
+    const imgElem = document.getElementById("lightboxImg") || document.getElementById("lightboxImage");
     const titleElem = document.getElementById("lightboxTitle");
-    const captionElem = document.getElementById("lightboxCaption");
+    const descElem = document.getElementById("lightboxDesc") || document.getElementById("lightboxCaption");
+    const categoryElem = document.getElementById("lightboxCategoryBadge");
+    const prevBtn = document.getElementById("lightboxPrevBtn");
+    const nextBtn = document.getElementById("lightboxNextBtn");
+    const waBtn = document.getElementById("lightboxWaBtn");
 
-    galleryItems.forEach(item => {
-      item.addEventListener("click", function () {
-        const img = this.querySelector("img");
-        const title = this.getAttribute("data-title") || (img ? img.alt : "Dokumentasi Coban Rondo");
-        const desc = this.getAttribute("data-desc") || "Kegiatan seru di Kawasan Wisata Coban Rondo, Malang.";
+    let currentPhotoIndex = 0;
 
-        if (img) {
-          imgElem.src = img.src;
-          titleElem.textContent = title;
-          captionElem.textContent = desc;
-          bsModal.show();
-        }
+    function showPhotoByIndex(index) {
+      if (index < 0) index = galleryItems.length - 1;
+      if (index >= galleryItems.length) index = 0;
+      currentPhotoIndex = index;
+
+      const currentItem = galleryItems[currentPhotoIndex];
+      const img = currentItem.querySelector("img");
+      const title = currentItem.getAttribute("data-title") || (img ? img.alt : "Dokumentasi Coban Rondo");
+      const desc = currentItem.getAttribute("data-desc") || "Kegiatan petualangan alam dan outbound training di Kawasan Wisata Coban Rondo, Pujon Malang.";
+      const categoryBadge = currentItem.querySelector(".badge");
+      const categoryText = categoryBadge ? categoryBadge.textContent : "Dokumentasi";
+
+      if (img && imgElem) {
+        imgElem.src = img.src;
+        imgElem.alt = title;
+      }
+      if (titleElem) titleElem.textContent = title;
+      if (descElem) descElem.textContent = desc;
+      if (categoryElem) categoryElem.textContent = categoryText;
+      if (waBtn) {
+        waBtn.href = buildWaUrl(`Halo Admin Coban Rondo, saya tertarik dengan kegiatan di foto galeri: "${title}". Boleh minta info penawaran paketnya?`);
+      }
+    }
+
+    galleryItems.forEach((item, index) => {
+      item.style.cursor = "pointer";
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        showPhotoByIndex(index);
+        bsModal.show();
       });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        showPhotoByIndex(currentPhotoIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        showPhotoByIndex(currentPhotoIndex + 1);
+      });
+    }
+
+    // Keyboard navigation (ArrowLeft & ArrowRight)
+    lightboxModal.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        showPhotoByIndex(currentPhotoIndex - 1);
+      } else if (e.key === "ArrowRight") {
+        showPhotoByIndex(currentPhotoIndex + 1);
+      }
     });
   }
 
@@ -462,49 +521,206 @@
   }
 
   /* --------------------------------------------------------------------------
-     9. ARTICLE LIVE SEARCH & QUICK READER
+     9. ARTICLE FLOATING FILTER & SCREENSHOT-MATCHED PAGINATION
      -------------------------------------------------------------------------- */
   function initArticleFeatures() {
-    const searchInput = document.getElementById("articleSearchInput");
-    const articleCards = document.querySelectorAll(".article-card-item");
+    const filterBtns = document.querySelectorAll("[data-article-filter]");
+    const featuredHero = document.getElementById("articleFeaturedHero");
+    const gridCards = document.querySelectorAll(".article-grid-item");
+    const paginationWrap = document.getElementById("articlePaginationWrap");
+    const counterEl = document.getElementById("articleVisibleCount");
+    const emptyStateEl = document.getElementById("articleEmptyState");
+    const resetBtn = document.getElementById("resetArticleFilterBtn");
 
-    if (searchInput && articleCards.length) {
-      searchInput.addEventListener("input", function () {
-        const query = this.value.toLowerCase().trim();
-        articleCards.forEach(card => {
-          const title = (card.querySelector(".article-title")?.textContent || "").toLowerCase();
-          const desc = (card.querySelector(".article-excerpt")?.textContent || "").toLowerCase();
-          const category = (card.getAttribute("data-category") || "").toLowerCase();
+    if (!gridCards.length && !featuredHero) return;
 
-          if (title.includes(query) || desc.includes(query) || category.includes(query)) {
-            card.style.display = "block";
+    let currentCategory = "all";
+    let currentPage = 1;
+
+    function renderPagination() {
+      if (!paginationWrap) return;
+
+      const totalPages = 5;
+      let html = '<div class="pagination-custom-box">';
+
+      // Tombol Sebelumnya
+      const prevDisabled = currentPage === 1 ? " disabled" : "";
+      html += `<button class="page-box-btn btn-nav-text${prevDisabled}" data-page="prev">Sebelumnya</button>`;
+
+      // Nomor Halaman 1 sampai 5 (Sesuai Desain Referensi)
+      for (let i = 1; i <= totalPages; i++) {
+        const activeClass = i === currentPage ? " active" : "";
+        html += `<button class="page-box-btn${activeClass}" data-page="${i}">${i}</button>`;
+      }
+
+      // Tombol Berikutnya
+      const nextDisabled = currentPage === totalPages ? " disabled" : "";
+      html += `<button class="page-box-btn btn-nav-text${nextDisabled}" data-page="next">Berikutnya</button>`;
+
+      html += "</div>";
+      paginationWrap.innerHTML = html;
+
+      // Event listener tombol pagination
+      const pageButtons = paginationWrap.querySelectorAll(".page-box-btn");
+      pageButtons.forEach(btn => {
+        btn.addEventListener("click", function () {
+          const target = this.getAttribute("data-page");
+          let newPage = currentPage;
+
+          if (target === "prev") {
+            if (currentPage > 1) newPage = currentPage - 1;
+          } else if (target === "next") {
+            if (currentPage < totalPages) newPage = currentPage + 1;
           } else {
-            card.style.display = "none";
+            newPage = parseInt(target, 10);
+          }
+
+          if (newPage !== currentPage) {
+            currentPage = newPage;
+            applyFilters(false);
+
+            // Smooth scroll up to article section
+            const scrollTarget = document.getElementById("articleFeaturedHero") || document.getElementById("articleCardsGrid");
+            if (scrollTarget) {
+              const yOffset = -100;
+              const y = scrollTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
           }
         });
       });
     }
 
-    // Article Category Filter
-    const articleCategoryBtns = document.querySelectorAll("[data-article-filter]");
-    if (articleCategoryBtns.length && articleCards.length) {
-      articleCategoryBtns.forEach(btn => {
-        btn.addEventListener("click", function () {
-          articleCategoryBtns.forEach(b => b.classList.remove("active"));
-          this.classList.add("active");
+    function applyFilters(resetPage = true) {
+      if (resetPage) {
+        currentPage = 1;
+      }
 
-          const filter = this.getAttribute("data-article-filter");
-          articleCards.forEach(card => {
-            const cat = card.getAttribute("data-category");
-            if (filter === "all" || cat === filter) {
-              card.style.display = "block";
+      let visibleCount = 0;
+
+      // Filter Featured Hero
+      if (featuredHero) {
+        const hCat = (featuredHero.getAttribute("data-category") || "").toLowerCase();
+        const catOk = currentCategory === "all" || hCat === currentCategory.toLowerCase();
+
+        if (catOk && currentPage === 1) {
+          featuredHero.style.display = "";
+          visibleCount++;
+        } else {
+          featuredHero.style.display = "none";
+        }
+      }
+
+      // Filter 3 Grid Cards
+      gridCards.forEach(card => {
+        const cat = (card.getAttribute("data-category") || "").toLowerCase();
+        const matchesCat = currentCategory === "all" || cat === currentCategory.toLowerCase();
+
+        if (matchesCat) {
+          card.style.display = "";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Update visible counter
+      if (counterEl) {
+        counterEl.textContent = visibleCount;
+      }
+
+      // Toggle empty state
+      if (emptyStateEl) {
+        emptyStateEl.style.display = visibleCount === 0 ? "block" : "none";
+      }
+
+      // Render pagination UI
+      renderPagination();
+    }
+
+    if (filterBtns.length) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+          const selectedCat = this.getAttribute("data-article-filter") || "all";
+          filterBtns.forEach(b => {
+            if (b.getAttribute("data-article-filter") === selectedCat) {
+              b.classList.add("active");
             } else {
-              card.style.display = "none";
+              b.classList.remove("active");
             }
           });
+          currentCategory = selectedCat;
+          applyFilters(true);
         });
       });
     }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        currentCategory = "all";
+        filterBtns.forEach(b => {
+          if (b.getAttribute("data-article-filter") === "all") {
+            b.classList.add("active");
+          } else {
+            b.classList.remove("active");
+          }
+        });
+        applyFilters(true);
+      });
+    }
+
+    // Support URL tag/category parameter (e.g. ?tag=camping or #camping)
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagParam = urlParams.get("tag") || (window.location.hash ? window.location.hash.replace("#", "") : null);
+    if (tagParam && filterBtns.length) {
+      const matchingBtn = document.querySelector(`[data-article-filter="${tagParam}"]`);
+      if (matchingBtn) {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        matchingBtn.classList.add("active");
+        currentCategory = tagParam;
+      }
+    }
+
+    // Initialize with default state
+    applyFilters(true);
+
+    // Detail Page Utility: Share Copy Link
+    const copyBtns = document.querySelectorAll(".btn-share-copy");
+    copyBtns.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const urlToCopy = window.location.href;
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fa-solid fa-check text-success"></i> <span>Tersalin!</span>';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+          }, 2000);
+        }).catch(() => {
+          alert("Link artikel: " + urlToCopy);
+        });
+      });
+    });
+
+    // Detail Page Utility: Smooth TOC Jumping
+    const tocLinks = document.querySelectorAll(".article-toc-list a[href^='#']");
+    tocLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (targetId && targetId !== "#") {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const navOffset = 90;
+            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+              top: elementPosition - navOffset,
+              behavior: "smooth"
+            });
+          }
+        }
+      });
+    });
   }
 
   /* --------------------------------------------------------------------------
@@ -741,3 +957,4 @@
   }
 
 })();
+

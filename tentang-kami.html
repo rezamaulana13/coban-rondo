@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -32,6 +32,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="assets/img/logo.webp">
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
+
+  <!-- Resource Hints for High-Speed Asset Delivery -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,9 +108,9 @@
     <div class="navbar-progress-bar" id="navScrollProgress"></div>
 
     <div class="container">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="index.html">
         <div class="brand-logo-badge">
-          <img src="assets/img/logo.svg" alt="Logo Coban Rondo Outbound &amp; Adventure" width="58" height="58">
+          <img src="assets/img/logo.svg" alt="Logo Coban Rondo Outbound &amp; Adventure" width="58" height="58" decoding="async">
         </div>
         <div class="brand-text-wrap">
           <span class="brand-title">Coban Rondo</span>
@@ -122,21 +128,21 @@
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
-            <a class="nav-link" href="/">Beranda</a>
+            <a class="nav-link" href="index.html">Beranda</a>
           </li>
 
           <!-- Visual Mega-Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/paket" id="navDropdownPaket" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="paket.html" id="navDropdownPaket" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Paket &amp; Wahana
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
                 <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="/paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <a href="paket.html" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
               </div>
               <div class="dropdown-grid-cr">
-                <a class="dropdown-card-item" href="/paket#corporate">
+                <a class="dropdown-card-item" href="paket.html#corporate">
                   <div class="card-icon-circle bg-teal-gradient">
                     <i class="fa-solid fa-building-user"></i>
                   </div>
@@ -145,7 +151,7 @@
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
-                <a class="dropdown-card-item" href="/paket#edukasi">
+                <a class="dropdown-card-item" href="paket.html#edukasi">
                   <div class="card-icon-circle bg-cyan-gradient">
                     <i class="fa-solid fa-graduation-cap"></i>
                   </div>
@@ -154,7 +160,7 @@
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
-                <a class="dropdown-card-item" href="/paket#camping">
+                <a class="dropdown-card-item" href="paket.html#camping">
                   <div class="card-icon-circle bg-emerald-gradient">
                     <i class="fa-solid fa-campground"></i>
                   </div>
@@ -163,7 +169,7 @@
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
-                <a class="dropdown-card-item" href="/paket#wahana">
+                <a class="dropdown-card-item" href="paket.html#wahana">
                   <div class="card-icon-circle bg-amber-gradient">
                     <i class="fa-solid fa-person-falling-burst"></i>
                   </div>
@@ -176,20 +182,20 @@
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
                   <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="/paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <a href="paket.html#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
                 </div>
               </div>
             </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/galeri">Galeri</a>
+            <a class="nav-link" href="galeri.html">Galeri</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/tentang-kami">Tentang Kami</a>
+            <a class="nav-link active" href="tentang-kami.html">Tentang Kami</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/artikel">Artikel</a>
+            <a class="nav-link" href="artikel.html">Artikel</a>
           </li>
 
           <!-- Shimmer Glowing WhatsApp CTA -->
@@ -208,7 +214,7 @@
   <header class="page-hero-header">
     <div class="container position-relative">
       <nav class="breadcrumb-cr mb-2" aria-label="Breadcrumb">
-        <a href="/">Beranda</a> <span>/</span> <span class="text-white">Tentang Kami</span>
+        <a href="index.html">Beranda</a> <span>/</span> <span class="text-white">Tentang Kami</span>
       </nav>
       <h1 class="font-heading text-white display-5 fw-bold mb-2">Profil &amp; Dedikasi Keamanan Kami</h1>
       <p class="text-white-50 fs-5 mb-0" style="max-width: 680px;">Mengenal tim di balik ratusan keberhasilan event corporate gathering, pelatihan kepemimpinan, dan camping outdoor di Coban Rondo Malang.</p>
@@ -255,7 +261,7 @@
         <div class="col-lg-6">
           <div class="position-relative">
             <div class="glass-card p-2">
-              <img src="https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=800&q=80" alt="Kawasan Wisata Hutan Pinus Coban Rondo Pujon Kabupaten Malang" class="rounded-4 w-100" style="max-height: 420px; object-fit: cover;" loading="lazy">
+              <img src="assets/img/hero-outbound.webp" alt="Kawasan Wisata Outbound Hutan Pinus Coban Rondo Pujon Kabupaten Malang" class="rounded-4 w-100" style="max-height: 420px; object-fit: cover;" loading="lazy" decoding="async" width="600" height="420">
             </div>
             <div class="floating-feature-badge" style="bottom: 20px; left: 20px; right: auto;">
               <div class="stat-icon m-0" style="width: 44px; height: 44px;">
@@ -403,7 +409,7 @@
         </div>
         <div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-end">
           <div class="d-grid gap-2 w-100" style="max-width:240px;">
-            <a href="/paket" class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-center gap-2">
+            <a href="paket.html" class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-center gap-2">
               <span>Jelajahi Paket</span>
             </a>
             <a href="#" class="btn btn-aqua btn-lg d-flex align-items-center justify-content-center gap-2"
@@ -420,61 +426,123 @@
   <!-- Wave separator -->
   <div class="cta-footer-sep" aria-hidden="true"></div>
 
-
-    <!-- =========================================================
+  <!-- =========================================================
        7. FOOTER
   ========================================================== -->
   <footer class="footer-cr">
     <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <div class="brand-logo-badge">
-              <img src="assets/img/logo.svg" alt="Logo Coban Rondo Outbound" width="64" height="64">
+      
+      <!-- Main Grid (Non-colliding 5-column layout) -->
+      <div class="footer-grid-main">
+        
+        <!-- Col 1: Brand Spine + Logo & Bio -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-wrap">
+            <div class="footer-spine-brand">COBAN RONDO</div>
+            <div class="footer-brand-body">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <img src="assets/img/logo.svg" alt="Logo Coban Rondo" class="footer-clean-logo" width="44" height="44" loading="lazy" decoding="async">
+                <div>
+                  <div class="footer-brand-title">OUTBOUND &amp; ADVENTURE</div>
+                  <div class="footer-brand-tagline">OFFICIAL SPECIALIST</div>
+                </div>
+              </div>
+              <p class="footer-brand-desc">
+                Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
+              </p>
+              <div class="footer-social-row">
+                <a href="#" class="footer-social-circle" data-wa-float aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              </div>
             </div>
-            <div class="font-heading text-white fw-bold fs-4 mb-0">Coban Rondo <small class="d-block text-aqua fs-6">Outbound &amp; Adventure</small></div>
-          </div>
-          <p class="text-white-50 mb-4 small">Pusat penyelenggara kegiatan outdoor training, team building korporasi, outbound edukatif pelajar, dan camping ground terbaik di Coban Rondo, Pujon, Malang.</p>
-          <div class="d-flex gap-2">
-            <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
 
-        <div class="col-6 col-lg-2">
-          <h5 class="footer-title">Navigasi</h5>
-          <ul class="footer-links">
-            <li><a href="/"><i class="fa-solid fa-angle-right text-aqua"></i> Beranda</a></li>
-            <li><a href="/paket"><i class="fa-solid fa-angle-right text-aqua"></i> Paket &amp; Wahana</a></li>
-            <li><a href="/galeri"><i class="fa-solid fa-angle-right text-aqua"></i> Galeri Kegiatan</a></li>
-            <li><a href="/tentang-kami"><i class="fa-solid fa-angle-right text-aqua"></i> Tentang Kami</a></li>
-            <li><a href="/artikel"><i class="fa-solid fa-angle-right text-aqua"></i> Artikel &amp; Tips</a></li>
-          </ul>
+        <!-- Col 2: Jelajahi -->
+        <div class="footer-jelajahi-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">JELAJAHI</div>
+            <ul class="footer-menu-list">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="tentang-kami.html">Tentang Kami</a></li>
+              <li><a href="paket.html">Pilihan Paket</a></li>
+              <li><a href="artikel.html">Blog &amp; Panduan</a></li>
+              <li><a href="galeri.html">Galeri Foto</a></li>
+              <li><a href="#" data-wa-quick="Halo Admin Coban Rondo, saya ingin menghubungi Anda untuk konsultasi acara.">Hubungi Kami</a></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="col-6 col-lg-3">
-          <h5 class="footer-title">Paket Favorit</h5>
-          <ul class="footer-links">
-            <li><a href="/paket"><i class="fa-solid fa-angle-right text-aqua"></i> Corporate Team Building</a></li>
-            <li><a href="/paket"><i class="fa-solid fa-angle-right text-aqua"></i> Outbound Siswa &amp; LDKS</a></li>
-            <li><a href="/paket"><i class="fa-solid fa-angle-right text-aqua"></i> Paintball War Games</a></li>
-            <li><a href="/paket"><i class="fa-solid fa-angle-right text-aqua"></i> Pinus Forest Camping</a></li>
-            <li><a href="/paket"><i class="fa-solid fa-angle-right text-aqua"></i> Flying Fox &amp; Labirin</a></li>
-          </ul>
+        <!-- Col 3: Kategori -->
+        <div class="footer-kategori-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">KATEGORI</div>
+            <ul class="footer-menu-list">
+              <li><a href="paket.html#corporate">Corporate Outbound</a></li>
+              <li><a href="paket.html#edukasi">Edukasi &amp; LDKS</a></li>
+              <li><a href="paket.html#camping">Camping Ground</a></li>
+              <li><a href="paket.html#wahana">Paintball Battle</a></li>
+              <li><a href="paket.html#wahana">Flying Fox Pinus</a></li>
+              <li><a href="paket.html#corporate">Rafting Kasembon</a></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="col-lg-3">
-          <h5 class="footer-title">Kontak &amp; Lokasi</h5>
-          <p class="text-white-50 small mb-2"><i class="fa-solid fa-location-dot text-aqua me-2"></i> Kawasan Wisata Air Terjun Coban Rondo, Pandesari, Pujon, Malang, Jawa Timur 65391</p>
-          <p class="text-white-50 small mb-2"><i class="fa-brands fa-whatsapp text-aqua me-2"></i> +62 812-3456-7890 (Fast Response)</p>
-          <p class="text-white-50 small mb-0"><i class="fa-regular fa-envelope text-aqua me-2"></i> info@cobanrondo.web.id</p>
+        <!-- Col 4: Rekanan Official -->
+        <div class="footer-rekanan-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">REKANAN</div>
+            <div class="footer-info-card">
+              <p class="small text-slate-300 mb-2" style="font-size: 0.8rem; line-height: 1.5;">
+                Solusi outdoor event &amp; gathering resmi terpercaya:
+              </p>
+              <a href="https://cobanrondo.web.id" class="footer-domain-btn" target="_blank" rel="noopener">
+                <span>cobanrondo.web.id</span>
+                <i class="fa-solid fa-arrow-up-right-from-square fs-xs text-aqua"></i>
+              </a>
+              <div class="footer-official-tag">
+                <i class="fa-solid fa-circle-check text-success"></i> OFFICIAL OPERATOR
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Col 5: Rekomendasi Paket -->
+        <div class="footer-kontak-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">REKOMENDASI</div>
+            <div class="footer-info-card-cta">
+              <div class="footer-badge-b2b">
+                <span class="footer-live-dot-green"></span> REKOMENDASI PAKET
+              </div>
+              <a href="paket.html" class="btn-footer-gold mb-3">
+                <i class="fa-solid fa-layer-group fs-5"></i>
+                <span>Lihat Paket</span>
+              </a>
+              <div class="text-white-50" style="font-size: 0.76rem; line-height: 1.6;">
+                <div class="mb-1"><i class="fa-regular fa-clock me-1 text-aqua"></i> Senin &ndash; Minggu: 07.00 &ndash; 18.00 WIB</div>
+                <div><i class="fa-solid fa-location-dot me-1 text-aqua"></i> Hutan Pinus Coban Rondo &bull; Pujon, Malang</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="footer-bottom text-center">
-        <p class="mb-0">&copy; 2026 Coban Rondo Outbound &amp; Adventure. All Rights Reserved. Crafted for High-End Experience.</p>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Coban Rondo Outbound &amp; Adventure. All Rights Reserved &bull; Solusi Corporate Outbound &amp; Camping Ground Premium Indonesia.
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="tentang-kami.html" class="text-slate-400 text-decoration-none small">Tentang</a>
+          <a href="paket.html" class="text-slate-400 text-decoration-none small">Paket</a>
+          <a href="galeri.html" class="text-slate-400 text-decoration-none small">Galeri</a>
+          <a href="artikel.html" class="text-slate-400 text-decoration-none small">Artikel</a>
+        </div>
       </div>
     </div>
   </footer>

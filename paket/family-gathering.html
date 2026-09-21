@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Detail Paket Family Gathering &amp; Fun Outing | Coban Rondo Malang</title>
+  <meta name="description" content="Paket Family Gathering, Reuni Komunitas, dan Fun Outing di Coban Rondo Malang. Game santai, ramah segala usia (anak hingga lansia), dengan suasana sejuk alam pegunungan.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="../assets/img/logo.webp">
+  <link rel="apple-touch-icon" href="../assets/img/logo.webp">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom Theme Stylesheet -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body class="ambient-glow-wrap" style="overflow-x:hidden;">
+
+  <!-- =========================================================
+       1. SUPER DUPER LUXURY GLASSMORPHISM NAVBAR
+  ========================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-cr fixed-top">
+    <!-- Reading / Scroll Progress Bar -->
+    <div class="navbar-progress-bar" id="navScrollProgress"></div>
+
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <div class="brand-logo-badge">
+          <img src="../assets/img/logo.svg" alt="Logo Coban Rondo Outbound &amp; Adventure" width="58" height="58" decoding="async">
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Coban Rondo</span>
+          <span class="brand-sub">Outbound &amp; Adventure <span class="brand-live-dot" title="Layanan Reservasi Aktif"></span></span>
+        </div>
+      </a>
+
+      <!-- Custom Animated Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-cr border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Buka menu navigasi">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Beranda</a>
+          </li>
+
+          <!-- Visual Mega-Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="../paket.html" id="navDropdownPaket" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Paket &amp; Wahana
+            </a>
+            <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
+              <div class="dropdown-header-bar">
+                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
+                <a href="../paket.html" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+              </div>
+              <div class="dropdown-grid-cr">
+                <a class="dropdown-card-item" href="corporate-outbound.html">
+                  <div class="card-icon-circle bg-teal-gradient">
+                    <i class="fa-solid fa-building-user"></i>
+                  </div>
+                  <div class="card-text-wrap">
+                    <span class="card-title">Corporate Outbound</span>
+                    <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
+                  </div>
+                </a>
+                <a class="dropdown-card-item" href="outbound-edukasi.html">
+                  <div class="card-icon-circle bg-cyan-gradient">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </div>
+                  <div class="card-text-wrap">
+                    <span class="card-title">Edukasi &amp; Sekolah</span>
+                    <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
+                  </div>
+                </a>
+                <a class="dropdown-card-item" href="camping-ground.html">
+                  <div class="card-icon-circle bg-emerald-gradient">
+                    <i class="fa-solid fa-campground"></i>
+                  </div>
+                  <div class="card-text-wrap">
+                    <span class="card-title">Camping &amp; Glamping</span>
+                    <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
+                  </div>
+                </a>
+                <a class="dropdown-card-item" href="paintball-battle.html">
+                  <div class="card-icon-circle bg-amber-gradient">
+                    <i class="fa-solid fa-person-falling-burst"></i>
+                  </div>
+                  <div class="card-text-wrap">
+                    <span class="card-title">Wahana Petualangan</span>
+                    <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
+                  </div>
+                </a>
+              </div>
+              <div class="dropdown-footer-promo">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="../paket.html#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../galeri.html">Galeri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../tentang-kami.html">Tentang Kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../artikel.html">Artikel</a>
+          </li>
+
+          <!-- Shimmer Glowing WhatsApp CTA -->
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a href="#" class="btn-navbar-cta" data-wa-quick="Halo Admin Coban Rondo, saya ingin bertanya rincian paket outbound &amp; wahana.">
+              <span class="btn-live-pulse-dot"></span>
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Hubungi Kami</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="detail-hero-section" style="background: linear-gradient(180deg, rgba(7, 13, 22, 0.88) 0%, rgba(15, 76, 92, 0.94) 100%), url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;">
+    <div class="container">
+      <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html"><i class="fa-solid fa-house me-1"></i> Beranda</a>
+        <span class="sep">/</span>
+        <a href="../paket.html">Pilihan Paket</a>
+        <span class="sep">/</span>
+        <span class="current">Family Gathering</span>
+      </nav>
+
+      <span class="badge rounded-pill bg-danger text-white px-3 py-2 mb-3 fw-bold">
+        <i class="fa-solid fa-heart me-1"></i> Cocok untuk Segala Usia
+      </span>
+
+      <h1 class="detail-title">Paket Family Gathering &amp; Fun Outing</h1>
+      <p class="detail-subtitle">Ciptakan momen kehangatan, kebersamaan, dan tawa ceria keluarga besar, komunitas, atau paguyuban di alam asri Coban Rondo.</p>
+
+      <div class="detail-meta-pills">
+        <div class="detail-meta-pill"><i class="fa-regular fa-clock text-aqua"></i> 1 Hari (08.30 - 15.00 WIB)</div>
+        <div class="detail-meta-pill"><i class="fa-solid fa-users text-aqua"></i> Min. 25 Peserta</div>
+        <div class="detail-meta-pill"><i class="fa-solid fa-location-dot text-aqua"></i> Area Gazebo &amp; Rumput Hijau</div>
+        <div class="detail-meta-pill"><i class="fa-solid fa-face-smile text-aqua"></i> Game Ringan &amp; Non-Fisik Berat</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT (BOOTSTRAP GRID) -->
+  <section class="section-py bg-soft">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Left Column: Content Breakdown -->
+        <div class="col-lg-8">
+          
+          <div class="detail-card-box">
+            <h2 class="detail-sec-heading"><i class="fa-solid fa-circle-info text-aqua"></i> Deskripsi Program Family Outing</h2>
+            <p class="text-slate-700" style="line-height: 1.7;"><strong>Paket Family Gathering &amp; Fun Outing</strong> dirancang khusus dengan intensitas fisik ringan hingga sedang agar dapat dinikmati bersama oleh seluruh anggota keluarga—mulai dari anak-anak, remaja, orang tua, hingga kakek-nenek. Fokus utama program ini adalah membangun keakraban emosional, keceriaan, dan kenangan indah yang tak terlupakan.</p>
+            
+            <p class="text-slate-700" style="line-height: 1.7;">Dipandu oleh master game berkepribadian ceria dan komunikatif, seluruh games dikemas dengan nuansa humor, interaksi orangtua-anak, dan hadiah-hadiah seru yang membangkitkan tawa.</p>
+
+            <h3 class="mt-4 mb-3 fs-5 fw-bold text-slate-900">Keunggulan Paket Ini:</h3>
+            <div class="detail-highlights-grid">
+              <div class="highlight-box-item">
+                <strong>All-Age Friendly Games</strong>
+                <span>Simulasi permainan inklusif yang aman, tidak berbahaya, dan bisa diikuti oleh balita hingga lansia.</span>
+              </div>
+              <div class="highlight-box-item">
+                <strong>Parent &amp; Kids Bonding</strong>
+                <span>Sesi khusus permainan kolaborasi antara anak dan orang tua untuk merekatkan hubungan emosional.</span>
+              </div>
+              <div class="highlight-box-item">
+                <strong>Fasilitas Gazebo Nyaman</strong>
+                <span>Disediakan area teduh dengan karpet/tikar untuk keluarga yang ingin sekadar bercengkerama santai.</span>
+              </div>
+              <div class="highlight-box-item">
+                <strong>Spot Foto Estetik</strong>
+                <span>Dokumentasi keluarga berlatar hutan pinus menjulang dan air terjun alami nan mempesona.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Rundown -->
+          <div class="detail-card-box">
+            <h2 class="detail-sec-heading"><i class="fa-solid fa-timeline text-aqua"></i> Estimasi Rundown Kegiatan</h2>
+            <div class="detail-timeline">
+              <div class="detail-timeline-item">
+                <div class="detail-timeline-dot"></div>
+                <div class="detail-timeline-time">08.30 - 09.00 WIB</div>
+                <div class="detail-timeline-desc">
+                  <strong>Penyambutan &amp; Welcome Snack</strong>
+                  <p>Keluarga berkumpul di area gazebo privat, registrasi santai, dan menikmati hidangan kue basah tradisional serta teh hangat manis.</p>
+                </div>
+              </div>
+              <div class="detail-timeline-item">
+                <div class="detail-timeline-dot"></div>
+                <div class="detail-timeline-time">09.00 - 10.15 WIB</div>
+                <div class="detail-timeline-desc">
+                  <strong>Opening Fun Games &amp; Senam Gembira</strong>
+                  <p>Senam peregangan lucu, permainan tepuk ria, sambung kata keluarga, dan pembagian doorprize pembuka.</p>
+                </div>
+              </div>
+              <div class="detail-timeline-item">
+                <div class="detail-timeline-dot"></div>
+                <div class="detail-timeline-time">10.15 - 12.00 WIB</div>
+                <div class="detail-timeline-desc">
+                  <strong>Family Synergy &amp; Kids Race Games</strong>
+                  <p>Game estafet bola naga, estafet hula-hoop keluarga, mini tebak gaya berpasangan, dan fun games khusus anak-anak.</p>
+                </div>
+              </div>
+              <div class="detail-timeline-item">
+                <div class="detail-timeline-dot"></div>
+                <div class="detail-timeline-time">12.00 - 13.30 WIB</div>
+                <div class="detail-timeline-desc">
+                  <strong>Santap Siang Prasmanan Bersama (Family Feast)</strong>
+                  <p>Makan siang lezat dengan menu khas Malang: Ayam Bakar / Goreng Kremes, Sambal Lalapan, Sayur Asem, dan Buah Segar.</p>
+                </div>
+              </div>
+              <div class="detail-timeline-item">
+                <div class="detail-timeline-dot"></div>
+                <div class="detail-timeline-time">13.30 - 15.00 WIB</div>
+                <div class="detail-timeline-desc">
+                  <strong>Jalan Santai ke Air Terjun &amp; Foto Kenangan</strong>
+                  <p>Jalan santai menuju Air Terjun Coban Rondo, sesi foto keluarga besar berlatar air terjun, pembagian souvenir, dan penutupan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fasilitas Termasuk & Tidak Termasuk -->
+          <div class="detail-card-box">
+            <h2 class="detail-sec-heading"><i class="fa-solid fa-list-check text-aqua"></i> Rincian Fasilitas Paket</h2>
+            
+            <h4 class="text-success fs-6 fw-bold mb-3"><i class="fa-solid fa-circle-check me-1"></i> Sudah Termasuk (Included):</h4>
+            <ul class="detail-check-grid mb-4">
+              <li><i class="fa-solid fa-check"></i> Tiket Masuk Gerbang Wisata Coban Rondo</li>
+              <li><i class="fa-solid fa-check"></i> Fasilitator / Host Acara Ramah Keluarga &amp; MC Acara</li>
+              <li><i class="fa-solid fa-check"></i> Sewa Gazebo / Area Rumput Eksklusif + Tikar/Karpet</li>
+              <li><i class="fa-solid fa-check"></i> 1x Makan Siang Prasmanan Khas Nusantara</li>
+              <li><i class="fa-solid fa-check"></i> 1x Snack Box &amp; Welcome Drink Hangat</li>
+              <li><i class="fa-solid fa-check"></i> Sound System Outdoor &amp; Musik Santai</li>
+              <li><i class="fa-solid fa-check"></i> Seluruh Peralatan Fun Games Keluarga</li>
+              <li><i class="fa-solid fa-check"></i> Spanduk Banner Acara Keluarga (Free Desain)</li>
+              <li><i class="fa-solid fa-check"></i> Dokumentasi Foto Keluarga Resolusi HD</li>
+            </ul>
+
+            <h4 class="text-danger fs-6 fw-bold mb-3"><i class="fa-solid fa-circle-xmark me-1"></i> Belum Termasuk (Excluded):</h4>
+            <ul class="detail-uncheck-grid">
+              <li><i class="fa-solid fa-xmark"></i> Transportasi Kendaraan Menuju Lokasi</li>
+              <li><i class="fa-solid fa-xmark"></i> Hadiah / Doorprize Utama</li>
+              <li><i class="fa-solid fa-xmark"></i> Tiket Wahana Tambahan di luar area outbound</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Sticky Booking Card -->
+        <div class="col-lg-4">
+          <div class="detail-sticky-card">
+            <span class="detail-card-badge"><i class="fa-solid fa-heart me-1"></i> Paket Hangat &amp; Nyaman</span>
+            
+            <div class="detail-price-wrap">
+              <div class="detail-price-main">
+                Rp 150.000 <small>/ orang</small>
+              </div>
+              <div class="detail-price-sub">*Minimal 25 pax. Diskon khusus untuk anak balita di bawah 4 tahun (Gratis).</div>
+            </div>
+
+            <div class="detail-key-points">
+              <div class="detail-key-item"><i class="fa-solid fa-shield-check text-aqua"></i> <span>Game Seru Tanpa Capek Berlebih</span></div>
+              <div class="detail-key-item"><i class="fa-solid fa-utensils text-aqua"></i> <span>Makan Siang Prasmanan Segar</span></div>
+              <div class="detail-key-item"><i class="fa-solid fa-music text-aqua"></i> <span>Sound &amp; Stand Mic untuk Acara</span></div>
+              <div class="detail-key-item"><i class="fa-solid fa-camera text-aqua"></i> <span>Dokumentasi Foto Seluruh Momen</span></div>
+            </div>
+
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20booking%20Paket%20Family%20Gathering%20(Rp%20150.000%2Fpax)%20untuk%20acara%20keluarga%20kami.%20Boleh%20konsultasi%20jadwal%3F" target="_blank" rel="noopener" class="btn-book-wa-now">
+              <i class="fa-brands fa-whatsapp fs-5"></i>
+              <span>Booking via WhatsApp</span>
+            </a>
+
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20mohon%20kirimkan%20info%20menu%20makanan%20dan%20games%20Paket%20Family%20Gathering." target="_blank" rel="noopener" class="btn-proposal-link">
+              <i class="fa-solid fa-envelope-open-text text-danger"></i>
+              <span>Tanya Menu &amp; Konsep Games</span>
+            </a>
+
+            <div class="mt-3 p-2 bg-light rounded text-center small text-slate-600 border">
+              <i class="fa-solid fa-circle-check text-warning me-1"></i> Area Bersih, Akses Ramah Anak &amp; Toilet Bersih.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. CTA BANNER — PAKET
+  ========================================================== -->
+  <section class="cta-compact position-relative overflow-hidden" style="background: linear-gradient(135deg, #0F4C5C 0%, #134E4A 50%, #0891B2 100%);">
+    <!-- Decorative blobs -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index:0; pointer-events:none;">
+      <div style="position:absolute;width:380px;height:380px;background:rgba(0,210,255,0.08);border-radius:50%;top:-100px;right:-80px;filter:blur(60px);</div>
+      <div style="position:absolute;width:280px;height:280px;background:rgba(255,255,255,0.05);border-radius:50%;bottom:-80px;left:-60px;filter:blur(50px);"></div>
+    </div>
+    <div class="container position-relative" style="z-index:2;">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-lg-7 text-center text-lg-start">
+          <span class="section-eyebrow section-eyebrow-light mb-3 d-inline-block"><i class="fa-solid fa-file-invoice-dollar me-2"></i>Penawaran Khusus &amp; Proposal Resmi</span>
+          <h2 class="section-title text-white mb-3">Butuh Paket Custom Sesuai <span style="color:#00D2FF;">Anggaran Anda?</span></h2>
+          <p class="text-white-50 mb-0 fs-5">Tim kami siap menyusun proposal lengkap dengan rundown acara, rincian biaya transparan, dan invoice resmi &mdash; gratis &amp; tanpa komitmen!</p>
+          <div class="d-flex flex-wrap gap-2 mt-3 justify-content-center justify-content-lg-start">
+            <div class="d-flex align-items-center gap-2 text-white-50 small"><i class="fa-solid fa-check-circle text-aqua"></i> Proposal PDF dalam 2 Jam</div>
+            <div class="d-flex align-items-center gap-2 text-white-50 small"><i class="fa-solid fa-check-circle text-aqua"></i> Harga Transparan &amp; Nego</div>
+            <div class="d-flex align-items-center gap-2 text-white-50 small"><i class="fa-solid fa-check-circle text-aqua"></i> Invoice Legal Perusahaan</div>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center text-lg-end">
+          <a href="#" class="btn btn-aqua btn-lg px-5 py-3 d-inline-flex align-items-center gap-2 mb-3"
+             data-wa-quick="Halo Admin Coban Rondo, saya ingin request proposal resmi dan penawaran harga paket family gathering untuk keluarga/rombongan kami.">
+            <i class="fa-brands fa-whatsapp fs-4"></i>
+            <span>Minta Proposal Sekarang</span>
+          </a>
+          <p class="text-white-50 small mb-0"><i class="fa-regular fa-clock me-1"></i> Respon dalam 15 menit &mdash; Senin s/d Minggu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave separator -->
+  <div class="cta-footer-sep" aria-hidden="true"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer-cr">
+    <div class="container">
+      <div class="footer-grid-main">
+        
+        <!-- Col 1: Brand Spine + Logo & Bio -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-wrap">
+            <div class="footer-spine-brand">COBAN RONDO</div>
+            <div class="footer-brand-body">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <img src="../assets/img/logo.svg" alt="Logo Coban Rondo" class="footer-clean-logo" width="44" height="44" loading="lazy" decoding="async">
+                <div>
+                  <div class="footer-brand-title">OUTBOUND &amp; ADVENTURE</div>
+                  <div class="footer-brand-tagline">OFFICIAL SPECIALIST</div>
+                </div>
+              </div>
+              <p class="footer-brand-desc">
+                Pusat layanan outbound training, team building, camping ground, dan petualangan terpadu profesional di kawasan wisata alam Coban Rondo Malang.
+              </p>
+              <div class="footer-social-row">
+                <a href="#" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Jelajahi -->
+        <div class="footer-jelajahi-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">JELAJAHI</div>
+            <ul class="footer-menu-list">
+              <li><a href="../index.html">Beranda</a></li>
+              <li><a href="../tentang-kami.html">Tentang Kami</a></li>
+              <li><a href="../paket.html">Pilihan Paket</a></li>
+              <li><a href="../artikel.html">Blog &amp; Panduan</a></li>
+              <li><a href="../galeri.html">Galeri Foto</a></li>
+              <li><a href="../kontak.html">Hubungi Kami</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Kategori -->
+        <div class="footer-kategori-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">KATEGORI</div>
+            <ul class="footer-menu-list">
+              <li><a href="corporate-outbound.html">Corporate Outbound</a></li>
+              <li><a href="outbound-edukasi.html">Edukasi &amp; LDKS</a></li>
+              <li><a href="camping-ground.html">Camping Ground</a></li>
+              <li><a href="paintball-battle.html">Paintball Battle</a></li>
+              <li><a href="flying-fox-labirin.html">Flying Fox Pinus</a></li>
+              <li><a href="rafting-kasembon.html">Rafting Kasembon</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 4: Rekanan Official -->
+        <div class="footer-rekanan-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">REKANAN</div>
+            <div class="footer-info-card">
+              <p class="small text-slate-300 mb-2" style="font-size: 0.8rem; line-height: 1.5;">
+                Solusi outdoor event &amp; gathering resmi terpercaya:
+              </p>
+              <a href="https://cobanrondo.web.id" class="footer-domain-btn" target="_blank" rel="noopener">
+                <span>cobanrondo.web.id</span>
+                <i class="fa-solid fa-arrow-up-right-from-square fs-xs text-aqua"></i>
+              </a>
+              <div class="footer-official-tag">
+                <i class="fa-solid fa-circle-check text-success"></i> OFFICIAL OPERATOR
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 5: Kontak & WA CTA -->
+        <div class="footer-kontak-col">
+          <div class="footer-col-wrap">
+            <div class="footer-col-spine">REKOMENDASI</div>
+            <div class="footer-info-card-cta">
+              <div class="footer-badge-b2b">
+                <span class="footer-live-dot-green"></span> REKOMENDASI PAKET
+              </div>
+              <a href="../paket.html" class="btn-footer-gold mb-3">
+                <i class="fa-solid fa-layer-group fs-5"></i>
+                <span>Lihat Paket</span>
+              </a>
+              <div class="text-white-50" style="font-size: 0.76rem; line-height: 1.6;">
+                <div class="mb-1"><i class="fa-regular fa-clock me-1 text-aqua"></i> Senin &ndash; Minggu: 07.00 &ndash; 18.00 WIB</div>
+                <div><i class="fa-solid fa-location-dot me-1 text-aqua"></i> Hutan Pinus Coban Rondo &bull; Pujon, Malang</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Coban Rondo Outbound &amp; Adventure. All Rights Reserved &bull; Solusi Corporate Outbound &amp; Camping Ground Premium Indonesia.
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="../tentang-kami.html" class="text-slate-400 text-decoration-none small">Tentang</a>
+          <a href="../paket.html" class="text-slate-400 text-decoration-none small">Paket</a>
+          <a href="../galeri.html" class="text-slate-400 text-decoration-none small">Galeri</a>
+          <a href="../artikel.html" class="text-slate-400 text-decoration-none small">Artikel</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="floating-wa-btn" aria-label="Konsultasi WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS Scripts -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
