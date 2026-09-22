@@ -106,6 +106,6 @@
 </IfModule>
 
 # ----------------------------------------------------------------------
-# 6. CUSTOM ERROR PAGES (Optional)
+# 6. CUSTOM ERROR PAGES
 # ----------------------------------------------------------------------
-# ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html

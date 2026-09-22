@@ -239,22 +239,13 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="galeri.html">Galeri</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="artikel.html">Artikel</a>
           </li>
-
-          <!-- Shimmer Glowing WhatsApp CTA -->
-          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-            <a href="#" class="btn-navbar-cta" data-wa-quick="Halo Admin Coban Rondo, saya ingin konsultasi kegiatan gathering/outbound kami.">
-              <span class="btn-live-pulse-dot"></span>
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>Hubungi Kami</span>
-            </a>
+          <li class="nav-item">
+            <a class="nav-link" href="galeri.html">Galeri</a>
           </li>
         </ul>
       </div>
@@ -272,67 +263,10 @@
   </header>
 
   <!-- =========================================================
-  <!-- =========================================================
-       FLOATING VERTICAL CATEGORY DOCK (SIDEBAR CAPSULE WIDGET)
+       3. ARTICLE FEED
   ========================================================== -->
-  <aside class="floating-category-dock" aria-label="Navigasi Kategori Melayang">
-    <div class="dock-header-tag">KATEGORI</div>
-    <button type="button" class="dock-btn active" data-article-filter="all" aria-label="Semua Artikel">
-      <i class="fa-solid fa-shapes"></i>
-      <span class="dock-tooltip">Semua Artikel</span>
-    </button>
-    <button type="button" class="dock-btn" data-article-filter="tips-gathering" aria-label="Tips Gathering">
-      <i class="fa-solid fa-briefcase"></i>
-      <span class="dock-tooltip">Tips Gathering</span>
-    </button>
-    <button type="button" class="dock-btn" data-article-filter="ice-breaking" aria-label="Ice Breaking">
-      <i class="fa-solid fa-comments"></i>
-      <span class="dock-tooltip">Ice Breaking</span>
-    </button>
-    <button type="button" class="dock-btn" data-article-filter="camping" aria-label="Camping &amp; Alam">
-      <i class="fa-solid fa-campground"></i>
-      <span class="dock-tooltip">Camping &amp; Alam</span>
-    </button>
-    <button type="button" class="dock-btn" data-article-filter="wahana" aria-label="Wahana Aksi">
-      <i class="fa-solid fa-crosshairs"></i>
-      <span class="dock-tooltip">Wahana Aksi</span>
-    </button>
-  </aside>
-
-  <!-- =========================================================
-       3. ARTICLE FEED & TOP CATEGORY FILTER
-  ========================================================== -->
-  <section class="section-py pt-4">
+  <section class="section-py pt-5">
     <div class="container">
-      
-      <!-- Top Horizontal Category Filter Bar (Matching Reference) -->
-      <div class="article-top-filter-bar mb-4" role="tablist" aria-label="Filter Topik Artikel">
-        <button type="button" class="btn-top-filter active" data-article-filter="all">
-          <i class="fa-solid fa-shapes"></i> <span>Semua Artikel</span>
-        </button>
-        <button type="button" class="btn-top-filter" data-article-filter="tips-gathering">
-          <i class="fa-solid fa-briefcase"></i> <span>Tips Gathering</span>
-        </button>
-        <button type="button" class="btn-top-filter" data-article-filter="ice-breaking">
-          <i class="fa-solid fa-comments"></i> <span>Ice Breaking</span>
-        </button>
-        <button type="button" class="btn-top-filter" data-article-filter="camping">
-          <i class="fa-solid fa-campground"></i> <span>Camping &amp; Alam</span>
-        </button>
-        <button type="button" class="btn-top-filter" data-article-filter="wahana">
-          <i class="fa-solid fa-crosshairs"></i> <span>Wahana Aksi</span>
-        </button>
-      </div>
-
-      <!-- Live Counter & Active Topic Label -->
-      <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2 pb-2 border-bottom">
-        <div class="small text-slate-500">
-          Menampilkan <strong id="articleVisibleCount" class="text-aqua-dark">4</strong> artikel &amp; panduan petualangan
-        </div>
-        <div class="small text-slate-400 d-none d-sm-block">
-          <i class="fa-solid fa-sparkles text-aqua me-1"></i> Tim Fasilitator &amp; Instruktur Coban Rondo
-        </div>
-      </div>
 
       <!-- Featured Highlight Post (Artikel 1: Rundown Gathering) -->
       <div class="glass-card mb-5 p-0 overflow-hidden article-card-item shadow-sm" id="articleFeaturedHero" data-category="tips-gathering">
@@ -458,33 +392,62 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- Empty State When No Article Matches Filter -->
-      <div class="article-empty-state" id="articleEmptyState">
-        <div class="mb-3">
-          <i class="fa-solid fa-book-open-reader text-slate-300" style="font-size: 3.5rem;"></i>
+        <!-- Article 5: Manfaat Team Building -->
+        <div class="col-lg-4 col-md-6 article-card-item article-grid-item" data-category="tips-gathering">
+          <div class="glass-card h-100 d-flex flex-column p-4">
+            <a href="artikel/manfaat-team-building-karyawan.html" class="article-card-thumb-wrap d-block position-relative overflow-hidden rounded-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=75" alt="5 Manfaat Nyata Outbound Team Building bagi Produktivitas Karyawan Kantor" class="w-100" style="height: 220px; object-fit: cover; transition: transform 0.5s ease;" loading="lazy" decoding="async" width="400" height="220">
+              <span class="article-category-badge badge-cat-gathering position-absolute top-0 start-0 m-3 shadow-sm bg-white">Tips Gathering</span>
+            </a>
+            <div class="d-flex align-items-center gap-2 small text-slate-400 mb-2">
+              <span><i class="fa-regular fa-calendar me-1"></i> 22 Sep 2026</span>
+              <span>&bull;</span>
+              <span><i class="fa-regular fa-clock me-1"></i> 5 Min</span>
+            </div>
+            <h2 class="font-heading fw-bold fs-5 mb-2 text-slate-900 article-title">
+              <a href="artikel/manfaat-team-building-karyawan.html" class="text-slate-900 text-decoration-none">
+                5 Manfaat Nyata Outbound Team Building bagi Produktivitas Karyawan
+              </a>
+            </h2>
+            <p class="text-slate-600 small mb-4 flex-grow-1 article-excerpt">
+              Mengapa investasi outbound team building bukan sekadar liburan kantor biasa, melainkan pendorong utama loyalitas dan sinergi kerja tim.
+            </p>
+            <div class="border-top pt-3 mt-auto">
+              <a href="artikel/manfaat-team-building-karyawan.html" class="text-aqua-dark fw-bold small d-inline-flex align-items-center gap-1">
+                <span>Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <h4 class="font-heading fw-bold text-slate-800 mb-2">Tidak Ada Artikel di Kategori Ini</h4>
-        <p class="text-slate-500 small mb-4" style="max-width: 420px; margin: 0 auto;">
-          Silakan klik tombol di bawah untuk menampilkan seluruh topik artikel panduan petualangan.
-        </p>
-        <button type="button" class="btn btn-aqua btn-sm" id="resetArticleFilterBtn">
-          <i class="fa-solid fa-rotate-left me-1"></i> Tampilkan Semua Topik
-        </button>
-      </div>
 
-      <!-- Segmented Box Pagination (Matching Reference) -->
-      <div class="article-pagination-wrap" id="articlePaginationWrap">
-        <div class="pagination-custom-box">
-          <button class="page-box-btn btn-nav-text disabled" data-page="prev">Sebelumnya</button>
-          <button class="page-box-btn active" data-page="1">1</button>
-          <button class="page-box-btn" data-page="2">2</button>
-          <button class="page-box-btn" data-page="3">3</button>
-          <button class="page-box-btn" data-page="4">4</button>
-          <button class="page-box-btn" data-page="5">5</button>
-          <button class="page-box-btn btn-nav-text" data-page="next">Berikutnya</button>
+        <!-- Article 6: Tips Memilih Provider -->
+        <div class="col-lg-4 col-md-6 article-card-item article-grid-item" data-category="tips-gathering">
+          <div class="glass-card h-100 d-flex flex-column p-4">
+            <a href="artikel/tips-memilih-provider-outbound.html" class="article-card-thumb-wrap d-block position-relative overflow-hidden rounded-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=75" alt="Tips Cerdas Memilih Provider Outbound Profesional & Bersertifikat di Malang" class="w-100" style="height: 220px; object-fit: cover; transition: transform 0.5s ease;" loading="lazy" decoding="async" width="400" height="220">
+              <span class="article-category-badge badge-cat-gathering position-absolute top-0 start-0 m-3 shadow-sm bg-white">Tips Gathering</span>
+            </a>
+            <div class="d-flex align-items-center gap-2 small text-slate-400 mb-2">
+              <span><i class="fa-regular fa-calendar me-1"></i> 22 Sep 2026</span>
+              <span>&bull;</span>
+              <span><i class="fa-regular fa-clock me-1"></i> 6 Min</span>
+            </div>
+            <h2 class="font-heading fw-bold fs-5 mb-2 text-slate-900 article-title">
+              <a href="artikel/tips-memilih-provider-outbound.html" class="text-slate-900 text-decoration-none">
+                Tips Cerdas Memilih Provider Outbound Profesional &amp; Bersertifikat di Malang
+              </a>
+            </h2>
+            <p class="text-slate-600 small mb-4 flex-grow-1 article-excerpt">
+              Panduan krusial mengecek lisensi BNSP fasilitator, standar SOP keselamatan K3 alam terbuka, dan transparansi paket sebelum deal.
+            </p>
+            <div class="border-top pt-3 mt-auto">
+              <a href="artikel/tips-memilih-provider-outbound.html" class="text-aqua-dark fw-bold small d-inline-flex align-items-center gap-1">
+                <span>Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
+
       </div>
 
     </div>
@@ -550,7 +513,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="#" class="footer-social-circle" data-wa-float aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -636,18 +599,21 @@
         <div>
           &copy; 2026 Coban Rondo Outbound &amp; Adventure. All Rights Reserved &bull; Solusi Corporate Outbound &amp; Camping Ground Premium Indonesia.
         </div>
-        <div class="d-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
           <a href="tentang-kami.html" class="text-slate-400 text-decoration-none small">Tentang</a>
           <a href="paket.html" class="text-slate-400 text-decoration-none small">Paket</a>
           <a href="galeri.html" class="text-slate-400 text-decoration-none small">Galeri</a>
           <a href="artikel.html" class="text-slate-400 text-decoration-none small">Artikel</a>
+          <a href="kebijakan-privasi.html" class="text-slate-400 text-decoration-none small">Privasi</a>
+          <a href="syarat-ketentuan.html" class="text-slate-400 text-decoration-none small">Syarat &amp; Ketentuan</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave -->
-  <a href="#" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
+  <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
+     target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 

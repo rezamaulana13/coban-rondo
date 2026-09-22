@@ -9,7 +9,7 @@
 
   // Global Config
   const CR_CONFIG = {
-    WA_NUMBER: "6281234567890",
+    WA_NUMBER: "6288989643555",
     BRAND_NAME: "Coban Rondo Outbound & Camping",
     LOCATION: "Kawasan Wisata Coban Rondo, Pandesari, Pujon, Malang, Jawa Timur"
   };
@@ -42,6 +42,7 @@
     initBookingModal();
     initQuickWaTriggers();
     initArticleFeatures();
+    initArticleDetailInteractions();
     initBackToTop();
     initTestimonialSlider();
     initHeroVideo();
@@ -502,21 +503,36 @@
      -------------------------------------------------------------------------- */
   function initQuickWaTriggers() {
     // Floating WA button target
-    const floatingWa = document.querySelector("[data-wa-float]");
-    if (floatingWa) {
+    const floatingWaElements = document.querySelectorAll("[data-wa-float], .floating-wa-btn");
+    floatingWaElements.forEach(floatingWa => {
       const pageTitle = document.title.split("|")[0].trim();
       const defaultMsg = `Halo Admin ${CR_CONFIG.BRAND_NAME}, saya sedang mengunjungi website (${pageTitle}) dan ingin konsultasi seputar kegiatan outbound & camping di Coban Rondo.`;
-      floatingWa.href = buildWaUrl(defaultMsg);
+      const waUrl = buildWaUrl(defaultMsg);
+      floatingWa.href = waUrl;
       floatingWa.setAttribute("target", "_blank");
       floatingWa.setAttribute("rel", "noopener noreferrer");
-    }
+      floatingWa.onclick = function (e) {
+        // Fallback in case default navigation is intercepted
+        if (!floatingWa.href || floatingWa.href.endsWith("#")) {
+          e.preventDefault();
+          window.open(waUrl, "_blank");
+        }
+      };
+    });
 
     // Quick WA links with custom attributes
     document.querySelectorAll("[data-wa-quick]").forEach(el => {
       const msg = el.getAttribute("data-wa-quick") || `Halo Admin ${CR_CONFIG.BRAND_NAME}, saya ingin informasi paket outbound Coban Rondo.`;
-      el.href = buildWaUrl(msg);
+      const waUrl = buildWaUrl(msg);
+      el.href = waUrl;
       el.setAttribute("target", "_blank");
       el.setAttribute("rel", "noopener noreferrer");
+      el.onclick = function (e) {
+        if (!el.href || el.href.endsWith("#")) {
+          e.preventDefault();
+          window.open(waUrl, "_blank");
+        }
+      };
     });
   }
 
@@ -952,6 +968,59 @@
         video.pause();
         if (icon) icon.className = "fa-solid fa-play";
         toggleBtn.setAttribute("aria-label", "Putar video latar");
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     13. ARTICLE DETAIL PAGE INTERACTIONS (Auto TOC, FAQ, Share Buttons)
+     -------------------------------------------------------------------------- */
+  function initArticleDetailInteractions() {
+    // 1. Generate Auto TOC if container exists
+    const tocList = document.getElementById("auto-toc-list");
+    if (tocList) {
+      const headings = document.querySelectorAll(".article-body h2, .article-body h3");
+      if (headings.length > 0) {
+        tocList.innerHTML = "";
+        headings.forEach(function (heading, index) {
+          if (!heading.id) {
+            heading.id = "section-" + (index + 1);
+          }
+          const li = document.createElement("li");
+          if (heading.tagName === "H3") {
+            li.style.paddingLeft = "18px";
+          }
+          const a = document.createElement("a");
+          a.href = "#" + heading.id;
+          a.textContent = heading.textContent.trim();
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+      }
+    }
+
+    // 2. Collapsible Mini FAQ
+    document.querySelectorAll(".faq-mini-question").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const item = btn.closest(".faq-mini-item");
+        if (item) item.classList.toggle("active");
+      });
+    });
+
+    // 3. Dynamic Social Share Buttons
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
+    const shareLinks = {
+      whatsapp: "https://wa.me/?text=" + pageTitle + "%20" + pageUrl,
+      facebook: "https://www.facebook.com/sharer/sharer.php?u=" + pageUrl,
+      twitter: "https://twitter.com/intent/tweet?text=" + pageTitle + "&url=" + pageUrl,
+      linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + pageUrl
+    };
+
+    document.querySelectorAll(".share-btn[data-share]").forEach(function (btn) {
+      const network = btn.getAttribute("data-share");
+      if (shareLinks[network]) {
+        btn.href = shareLinks[network];
       }
     });
   }

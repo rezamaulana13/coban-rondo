@@ -120,6 +120,32 @@
     </image:image>
   </url>
 
+  <!-- 10. Detail Artikel 5: Manfaat Team Building -->
+  <url>
+    <loc>https://cobanrondo.web.id/artikel/manfaat-team-building-karyawan.html</loc>
+    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>5 Manfaat Nyata Outbound Team Building Karyawan</image:title>
+      <image:caption>Pentingnya outbound team building untuk meningkatkan sinergi dan produktivitas kerja</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 11. Detail Artikel 6: Tips Memilih Provider Outbound -->
+  <url>
+    <loc>https://cobanrondo.web.id/artikel/tips-memilih-provider-outbound.html</loc>
+    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Tips Memilih Provider Outbound Profesional di Malang</image:title>
+      <image:caption>Panduan memilih vendor outbound berlisensi BNSP dan standar keselamatan K3</image:caption>
+    </image:image>
+  </url>
+
   <!-- Package Detail Pages -->
   <url>
     <loc>https://cobanrondo.web.id/paket/corporate-outbound.html</loc>
@@ -168,5 +194,19 @@
     <lastmod>2026-09-22T00:00:00+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <!-- Legal & Policy Pages -->
+  <url>
+    <loc>https://cobanrondo.web.id/kebijakan-privasi.html</loc>
+    <lastmod>2026-09-23T00:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cobanrondo.web.id/syarat-ketentuan.html</loc>
+    <lastmod>2026-09-23T00:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
