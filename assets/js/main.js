@@ -46,6 +46,7 @@
     initBackToTop();
     initTestimonialSlider();
     initHeroVideo();
+    initNetworkModal();
   });
 
   /* --------------------------------------------------------------------------
@@ -56,7 +57,8 @@
     const progressBar = document.getElementById("navScrollProgress");
     if (!navbar) return;
 
-    function handleScroll() {
+    let isTicking = false;
+    function updateNavbar() {
       const scrollY = window.scrollY || window.pageYOffset;
       if (scrollY > 30) {
         navbar.classList.add("scrolled");
@@ -69,10 +71,22 @@
         const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
         progressBar.style.width = Math.min(100, Math.max(0, progress)) + "%";
       }
+      isTicking = false;
+    }
+
+    function handleScroll() {
+      if (!isTicking) {
+        window.requestAnimationFrame(updateNavbar);
+        isTicking = true;
+      }
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(updateNavbar);
+    } else {
+      setTimeout(updateNavbar, 60);
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -383,6 +397,57 @@
       }
     }
 
+    // Custom Package Dropdown Interactivity
+    const customDropdown = document.getElementById("customPackageDropdown");
+    const customTrigger = document.getElementById("customPackageTrigger");
+    const customMenu = document.getElementById("customPackageMenu");
+    const customTitle = document.getElementById("customPackageTitle");
+    const customPrice = document.getElementById("customPackagePrice");
+    const customIcon = document.getElementById("customPackageIcon");
+
+    if (customDropdown && customTrigger && customMenu) {
+      customTrigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = customDropdown.classList.toggle("open");
+        customTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      customMenu.querySelectorAll(".custom-calc-item").forEach(item => {
+        item.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const val = item.getAttribute("data-value");
+          const title = item.getAttribute("data-title");
+          const priceText = item.getAttribute("data-price-text");
+          const iconClass = item.getAttribute("data-icon");
+
+          customMenu.querySelectorAll(".custom-calc-item").forEach(i => i.classList.remove("active"));
+          item.classList.add("active");
+
+          if (customTitle) customTitle.innerHTML = title;
+          if (customPrice) customPrice.textContent = priceText;
+          if (customIcon && iconClass) {
+            customIcon.className = `fa-solid ${iconClass} text-aqua`;
+          }
+
+          if (packageSelect) {
+            packageSelect.value = val;
+            calculate();
+          }
+
+          customDropdown.classList.remove("open");
+          customTrigger.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!customDropdown.contains(e.target)) {
+          customDropdown.classList.remove("open");
+          customTrigger.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
     if (packageSelect) packageSelect.addEventListener("change", calculate);
     if (paxInput) {
       paxInput.addEventListener("input", calculate);
@@ -537,48 +602,59 @@
   }
 
   /* --------------------------------------------------------------------------
-     9. ARTICLE FLOATING FILTER & SCREENSHOT-MATCHED PAGINATION
+     9. ARTICLE DYNAMIC 3-PER-PAGE PAGINATION (MATCHING USER SCREENSHOT)
      -------------------------------------------------------------------------- */
   function initArticleFeatures() {
-    const filterBtns = document.querySelectorAll("[data-article-filter]");
-    const featuredHero = document.getElementById("articleFeaturedHero");
-    const gridCards = document.querySelectorAll(".article-grid-item");
+    const gridCards = Array.from(document.querySelectorAll(".article-grid-item"));
     const paginationWrap = document.getElementById("articlePaginationWrap");
-    const counterEl = document.getElementById("articleVisibleCount");
-    const emptyStateEl = document.getElementById("articleEmptyState");
-    const resetBtn = document.getElementById("resetArticleFilterBtn");
+    const paginationInfo = document.getElementById("articlePaginationInfo");
+    const articleSection = document.getElementById("articleSection") || document.getElementById("articleCardsGrid");
 
-    if (!gridCards.length && !featuredHero) return;
+    if (!gridCards.length) return;
 
-    let currentCategory = "all";
+    const ITEMS_PER_PAGE = 3;
+    const totalItems = gridCards.length;
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
     let currentPage = 1;
 
-    function renderPagination() {
+    function renderPaginationUI() {
       if (!paginationWrap) return;
 
-      const totalPages = 5;
-      let html = '<div class="pagination-custom-box">';
-
-      // Tombol Sebelumnya
-      const prevDisabled = currentPage === 1 ? " disabled" : "";
-      html += `<button class="page-box-btn btn-nav-text${prevDisabled}" data-page="prev">Sebelumnya</button>`;
-
-      // Nomor Halaman 1 sampai 5 (Sesuai Desain Referensi)
-      for (let i = 1; i <= totalPages; i++) {
-        const activeClass = i === currentPage ? " active" : "";
-        html += `<button class="page-box-btn${activeClass}" data-page="${i}">${i}</button>`;
+      if (totalPages <= 1) {
+        paginationWrap.innerHTML = "";
+        if (paginationInfo) {
+          paginationInfo.textContent = totalItems > 0 ? `Menampilkan 1 - ${totalItems} dari ${totalItems} artikel` : "";
+        }
+        return;
       }
 
-      // Tombol Berikutnya
-      const nextDisabled = currentPage === totalPages ? " disabled" : "";
-      html += `<button class="page-box-btn btn-nav-text${nextDisabled}" data-page="next">Berikutnya</button>`;
+      let html = "";
 
-      html += "</div>";
+      // 1. Prev Pill Button
+      const prevDisabled = currentPage === 1 ? " disabled" : "";
+      html += `<button class="page-round-btn btn-nav-pill${prevDisabled}" data-page="prev" aria-label="Halaman sebelumnya"><i class="fa-solid fa-chevron-left me-1"></i> Prev</button>`;
+
+      // 2. Page Number Circles
+      for (let i = 1; i <= totalPages; i++) {
+        const activeClass = i === currentPage ? " active" : "";
+        html += `<button class="page-round-btn${activeClass}" data-page="${i}" aria-label="Ke halaman ${i}">${i}</button>`;
+      }
+
+      // 3. Next Pill Button
+      const nextDisabled = currentPage === totalPages ? " disabled" : "";
+      html += `<button class="page-round-btn btn-nav-pill${nextDisabled}" data-page="next" aria-label="Halaman berikutnya">Next <i class="fa-solid fa-chevron-right ms-1"></i></button>`;
+
       paginationWrap.innerHTML = html;
 
-      // Event listener tombol pagination
-      const pageButtons = paginationWrap.querySelectorAll(".page-box-btn");
-      pageButtons.forEach(btn => {
+      // 4. Update Summary Counter Text
+      if (paginationInfo) {
+        const startItem = (currentPage - 1) * ITEMS_PER_PAGE + 1;
+        const endItem = Math.min(currentPage * ITEMS_PER_PAGE, totalItems);
+        paginationInfo.textContent = `Menampilkan ${startItem} - ${endItem} dari ${totalItems} artikel`;
+      }
+
+      // 5. Attach Click Listeners
+      paginationWrap.querySelectorAll(".page-round-btn").forEach(btn => {
         btn.addEventListener("click", function () {
           const target = this.getAttribute("data-page");
           let newPage = currentPage;
@@ -593,13 +669,12 @@
 
           if (newPage !== currentPage) {
             currentPage = newPage;
-            applyFilters(false);
+            applyPagination();
 
-            // Smooth scroll up to article section
-            const scrollTarget = document.getElementById("articleFeaturedHero") || document.getElementById("articleCardsGrid");
-            if (scrollTarget) {
-              const yOffset = -100;
-              const y = scrollTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            // Smooth scroll up to article grid section
+            if (articleSection) {
+              const yOffset = -90;
+              const y = articleSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
               window.scrollTo({ top: y, behavior: "smooth" });
             }
           }
@@ -607,136 +682,26 @@
       });
     }
 
-    function applyFilters(resetPage = true) {
-      if (resetPage) {
-        currentPage = 1;
-      }
+    function applyPagination() {
+      const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+      const endIndex = startIndex + ITEMS_PER_PAGE;
 
-      let visibleCount = 0;
-
-      // Filter Featured Hero
-      if (featuredHero) {
-        const hCat = (featuredHero.getAttribute("data-category") || "").toLowerCase();
-        const catOk = currentCategory === "all" || hCat === currentCategory.toLowerCase();
-
-        if (catOk && currentPage === 1) {
-          featuredHero.style.display = "";
-          visibleCount++;
-        } else {
-          featuredHero.style.display = "none";
-        }
-      }
-
-      // Filter 3 Grid Cards
-      gridCards.forEach(card => {
-        const cat = (card.getAttribute("data-category") || "").toLowerCase();
-        const matchesCat = currentCategory === "all" || cat === currentCategory.toLowerCase();
-
-        if (matchesCat) {
+      // Toggle display of cards
+      gridCards.forEach((card, index) => {
+        if (index >= startIndex && index < endIndex) {
           card.style.display = "";
-          visibleCount++;
+          card.style.animation = "fadeInUp 0.35s ease forwards";
         } else {
           card.style.display = "none";
         }
       });
 
-      // Update visible counter
-      if (counterEl) {
-        counterEl.textContent = visibleCount;
-      }
-
-      // Toggle empty state
-      if (emptyStateEl) {
-        emptyStateEl.style.display = visibleCount === 0 ? "block" : "none";
-      }
-
-      // Render pagination UI
-      renderPagination();
+      // Render Pagination UI
+      renderPaginationUI();
     }
 
-    if (filterBtns.length) {
-      filterBtns.forEach(btn => {
-        btn.addEventListener("click", function () {
-          const selectedCat = this.getAttribute("data-article-filter") || "all";
-          filterBtns.forEach(b => {
-            if (b.getAttribute("data-article-filter") === selectedCat) {
-              b.classList.add("active");
-            } else {
-              b.classList.remove("active");
-            }
-          });
-          currentCategory = selectedCat;
-          applyFilters(true);
-        });
-      });
-    }
-
-    if (resetBtn) {
-      resetBtn.addEventListener("click", function () {
-        currentCategory = "all";
-        filterBtns.forEach(b => {
-          if (b.getAttribute("data-article-filter") === "all") {
-            b.classList.add("active");
-          } else {
-            b.classList.remove("active");
-          }
-        });
-        applyFilters(true);
-      });
-    }
-
-    // Support URL tag/category parameter (e.g. ?tag=camping or #camping)
-    const urlParams = new URLSearchParams(window.location.search);
-    const tagParam = urlParams.get("tag") || (window.location.hash ? window.location.hash.replace("#", "") : null);
-    if (tagParam && filterBtns.length) {
-      const matchingBtn = document.querySelector(`[data-article-filter="${tagParam}"]`);
-      if (matchingBtn) {
-        filterBtns.forEach(b => b.classList.remove("active"));
-        matchingBtn.classList.add("active");
-        currentCategory = tagParam;
-      }
-    }
-
-    // Initialize with default state
-    applyFilters(true);
-
-    // Detail Page Utility: Share Copy Link
-    const copyBtns = document.querySelectorAll(".btn-share-copy");
-    copyBtns.forEach(btn => {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        const urlToCopy = window.location.href;
-        navigator.clipboard.writeText(urlToCopy).then(() => {
-          const originalText = btn.innerHTML;
-          btn.innerHTML = '<i class="fa-solid fa-check text-success"></i> <span>Tersalin!</span>';
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-          }, 2000);
-        }).catch(() => {
-          alert("Link artikel: " + urlToCopy);
-        });
-      });
-    });
-
-    // Detail Page Utility: Smooth TOC Jumping
-    const tocLinks = document.querySelectorAll(".article-toc-list a[href^='#']");
-    tocLinks.forEach(link => {
-      link.addEventListener("click", function (e) {
-        const targetId = this.getAttribute("href");
-        if (targetId && targetId !== "#") {
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            const navOffset = 90;
-            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({
-              top: elementPosition - navOffset,
-              behavior: "smooth"
-            });
-          }
-        }
-      });
-    });
+    // Initial run
+    applyPagination();
   }
 
   /* --------------------------------------------------------------------------
@@ -955,21 +920,50 @@
      -------------------------------------------------------------------------- */
   function initHeroVideo() {
     const video = document.getElementById("heroBgVideo");
-    const toggleBtn = document.getElementById("btnHeroVideoToggle");
-    if (!video || !toggleBtn) return;
+    if (!video) return;
 
-    toggleBtn.addEventListener("click", function () {
-      const icon = toggleBtn.querySelector("i");
-      if (video.paused) {
-        video.play();
-        if (icon) icon.className = "fa-solid fa-pause";
-        toggleBtn.setAttribute("aria-label", "Jeda video latar");
-      } else {
-        video.pause();
-        if (icon) icon.className = "fa-solid fa-play";
-        toggleBtn.setAttribute("aria-label", "Putar video latar");
+    const toggleBtn = document.getElementById("btnHeroVideoToggle");
+
+    // Deferred/lazy load hero video stream to keep initial mobile LCP ultrafast
+    function loadAndPlayVideo() {
+      const sources = video.querySelectorAll("source[data-src]");
+      if (sources.length > 0) {
+        sources.forEach(source => {
+          source.src = source.getAttribute("data-src");
+          source.removeAttribute("data-src");
+        });
+        video.load();
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay policy or low battery mode graceful fallback
+          });
+        }
       }
-    });
+    }
+
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(loadAndPlayVideo, { timeout: 2500 });
+    } else {
+      window.addEventListener("load", () => {
+        setTimeout(loadAndPlayVideo, 300);
+      });
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", function () {
+        const icon = toggleBtn.querySelector("i");
+        if (video.paused) {
+          video.play();
+          if (icon) icon.className = "fa-solid fa-pause";
+          toggleBtn.setAttribute("aria-label", "Jeda video latar");
+        } else {
+          video.pause();
+          if (icon) icon.className = "fa-solid fa-play";
+          toggleBtn.setAttribute("aria-label", "Putar video latar");
+        }
+      });
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -1023,6 +1017,115 @@
         btn.href = shareLinks[network];
       }
     });
+  }
+
+  /* --------------------------------------------------------------------------
+     14. OUR NETWORKS POPUP MODAL (18 Partner Outbound & Adventure Networks)
+     -------------------------------------------------------------------------- */
+  function initNetworkModal() {
+    const NETWORK_DATA = [
+      { name: "Provider Outbound", domain: "provideroutbound.web.id", url: "https://provideroutbound.web.id", icon: "fa-compass" },
+      { name: "Outbound Batu Malang", domain: "outboundbatumalang.web.id", url: "https://outboundbatumalang.web.id", icon: "fa-mountain-sun" },
+      { name: "Outbound Malang", domain: "outboundmalang.web.id", url: "https://outboundmalang.web.id", icon: "fa-tree" },
+      { name: "Paket Outbound Malang", domain: "paketoutboundmalang.web.id", url: "https://paketoutboundmalang.web.id", icon: "fa-boxes-stacked" },
+      { name: "Vendor Outbound Malang", domain: "vendoroutboundmalang.web.id", url: "https://vendoroutboundmalang.web.id", icon: "fa-handshake" },
+      { name: "Offroad Indonesia", domain: "offroad.web.id", url: "https://offroad.web.id", icon: "fa-truck-monster" },
+      { name: "Paintball Indonesia", domain: "paintball.web.id", url: "https://paintball.web.id", icon: "fa-crosshairs" },
+      { name: "Rafting Indonesia", domain: "rafting.web.id", url: "https://rafting.web.id", icon: "fa-water" },
+      { name: "Outbound Pantai", domain: "outboundpantai.web.id", url: "https://outboundpantai.web.id", icon: "fa-umbrella-beach" },
+      { name: "Paintball Batu Malang", domain: "paintballbatumalang.web.id", url: "https://paintballbatumalang.web.id", icon: "fa-shield-halved" },
+      { name: "Malang Traveler", domain: "malangtraveler.web.id", url: "https://malangtraveler.web.id", icon: "fa-route" },
+      { name: "Outbound Kediri", domain: "outboundkediri.web.id", url: "https://outboundkediri.web.id", icon: "fa-location-dot" },
+      { name: "Pantai Malang Selatan", domain: "pantaimalangselatan.web.id", url: "https://pantaimalangselatan.web.id", icon: "fa-sun" },
+      { name: "Jasa Outbound Malang", domain: "jasaoutboundmalang.web.id", url: "https://jasaoutboundmalang.web.id", icon: "fa-user-group" },
+      { name: "Outbound Indonesia", domain: "outboundindonesia.web.id", url: "https://outboundindonesia.web.id", icon: "fa-earth-asia" },
+      { name: "Indonesia Outbound", domain: "indonesiaoutbound.web.id", url: "https://indonesiaoutbound.web.id", icon: "fa-flag" },
+      { name: "Gemilang Katun Outbound", domain: "gemilangkatunoutbound.web.id", url: "https://gemilangkatunoutbound.web.id", icon: "fa-star" },
+      { name: "Outbound Jatim", domain: "outboundjatim.web.id", url: "https://outboundjatim.web.id", icon: "fa-map-location-dot" }
+    ];
+
+    let modalEl = document.getElementById("networkModal");
+    if (!modalEl) {
+      const cardsHtml = NETWORK_DATA.map(item => `
+        <div class="col-lg-4 col-md-6 col-12 network-grid-item" data-network-name="${item.name.toLowerCase()}" data-network-domain="${item.domain.toLowerCase()}">
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="network-card-link">
+            <div class="network-icon-box">
+              <i class="fa-solid ${item.icon}"></i>
+            </div>
+            <div class="overflow-hidden">
+              <div class="network-card-title text-truncate">${item.name}</div>
+              <span class="network-card-domain">${item.domain}</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square network-card-arrow"></i>
+          </a>
+        </div>
+      `).join("");
+
+      const modalHtml = `
+        <div class="modal fade" id="networkModal" tabindex="-1" aria-labelledby="networkModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+            <div class="modal-content network-modal-content">
+              <div class="modal-header network-modal-header">
+                <div>
+                  <h3 class="modal-title network-modal-title" id="networkModalLabel">
+                    <i class="fa-solid fa-network-wired text-aqua"></i>
+                    <span>Our Networks</span>
+                    <span class="network-modal-badge ms-2">${NETWORK_DATA.length} Partner Websites</span>
+                  </h3>
+                  <p class="text-slate-500 small mb-0 mt-1">Jaringan resmi portal outbound, rafting, paintball, camping &amp; wisata petualangan terintegrasi.</p>
+                </div>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Tutup"></button>
+              </div>
+              <div class="modal-body network-modal-body">
+                <div class="network-search-input-wrap">
+                  <i class="fa-solid fa-magnifying-glass network-search-icon"></i>
+                  <input type="text" class="network-search-input" id="networkSearchInput" placeholder="Cari website jaringan (contoh: Malang, Paintball, Rafting, Kediri)..." aria-label="Cari website jaringan">
+                </div>
+                <div class="row g-3" id="networkCardsContainer">
+                  ${cardsHtml}
+                </div>
+                <div id="networkEmptyState" class="text-center py-4 text-muted small" style="display: none;">
+                  <i class="fa-regular fa-face-meh fs-3 d-block mb-2 text-slate-400"></i>
+                  Tidak ada website jaringan yang cocok dengan pencarian Anda.
+                </div>
+              </div>
+              <div class="modal-footer bg-light py-2 px-4 d-flex justify-content-between align-items-center">
+                <small class="text-slate-500"><i class="fa-solid fa-shield-halved text-success me-1"></i> Terverifikasi Resmi &amp; Terintegrasi</small>
+                <button type="button" class="btn btn-sm btn-secondary px-3 rounded-pill" data-bs-dismiss="modal">Tutup</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML("beforeend", modalHtml);
+      modalEl = document.getElementById("networkModal");
+    }
+
+    // Attach live search filter
+    const searchInput = document.getElementById("networkSearchInput");
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        const query = this.value.trim().toLowerCase();
+        const items = document.querySelectorAll(".network-grid-item");
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const name = item.getAttribute("data-network-name") || "";
+          const domain = item.getAttribute("data-network-domain") || "";
+          if (query === "" || name.includes(query) || domain.includes(query)) {
+            item.style.display = "";
+            visibleCount++;
+          } else {
+            item.style.display = "none";
+          }
+        });
+
+        const emptyState = document.getElementById("networkEmptyState");
+        if (emptyState) {
+          emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        }
+      });
+    }
   }
 
 })();

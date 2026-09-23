@@ -34,7 +34,6 @@
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
 
   <!-- Resource Hints for High-Speed Asset Delivery -->
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -42,16 +41,18 @@
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap"></noscript>
 
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- FontAwesome 6 Pro/Free Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
   <!-- Custom Theme Stylesheet (Aqua & Tropical Nature) -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.min.css" rel="stylesheet">
 
   <!-- =========================================================
        SCHEMA.ORG JSON-LD STRUCTURED DATA (BREADCRUMB & PRODUCT/SERVICE)
@@ -78,80 +79,132 @@
         ]
       },
       {
+        "@type": ["LocalBusiness", "SportsActivityLocation", "TouristAttraction"],
+        "@id": "https://cobanrondo.web.id/#business",
+        "name": "Coban Rondo Outbound & Camping",
+        "alternateName": "Provider Outbound Coban Rondo Malang",
+        "url": "https://cobanrondo.web.id/",
+        "logo": "https://cobanrondo.web.id/assets/img/logo.webp",
+        "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+        "description": "Penyedia layanan paket outbound training gathering, outbound edukasi LDKS, paintball battle war game, dan camping ground hutan pinus di Coban Rondo Pujon Malang.",
+        "telephone": "+6288989643555",
+        "email": "info@cobanrondo.web.id",
+        "priceRange": "Rp 55.000 - Rp 350.000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kawasan Wisata Air Terjun Coban Rondo, Jl. Coban Rondo",
+          "addressLocality": "Pandesari, Pujon",
+          "addressRegion": "Jawa Timur",
+          "postalCode": "65391",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.884722,
+          "longitude": 112.477222
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "284",
+          "reviewCount": "284"
+        }
+      },
+      {
         "@type": "ItemList",
         "name": "Katalog Paket Outbound & Wahana Coban Rondo",
         "itemListElement": [
           {
-            "@type": "Service",
+            "@type": "Product",
             "position": 1,
             "name": "Paket Corporate Gathering & Team Building",
+            "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80",
             "description": "Program outbound team building 1 hari untuk perusahaan dan instansi dengan fasilitator BNSP, 5 modul games, tiket kawasan, makan siang prasmanan, dan banner.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coban Rondo Outbound & Camping"
+            "brand": {
+              "@type": "Brand",
+              "name": "Coban Rondo Outbound"
             },
             "offers": {
               "@type": "Offer",
               "price": "185000",
               "priceCurrency": "IDR",
               "availability": "https://schema.org/InStock",
-              "url": "https://cobanrondo.web.id/paket"
+              "url": "https://cobanrondo.web.id/paket",
+              "seller": {
+                "@id": "https://cobanrondo.web.id/#business"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",
-              "reviewCount": "142"
+              "reviewCount": "142",
+              "bestRating": "5",
+              "worstRating": "1"
             }
           },
           {
-            "@type": "Service",
+            "@type": "Product",
             "position": 2,
             "name": "Paket Outbound Leadership & LDKS Pelajar",
+            "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
             "description": "Pelatihan kepemimpinan dan karakter siswa sekolah di alam terbuka dengan ice breaking edukatif, tiket air terjun, dan makan siang sehat.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coban Rondo Outbound & Camping"
+            "brand": {
+              "@type": "Brand",
+              "name": "Coban Rondo Outbound"
             },
             "offers": {
               "@type": "Offer",
               "price": "135000",
               "priceCurrency": "IDR",
               "availability": "https://schema.org/InStock",
-              "url": "https://cobanrondo.web.id/paket"
+              "url": "https://cobanrondo.web.id/paket",
+              "seller": {
+                "@id": "https://cobanrondo.web.id/#business"
+              }
             }
           },
           {
-            "@type": "Service",
+            "@type": "Product",
             "position": 3,
             "name": "Paket Pinus Forest Camping Ground 2D1N",
+            "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80",
             "description": "Paket perkemahan hutan pinus 2 hari 1 malam lengkap dengan tenda dome matras, api unggun malam hari, dan akses fasilitas 24 jam.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coban Rondo Outbound & Camping"
+            "brand": {
+              "@type": "Brand",
+              "name": "Coban Rondo Outbound"
             },
             "offers": {
               "@type": "Offer",
               "price": "95000",
               "priceCurrency": "IDR",
               "availability": "https://schema.org/InStock",
-              "url": "https://cobanrondo.web.id/paket"
+              "url": "https://cobanrondo.web.id/paket",
+              "seller": {
+                "@id": "https://cobanrondo.web.id/#business"
+              }
             }
           },
           {
-            "@type": "Service",
+            "@type": "Product",
             "position": 4,
             "name": "Paket Paintball Battle War Game",
+            "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
             "description": "Simulasi pertempuran strategi hutan pinus dengan senjata Tippmann semi-auto, goggle mask, 50 butir peluru, rompi pelindung, dan wasit.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coban Rondo Outbound & Camping"
+            "brand": {
+              "@type": "Brand",
+              "name": "Coban Rondo Outbound"
             },
             "offers": {
               "@type": "Offer",
               "price": "110000",
               "priceCurrency": "IDR",
               "availability": "https://schema.org/InStock",
-              "url": "https://cobanrondo.web.id/paket"
+              "url": "https://cobanrondo.web.id/paket",
+              "seller": {
+                "@id": "https://cobanrondo.web.id/#business"
+              }
             }
           }
         ]
@@ -582,14 +635,110 @@
             <form id="calcForm">
               <div class="mb-4">
                 <label class="form-label font-heading fw-bold text-slate-900 fs-5 mb-2">1. Pilih Paket Utama</label>
-                <select class="form-select form-select-lg fs-6" id="calcPackage">
-                  <option value="corporate" data-price="185000">Corporate Gathering &amp; Team Building &mdash; Rp 185.000/pax</option>
-                  <option value="edukasi" data-price="135000">Outbound Edukasi / LDKS Pelajar &mdash; Rp 135.000/pax</option>
-                  <option value="family" data-price="120000">Family Outing &amp; Fun Games &mdash; Rp 120.000/pax</option>
-                  <option value="camping" data-price="95000">Pinus Forest Camping Ground &mdash; Rp 95.000/pax</option>
-                  <option value="glamping" data-price="350000">Glamping Luxury Riverside &mdash; Rp 350.000/pax</option>
-                  <option value="paintball" data-price="110000">Paintball Battle War Game &mdash; Rp 110.000/pax</option>
-                  <option value="combo" data-price="295000">Combo Outbound + Rafting Kasembon &mdash; Rp 295.000/pax</option>
+                <!-- Custom Luxury Dropdown (Never Overflows on Mobile) -->
+                <div class="custom-calc-dropdown position-relative" id="customPackageDropdown">
+                  <button type="button" class="custom-calc-btn w-100 d-flex align-items-center justify-content-between text-start" id="customPackageTrigger" aria-expanded="false" aria-haspopup="listbox">
+                    <div class="d-flex align-items-center gap-2 overflow-hidden">
+                      <div class="custom-calc-icon-box">
+                        <i class="fa-solid fa-building-user text-aqua" id="customPackageIcon"></i>
+                      </div>
+                      <div class="text-truncate">
+                        <div class="fw-bold text-slate-900 text-truncate" id="customPackageTitle">Corporate Gathering &amp; Team Building</div>
+                        <div class="text-aqua fw-bold small" id="customPackagePrice">Rp 185.000 / pax</div>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down custom-calc-chevron ms-2 text-slate-400"></i>
+                  </button>
+
+                  <div class="custom-calc-menu" id="customPackageMenu" role="listbox" aria-labelledby="customPackageTrigger">
+                    <div class="custom-calc-item active" data-value="corporate" data-price="185000" data-title="Corporate Gathering &amp; Team Building" data-price-text="Rp 185.000 / pax" data-icon="fa-building-user">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-building-user text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Corporate Gathering &amp; Team Building</div>
+                          <div class="text-aqua small fw-bold">Rp 185.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+
+                    <div class="custom-calc-item" data-value="edukasi" data-price="135000" data-title="Outbound Edukasi / LDKS Pelajar" data-price-text="Rp 135.000 / pax" data-icon="fa-graduation-cap">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-graduation-cap text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Outbound Edukasi / LDKS Pelajar</div>
+                          <div class="text-aqua small fw-bold">Rp 135.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+
+                    <div class="custom-calc-item" data-value="family" data-price="120000" data-title="Family Outing &amp; Fun Games" data-price-text="Rp 120.000 / pax" data-icon="fa-people-roof">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-people-roof text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Family Outing &amp; Fun Games</div>
+                          <div class="text-aqua small fw-bold">Rp 120.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+
+                    <div class="custom-calc-item" data-value="camping" data-price="95000" data-title="Pinus Forest Camping Ground" data-price-text="Rp 95.000 / pax" data-icon="fa-campground">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-campground text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Pinus Forest Camping Ground</div>
+                          <div class="text-aqua small fw-bold">Rp 95.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+
+                    <div class="custom-calc-item" data-value="glamping" data-price="350000" data-title="Glamping Luxury Riverside" data-price-text="Rp 350.000 / pax" data-icon="fa-tents">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-tents text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Glamping Luxury Riverside</div>
+                          <div class="text-aqua small fw-bold">Rp 350.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+
+                    <div class="custom-calc-item" data-value="paintball" data-price="110000" data-title="Paintball Battle War Game" data-price-text="Rp 110.000 / pax" data-icon="fa-person-rifle">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-person-rifle text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Paintball Battle War Game</div>
+                          <div class="text-aqua small fw-bold">Rp 110.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+
+                    <div class="custom-calc-item" data-value="combo" data-price="295000" data-title="Combo Outbound + Rafting Kasembon" data-price-text="Rp 295.000 / pax" data-icon="fa-water">
+                      <div class="d-flex align-items-center gap-2 text-truncate">
+                        <i class="fa-solid fa-water text-aqua flex-shrink-0"></i>
+                        <div class="text-truncate">
+                          <div class="fw-bold text-slate-900 text-truncate">Combo Outbound + Rafting Kasembon</div>
+                          <div class="text-aqua small fw-bold">Rp 295.000 / pax</div>
+                        </div>
+                      </div>
+                      <i class="fa-solid fa-circle-check text-aqua check-icon"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hidden Native Select for 100% calculation compatibility -->
+                <select class="d-none" id="calcPackage" aria-hidden="true" tabindex="-1">
+                  <option value="corporate" data-price="185000" selected>Corporate Gathering &amp; Team Building — Rp 185.000/pax</option>
+                  <option value="edukasi" data-price="135000">Outbound Edukasi / LDKS Pelajar — Rp 135.000/pax</option>
+                  <option value="family" data-price="120000">Family Outing &amp; Fun Games — Rp 120.000/pax</option>
+                  <option value="camping" data-price="95000">Pinus Forest Camping Ground — Rp 95.000/pax</option>
+                  <option value="glamping" data-price="350000">Glamping Luxury Riverside — Rp 350.000/pax</option>
+                  <option value="paintball" data-price="110000">Paintball Battle War Game — Rp 110.000/pax</option>
+                  <option value="combo" data-price="295000">Combo Outbound + Rafting Kasembon — Rp 295.000/pax</option>
                 </select>
               </div>
 
@@ -780,20 +929,23 @@
           </div>
         </div>
 
-        <!-- Col 4: Rekanan Official -->
+        <!-- Col 4: Jaringan Network -->
         <div class="footer-rekanan-col">
           <div class="footer-col-wrap">
-            <div class="footer-col-spine">REKANAN</div>
+            <div class="footer-col-spine">JARINGAN</div>
             <div class="footer-info-card">
               <p class="small text-slate-300 mb-2" style="font-size: 0.8rem; line-height: 1.5;">
-                Solusi outdoor event &amp; gathering resmi terpercaya:
+                Jaringan provider &amp; media partner outbound resmi:
               </p>
-              <a href="https://cobanrondo.web.id" class="footer-domain-btn" target="_blank" rel="noopener">
-                <span>cobanrondo.web.id</span>
+              <button type="button" class="footer-domain-btn border-0 w-100 text-start" data-bs-toggle="modal" data-bs-target="#networkModal">
+                <span class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-network-wired text-aqua"></i>
+                  <span>Our Networks</span>
+                </span>
                 <i class="fa-solid fa-arrow-up-right-from-square fs-xs text-aqua"></i>
-              </a>
-              <div class="footer-official-tag">
-                <i class="fa-solid fa-circle-check text-success"></i> OFFICIAL OPERATOR
+              </button>
+              <div class="footer-official-tag mt-2">
+                <i class="fa-solid fa-circle-check text-success"></i> 18 PARTNER NETWORK
               </div>
             </div>
           </div>
@@ -832,6 +984,7 @@
           <a href="paket.html" class="text-slate-400 text-decoration-none small">Paket</a>
           <a href="galeri.html" class="text-slate-400 text-decoration-none small">Galeri</a>
           <a href="artikel.html" class="text-slate-400 text-decoration-none small">Artikel</a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#networkModal" class="text-slate-400 text-decoration-none small"><i class="fa-solid fa-network-wired text-aqua me-1"></i> Our Networks</a>
           <a href="kebijakan-privasi.html" class="text-slate-400 text-decoration-none small">Privasi</a>
           <a href="syarat-ketentuan.html" class="text-slate-400 text-decoration-none small">Syarat &amp; Ketentuan</a>
         </div>
@@ -851,9 +1004,9 @@
   </button>
 
   <!-- Bootstrap 5.3 JS Bundle -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom Main JS -->
-  <script src="assets/js/main.js"></script>
+  <script defer src="assets/js/main.min.js"></script>
 </body>
 </html>

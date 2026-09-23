@@ -34,24 +34,28 @@
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
 
   <!-- Resource Hints for High-Speed Asset Delivery -->
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preload Critical LCP Hero Poster Image -->
+  <link rel="preload" as="image" href="assets/img/hero-outbound.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Google Fonts: Non-blocking Async Loading with Swap -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap"></noscript>
 
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- FontAwesome 6 Pro/Free Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <!-- FontAwesome 6 Icons: Non-blocking Async Loading -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
-  <!-- Custom Theme Stylesheet (Aqua & Tropical Nature) -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Custom Theme Stylesheet (Minified) -->
+  <link href="assets/css/style.min.css" rel="stylesheet">
 
   <!-- =========================================================
        SCHEMA.ORG JSON-LD STRUCTURED DATA (LOCAL BUSINESS & FAQ)
@@ -254,9 +258,9 @@
   <header class="hero-cr position-relative">
     <!-- Full-Bleed Nature Video Background -->
     <div class="hero-video-wrap">
-      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-outbound.webp" id="heroBgVideo">
-        <source src="assets/video/waterfall-coban-rondo.webm" type="video/webm">
-        <source src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Waterfall_on_Falls_Creek%2C_south_of_Augusta%2C_Montana_%2852974925584%29.webm" type="video/webm">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="none" poster="assets/img/hero-outbound.webp" id="heroBgVideo">
+        <source data-src="assets/video/waterfall-coban-rondo.webm" type="video/webm">
+        <source data-src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Waterfall_on_Falls_Creek%2C_south_of_Augusta%2C_Montana_%2852974925584%29.webm" type="video/webm">
       </video>
       <div class="hero-video-overlay"></div>
     </div>
@@ -952,20 +956,23 @@
           </div>
         </div>
 
-        <!-- Col 4: Rekanan Official -->
+        <!-- Col 4: Jaringan Network -->
         <div class="footer-rekanan-col">
           <div class="footer-col-wrap">
-            <div class="footer-col-spine">REKANAN</div>
+            <div class="footer-col-spine">JARINGAN</div>
             <div class="footer-info-card">
               <p class="small text-slate-300 mb-2" style="font-size: 0.8rem; line-height: 1.5;">
-                Solusi outdoor event &amp; gathering resmi terpercaya:
+                Jaringan provider &amp; media partner outbound resmi:
               </p>
-              <a href="https://cobanrondo.web.id" class="footer-domain-btn" target="_blank" rel="noopener">
-                <span>cobanrondo.web.id</span>
+              <button type="button" class="footer-domain-btn border-0 w-100 text-start" data-bs-toggle="modal" data-bs-target="#networkModal">
+                <span class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-network-wired text-aqua"></i>
+                  <span>Our Networks</span>
+                </span>
                 <i class="fa-solid fa-arrow-up-right-from-square fs-xs text-aqua"></i>
-              </a>
-              <div class="footer-official-tag">
-                <i class="fa-solid fa-circle-check text-success"></i> OFFICIAL OPERATOR
+              </button>
+              <div class="footer-official-tag mt-2">
+                <i class="fa-solid fa-circle-check text-success"></i> 18 PARTNER NETWORK
               </div>
             </div>
           </div>
@@ -1004,6 +1011,7 @@
           <a href="paket.html" class="text-slate-400 text-decoration-none small">Paket</a>
           <a href="galeri.html" class="text-slate-400 text-decoration-none small">Galeri</a>
           <a href="artikel.html" class="text-slate-400 text-decoration-none small">Artikel</a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#networkModal" class="text-slate-400 text-decoration-none small"><i class="fa-solid fa-network-wired text-aqua me-1"></i> Our Networks</a>
           <a href="kebijakan-privasi.html" class="text-slate-400 text-decoration-none small">Privasi</a>
           <a href="syarat-ketentuan.html" class="text-slate-400 text-decoration-none small">Syarat &amp; Ketentuan</a>
         </div>
@@ -1023,10 +1031,10 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!-- Bootstrap 5.3 JS Bundle -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap 5.3 JS Bundle (Deferred) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom Main JS -->
-  <script src="assets/js/main.js"></script>
+  <!-- Custom Main JS (Minified, Deferred) -->
+  <script defer src="assets/js/main.min.js"></script>
 </body>
 </html>

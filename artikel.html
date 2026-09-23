@@ -40,7 +40,6 @@
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
 
   <!-- Resource Hints for High-Speed Asset Delivery -->
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -48,16 +47,18 @@
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap"></noscript>
 
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- FontAwesome 6 Pro/Free Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
   <!-- Custom Theme Stylesheet (Aqua & Tropical Nature) -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.min.css" rel="stylesheet">
 
   <!-- =========================================================
        SCHEMA.ORG JSON-LD STRUCTURED DATA (BREADCRUMB & BLOG/ARTICLES)
@@ -265,49 +266,40 @@
   <!-- =========================================================
        3. ARTICLE FEED
   ========================================================== -->
-  <section class="section-py pt-5">
+  <section class="section-py pt-5" id="articleSection">
     <div class="container">
 
-      <!-- Featured Highlight Post (Artikel 1: Rundown Gathering) -->
-      <div class="glass-card mb-5 p-0 overflow-hidden article-card-item shadow-sm" id="articleFeaturedHero" data-category="tips-gathering">
-        <div class="row g-0 align-items-center">
-          <div class="col-lg-5">
-            <a href="artikel/rundown-company-gathering.html" class="d-block h-100 overflow-hidden position-relative">
-              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" alt="Panduan Menyusun Rundown Company Gathering Perusahaan di Coban Rondo" class="w-100 h-100" style="min-height: 290px; object-fit: cover; transition: transform 0.6s ease;" loading="lazy" decoding="async" width="600" height="360">
-              <span class="badge font-heading px-3 py-2 rounded-pill position-absolute top-0 start-0 m-3 shadow" style="background: linear-gradient(135deg, #00D2FF 0%, #00bcff 100%); color: #042f38; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.02em;">
-                <i class="fa-solid fa-star me-1 text-warning"></i> Artikel Utama
-              </span>
+      <!-- Articles Grid (7 Cards Paginated: 3 Cards per Page) -->
+      <div class="row g-4 mb-4" id="articleCardsGrid">
+        
+        <!-- Article 1: Rundown Company Gathering -->
+        <div class="col-lg-4 col-md-6 article-card-item article-grid-item" data-category="tips-gathering">
+          <div class="glass-card h-100 d-flex flex-column p-4">
+            <a href="artikel/rundown-company-gathering.html" class="article-card-thumb-wrap d-block position-relative overflow-hidden rounded-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=75" alt="Panduan Menyusun Rundown Company Gathering Perusahaan di Coban Rondo" class="w-100" style="height: 220px; object-fit: cover; transition: transform 0.5s ease;" loading="lazy" decoding="async" width="400" height="220">
+              <span class="article-category-badge badge-cat-gathering position-absolute top-0 start-0 m-3 shadow-sm bg-white">Tips Gathering</span>
             </a>
-          </div>
-          <div class="col-lg-7 p-4 p-md-5">
-            <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="article-category-badge badge-cat-gathering">Tips Gathering</span>
-              <span class="small text-slate-400">&bull;</span>
-              <span class="small text-slate-500 fw-semibold"><i class="fa-regular fa-clock me-1 text-aqua"></i> 6 Min Baca</span>
+            <div class="d-flex align-items-center gap-2 small text-slate-400 mb-2">
+              <span><i class="fa-regular fa-calendar me-1"></i> 22 Sep 2026</span>
+              <span>&bull;</span>
+              <span><i class="fa-regular fa-clock me-1"></i> 6 Min</span>
             </div>
-            <h2 class="font-heading fw-bold fs-3 mb-2 text-slate-900 article-title">
+            <h2 class="font-heading fw-bold fs-5 mb-2 text-slate-900 article-title">
               <a href="artikel/rundown-company-gathering.html" class="text-slate-900 text-decoration-none">
                 7 Langkah Menyusun Rundown Company Gathering yang Membekas &amp; Efektif
               </a>
             </h2>
-            <p class="text-slate-600 mb-4 article-excerpt" style="font-size: 0.95rem; line-height: 1.65;">
+            <p class="text-slate-600 small mb-4 flex-grow-1 article-excerpt">
               Pelajari formula seimbang antara sesi fun games, ice breaking, team bonding, dan waktu istirahat yang efektif di alam terbuka hutan pinus Coban Rondo.
             </p>
-            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 pt-3 border-top">
-              <div class="small text-slate-400">
-                <i class="fa-regular fa-calendar me-1"></i> 22 Sep 2026
-              </div>
-              <a href="artikel/rundown-company-gathering.html" class="btn btn-aqua btn-sm px-3">
-                <span>Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right ms-1"></i>
+            <div class="border-top pt-3 mt-auto">
+              <a href="artikel/rundown-company-gathering.html" class="text-aqua-dark fw-bold small d-inline-flex align-items-center gap-1">
+                <span>Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Articles Grid (3 Cards in 3-Column Layout) -->
-      <div class="row g-4 mb-4" id="articleCardsGrid">
-        
         <!-- Article 2: Ice Breaking -->
         <div class="col-lg-4 col-md-6 article-card-item article-grid-item" data-category="ice-breaking">
           <div class="glass-card h-100 d-flex flex-column p-4">
@@ -364,7 +356,7 @@
           </div>
         </div>
 
-        <!-- Article 4: Paintball Wargame -->
+        <!-- Article 4: Taktik Paintball -->
         <div class="col-lg-4 col-md-6 article-card-item article-grid-item" data-category="wahana">
           <div class="glass-card h-100 d-flex flex-column p-4">
             <a href="artikel/taktik-paintball-wargame.html" class="article-card-thumb-wrap d-block position-relative overflow-hidden rounded-3 mb-3">
@@ -448,6 +440,44 @@
           </div>
         </div>
 
+        <!-- Article 7: Estimasi Biaya Outbound (NEW) -->
+        <div class="col-lg-4 col-md-6 article-card-item article-grid-item" data-category="tips-gathering">
+          <div class="glass-card h-100 d-flex flex-column p-4">
+            <a href="artikel/estimasi-biaya-outbound-malang.html" class="article-card-thumb-wrap d-block position-relative overflow-hidden rounded-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=75" alt="Estimasi Biaya Outbound dan Gathering Kantor di Coban Rondo Malang 2026" class="w-100" style="height: 220px; object-fit: cover; transition: transform 0.5s ease;" loading="lazy" decoding="async" width="400" height="220">
+              <span class="article-category-badge badge-cat-gathering position-absolute top-0 start-0 m-3 shadow-sm bg-white">Tips Gathering</span>
+            </a>
+            <div class="d-flex align-items-center gap-2 small text-slate-400 mb-2">
+              <span><i class="fa-regular fa-calendar me-1"></i> 23 Sep 2026</span>
+              <span>&bull;</span>
+              <span><i class="fa-regular fa-clock me-1"></i> 6 Min</span>
+            </div>
+            <h2 class="font-heading fw-bold fs-5 mb-2 text-slate-900 article-title">
+              <a href="artikel/estimasi-biaya-outbound-malang.html" class="text-slate-900 text-decoration-none">
+                Estimasi Biaya Outbound &amp; Gathering Kantor Malang 2026: Rincian Paket &amp; Tips Hemat
+              </a>
+            </h2>
+            <p class="text-slate-600 small mb-4 flex-grow-1 article-excerpt">
+              Simulasi hitungan anggaran per pax, rincian fasilitas konsumsi, tiket masuk wisata, instruktur BNSP, dan cara menghemat budget acara kantor.
+            </p>
+            <div class="border-top pt-3 mt-auto">
+              <a href="artikel/estimasi-biaya-outbound-malang.html" class="text-aqua-dark fw-bold small d-inline-flex align-items-center gap-1">
+                <span>Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination Section (Matching Screenshot) -->
+      <div class="article-pagination-section text-center" id="articlePaginationSection">
+        <div class="pagination-round-box" id="articlePaginationWrap">
+          <!-- Dynamically populated by JS -->
+        </div>
+        <div class="pagination-counter-text mt-2" id="articlePaginationInfo">
+          Menampilkan 1 - 3 dari 7 artikel
+        </div>
       </div>
 
     </div>
@@ -552,20 +582,23 @@
           </div>
         </div>
 
-        <!-- Col 4: Rekanan Official -->
+        <!-- Col 4: Jaringan Network -->
         <div class="footer-rekanan-col">
           <div class="footer-col-wrap">
-            <div class="footer-col-spine">REKANAN</div>
+            <div class="footer-col-spine">JARINGAN</div>
             <div class="footer-info-card">
               <p class="small text-slate-300 mb-2" style="font-size: 0.8rem; line-height: 1.5;">
-                Solusi outdoor event &amp; gathering resmi terpercaya:
+                Jaringan provider &amp; media partner outbound resmi:
               </p>
-              <a href="https://cobanrondo.web.id" class="footer-domain-btn" target="_blank" rel="noopener">
-                <span>cobanrondo.web.id</span>
+              <button type="button" class="footer-domain-btn border-0 w-100 text-start" data-bs-toggle="modal" data-bs-target="#networkModal">
+                <span class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-network-wired text-aqua"></i>
+                  <span>Our Networks</span>
+                </span>
                 <i class="fa-solid fa-arrow-up-right-from-square fs-xs text-aqua"></i>
-              </a>
-              <div class="footer-official-tag">
-                <i class="fa-solid fa-circle-check text-success"></i> OFFICIAL OPERATOR
+              </button>
+              <div class="footer-official-tag mt-2">
+                <i class="fa-solid fa-circle-check text-success"></i> 18 PARTNER NETWORK
               </div>
             </div>
           </div>
@@ -604,6 +637,7 @@
           <a href="paket.html" class="text-slate-400 text-decoration-none small">Paket</a>
           <a href="galeri.html" class="text-slate-400 text-decoration-none small">Galeri</a>
           <a href="artikel.html" class="text-slate-400 text-decoration-none small">Artikel</a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#networkModal" class="text-slate-400 text-decoration-none small"><i class="fa-solid fa-network-wired text-aqua me-1"></i> Our Networks</a>
           <a href="kebijakan-privasi.html" class="text-slate-400 text-decoration-none small">Privasi</a>
           <a href="syarat-ketentuan.html" class="text-slate-400 text-decoration-none small">Syarat &amp; Ketentuan</a>
         </div>
@@ -623,9 +657,9 @@
   </button>
 
   <!-- Bootstrap 5.3 JS Bundle -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom Main JS -->
-  <script src="assets/js/main.js"></script>
+  <script defer src="assets/js/main.min.js"></script>
 </body>
 </html>
