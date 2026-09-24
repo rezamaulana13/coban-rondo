@@ -41,19 +41,25 @@ if (window.location.pathname.endsWith('.html')) {
   window.formatRupiah = formatRupiah;
 
   document.addEventListener("DOMContentLoaded", function () {
+    // Immediate critical init
     initNavbarScroll();
-    initStatsCounter();
-    initPackageFilter();
-    initGalleryFilter();
-    initGalleryLightbox();
-    initCostCalculator();
-    initBookingModal();
     initQuickWaTriggers();
-    initArticleFeatures();
-    initArticleDetailInteractions();
-    initBackToTop();
-    initTestimonialSlider();
-    initNetworkModal();
+    
+    // Defer non-critical calculations to idle time to prevent Forced Reflow & layout thrashing
+    const deferInit = window.requestIdleCallback || function (cb) { setTimeout(cb, 1); };
+    deferInit(function () {
+      initStatsCounter();
+      initPackageFilter();
+      initGalleryFilter();
+      initGalleryLightbox();
+      initCostCalculator();
+      initBookingModal();
+      initArticleFeatures();
+      initArticleDetailInteractions();
+      initBackToTop();
+      initTestimonialSlider();
+      initNetworkModal();
+    });
   });
 
   /* --------------------------------------------------------------------------

@@ -18,7 +18,8 @@
     <!-- High-Priority LCP Hero Image Preload (Mobile & Desktop Speed < 2.0s) -->
   <link rel="preload" as="image" href="../assets/img/family-gathering.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+  <noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript></noscript>
 
   <!-- Bootstrap 5.3 CSS (Local, Non-blocking) -->
   <link rel="preload" as="style" href="../assets/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -27,7 +28,8 @@
   <!-- FontAwesome 6 Icons: Non-blocking Async Loading -->
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript></noscript>
+  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript></noscript></noscript>
 
   <!-- Custom Theme Stylesheet (Local Minified, Non-blocking) -->
   <link rel="preload" as="style" href="../assets/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -37,7 +39,7 @@
   <!-- Critical CSS for Instant Paint -->
   <style id="cr-critical-css">
     body, h1, h2, h3, h4, h5, h6, .btn, .font-heading {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, 'Plus Jakarta Sans';
     }
     body {
       margin: 0;
