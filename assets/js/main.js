@@ -1,3 +1,11 @@
+
+// Client-side Clean URL Handler
+if (window.location.pathname.endsWith('.html')) {
+  var cleanPath = window.location.pathname.replace(/\.html$/, '');
+  if (cleanPath.endsWith('/index')) cleanPath = cleanPath.replace(/\/index$/, '') || '/';
+  window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+}
+
 /* ==========================================================================
    COBAN RONDO OUTBOUND & CAMPING — MAIN INTERACTIVE JAVASCRIPT
    Navbar scroll, Package & Gallery Filter, Interactive Cost Calculator,
@@ -45,7 +53,6 @@
     initArticleDetailInteractions();
     initBackToTop();
     initTestimonialSlider();
-    initHeroVideo();
     initNetworkModal();
   });
 
@@ -915,56 +922,7 @@
     goToSlide(0);
   }
 
-  /* --------------------------------------------------------------------------
-     12. HERO BACKGROUND VIDEO CONTROLS
-     -------------------------------------------------------------------------- */
-  function initHeroVideo() {
-    const video = document.getElementById("heroBgVideo");
-    if (!video) return;
 
-    const toggleBtn = document.getElementById("btnHeroVideoToggle");
-
-    // Deferred/lazy load hero video stream to keep initial mobile LCP ultrafast
-    function loadAndPlayVideo() {
-      const sources = video.querySelectorAll("source[data-src]");
-      if (sources.length > 0) {
-        sources.forEach(source => {
-          source.src = source.getAttribute("data-src");
-          source.removeAttribute("data-src");
-        });
-        video.load();
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Autoplay policy or low battery mode graceful fallback
-          });
-        }
-      }
-    }
-
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(loadAndPlayVideo, { timeout: 2500 });
-    } else {
-      window.addEventListener("load", () => {
-        setTimeout(loadAndPlayVideo, 300);
-      });
-    }
-
-    if (toggleBtn) {
-      toggleBtn.addEventListener("click", function () {
-        const icon = toggleBtn.querySelector("i");
-        if (video.paused) {
-          video.play();
-          if (icon) icon.className = "fa-solid fa-pause";
-          toggleBtn.setAttribute("aria-label", "Jeda video latar");
-        } else {
-          video.pause();
-          if (icon) icon.className = "fa-solid fa-play";
-          toggleBtn.setAttribute("aria-label", "Putar video latar");
-        }
-      });
-    }
-  }
 
   /* --------------------------------------------------------------------------
      13. ARTICLE DETAIL PAGE INTERACTIONS (Auto TOC, FAQ, Share Buttons)

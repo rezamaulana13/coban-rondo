@@ -94,7 +94,7 @@ html, body {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -103,7 +103,7 @@ body {
   color: var(--clr-slate-800);
   background-color: var(--clr-bg-page);
   line-height: 1.75;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: auto;
   width: 100%;
   -webkit-font-smoothing: antialiased;
@@ -342,7 +342,7 @@ img {
 /* Ambient Glowing Mesh Background */
 .ambient-glow-wrap {
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 .ambient-glow-wrap::before {
@@ -591,6 +591,22 @@ img {
   align-items: center;
   gap: 0.4rem;
   margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .navbar-cr {
+    padding: 0.5rem 0;
+  }
+  .brand-logo-badge {
+    width: 44px;
+    height: 44px;
+  }
+  .navbar-brand .brand-title {
+    font-size: 1.25rem;
+  }
+  .navbar-brand .brand-sub {
+    font-size: 0.68rem;
+  }
 }
 
 .brand-live-dot {
@@ -1030,34 +1046,38 @@ img {
    ========================================================================== */
 .hero-cr {
   position: relative;
-  min-height: 92vh;
+  min-height: 85vh;
+  min-height: 85svh;
   display: flex;
   align-items: center;
   color: #ffffff;
-  padding: 5.5rem 0 6.5rem;
+  padding: 5rem 0 6rem;
   overflow: hidden;
   background-color: #042f2e;
+  contain: paint;
 }
 
-/* Background Video Container */
+/* Background Media Container */
+.hero-media-wrap,
 .hero-video-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: 0;
+  pointer-events: none;
 }
 
+.hero-bg-img,
 .hero-bg-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.04);
+  aspect-ratio: 16 / 9;
   filter: brightness(0.92) contrast(1.05);
-  transition: opacity 0.6s ease;
+  display: block;
 }
 
 /* Cinematic Multi-layer Overlay for Perfect Legibility */
@@ -2165,7 +2185,7 @@ img {
 .page-hero-header {
   background: 
     var(--grad-hero-overlay),
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
+    url('../img/hero-coban-rondo.webp') center center / cover no-repeat;
   color: #ffffff;
   padding: 8.5rem 0 4.5rem;
   position: relative;
@@ -2981,7 +3001,7 @@ img {
 .detail-hero-section {
   position: relative;
   padding: 130px 0 60px;
-  background: linear-gradient(180deg, rgba(7, 13, 22, 0.88) 0%, rgba(15, 76, 92, 0.94) 100%), url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
+  background: linear-gradient(180deg, rgba(7, 13, 22, 0.88) 0%, rgba(15, 76, 92, 0.94) 100%), url('../img/hero-coban-rondo.webp') center center / cover no-repeat;
   color: #ffffff;
 }
 
@@ -4657,27 +4677,35 @@ img {
   color: #94a3b8;
 }
 
+/* Full-width Article Header */
+.article-header-wrapper {
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
 .article-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+  align-items: start;
 }
 @media (min-width: 992px) {
   .article-layout {
-    grid-template-columns: 2.3fr 1fr;
+    grid-template-columns: 2.25fr 1fr;
+    align-items: start;
   }
 }
 
 .article-title {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: #0f172a;
   line-height: 1.3;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   font-family: var(--font-heading);
 }
 @media (min-width: 768px) {
-  .article-title { font-size: 2.35rem; }
+  .article-title { font-size: 2.55rem; }
 }
 
 .article-top-meta {
@@ -5042,11 +5070,22 @@ img {
   color: #fff;
 }
 
-/* Sidebar Author Card & Related */
+/* Sidebar Author Card & Related (Sticky on Desktop) */
 .article-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.75rem;
+}
+
+@media (min-width: 992px) {
+  .article-sidebar,
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 95px;
+    align-self: start;
+    z-index: 10;
+  }
 }
 .sidebar-author-card {
   background: #fff;
@@ -5608,4 +5647,695 @@ img {
   background: #0891b2;
 }
 
+/* =====================================================
+   ARTICLE DETAIL PAGE MODERN STYLING (SEO/AEO/GEO READY)
+   - Full Width Header (Title & Meta Free on Top)
+   - 2-Column Layout starting exactly at Featured Image
+   - Sticky Author & Related Articles Sidebar on Scroll
+===================================================== */
 
+/* 1. Full-Width Header Wrapper */
+.article-header-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--clr-slate-200);
+}
+
+.article-header-wrapper .article-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--clr-slate-900);
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.article-header-wrapper .article-top-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.article-header-wrapper .meta-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: var(--clr-slate-900);
+}
+
+.article-header-wrapper .meta-author img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--clr-aqua-fresh);
+  box-shadow: 0 2px 8px rgba(0, 210, 255, 0.25);
+}
+
+/* 2. 2-Column Grid Layout Aligned at Image */
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 2.75rem;
+  align-items: start;
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* 3. Main Article Content (Left Column) */
+.article-main {
+  min-width: 0;
+  width: 100%;
+}
+
+.featured-image-wrap {
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 76, 92, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.15);
+  background: #ffffff;
+}
+
+.featured-image-wrap img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-caption {
+  font-size: 0.84rem;
+  color: var(--clr-slate-500);
+  font-style: italic;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-top: 1px solid var(--clr-slate-200);
+}
+
+/* Summary Box / Quick Answer (AEO / GEO) */
+.summary-box {
+  background: linear-gradient(135deg, rgba(240, 249, 255, 0.95) 0%, rgba(224, 242, 254, 0.9) 100%);
+  border-left: 4px solid var(--clr-aqua-primary);
+  border-radius: 0 14px 14px 0;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2.25rem;
+  box-shadow: 0 4px 15px rgba(8, 145, 178, 0.06);
+}
+
+.summary-box h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--clr-deep-teal);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary-box p {
+  font-size: 0.98rem;
+  color: var(--clr-slate-700);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box ul {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+  color: var(--clr-slate-700);
+  font-size: 0.94rem;
+}
+
+.summary-box li {
+  margin-bottom: 0.35rem;
+}
+
+/* Table of Contents Collapsible */
+.toc-box {
+  background: #ffffff;
+  border: 1px solid var(--clr-slate-200);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.toc-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--clr-slate-900);
+  cursor: pointer;
+  text-align: left;
+}
+
+.toc-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.toc-toggle.active i {
+  transform: rotate(90deg);
+}
+
+.toc-content {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--clr-slate-100);
+}
+
+.toc-content.show {
+  display: block;
+}
+
+.toc-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.toc-content li {
+  margin-bottom: 0.5rem;
+}
+
+.toc-content a {
+  color: var(--clr-slate-700);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.toc-content a:hover {
+  color: var(--clr-aqua-primary);
+  text-decoration: underline;
+}
+
+/* Article Body Typography */
+.article-body {
+  font-size: 1.05rem;
+  color: var(--clr-slate-800);
+  line-height: 1.85;
+}
+
+.article-body h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--clr-slate-900);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--clr-slate-100);
+}
+
+.article-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-deep-teal);
+  margin-top: 1.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-body p {
+  margin-bottom: 1.35rem;
+}
+
+.article-body strong {
+  color: var(--clr-slate-900);
+}
+
+/* Responsive Table */
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 76, 92, 0.04);
+  font-size: 0.94rem;
+}
+
+.article-table th {
+  background: var(--clr-deep-teal);
+  color: #ffffff;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.article-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--clr-slate-200);
+  color: var(--clr-slate-700);
+}
+
+.article-table tr:last-child td {
+  border-bottom: none;
+}
+
+.article-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Baca Juga Box (Internal Links) */
+.baca-juga-box {
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+}
+
+.baca-juga-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #15803d;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.baca-juga-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.baca-juga-list li {
+  margin-bottom: 0.35rem;
+}
+
+.baca-juga-list a {
+  color: #166534;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+/* 4. STICKY SIDEBAR (RIGHT COLUMN) */
+.article-sidebar.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 95px;
+  align-self: start;
+  z-index: 20;
+}
+
+@media (max-width: 991.98px) {
+  .article-sidebar.sidebar-sticky {
+    position: static;
+    top: auto;
+  }
+}
+
+.sidebar-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--clr-slate-200);
+  padding: 1.65rem;
+  box-shadow: 0 8px 24px rgba(15, 76, 92, 0.05);
+  margin-bottom: 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebar-card:hover {
+  box-shadow: 0 12px 32px rgba(15, 76, 92, 0.08);
+}
+
+/* Author Box in Sidebar */
+.sidebar-author-box {
+  text-align: center;
+}
+
+.sidebar-avatar-wrap {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1rem;
+}
+
+.sidebar-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--clr-aqua-fresh);
+  box-shadow: 0 4px 14px rgba(0, 210, 255, 0.3);
+}
+
+.sidebar-author-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--clr-slate-900);
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-author-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--clr-aqua-primary);
+  background: rgba(8, 145, 178, 0.1);
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.sidebar-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-slate-700);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-social a:hover {
+  background: var(--clr-aqua-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.sidebar-author-bio {
+  font-size: 0.84rem;
+  color: var(--clr-slate-600);
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Related Articles Widget */
+.sidebar-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--clr-slate-900);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 2px solid var(--clr-slate-100);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.related-item-mini {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.related-item-mini:hover {
+  transform: translateX(4px);
+}
+
+.related-item-mini img {
+  width: 72px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--clr-slate-200);
+}
+
+.related-item-body h4 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--clr-slate-900);
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.related-item-mini:hover .related-item-body h4 {
+  color: var(--clr-aqua-primary);
+}
+
+.related-item-meta {
+  font-size: 0.74rem;
+  color: var(--clr-slate-400);
+}
+
+/* Sidebar CTA Promo Card */
+.sidebar-cta-card {
+  background: linear-gradient(135deg, #042f2e 0%, #0f4c5c 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(4, 47, 46, 0.25);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.sidebar-cta-card h4 {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-cta-card p {
+  font-size: 0.85rem;
+  color: rgba(240, 249, 255, 0.85);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+/* Sidebar Author Card (Class Aliases for full compatibility) */
+.sidebar-author-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--clr-slate-200);
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(15, 76, 92, 0.05);
+  margin-bottom: 1.75rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebar-author-card:hover {
+  box-shadow: 0 12px 32px rgba(15, 76, 92, 0.08);
+}
+
+.sidebar-author-card img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--clr-aqua-fresh);
+  box-shadow: 0 4px 14px rgba(0, 210, 255, 0.3);
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.sidebar-author-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--clr-slate-900);
+  margin-bottom: 0.35rem;
+}
+
+.sidebar-author-card .author-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--clr-aqua-primary);
+  background: rgba(8, 145, 178, 0.1);
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.sidebar-author-card .desc {
+  font-size: 0.84rem;
+  color: var(--clr-slate-600);
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Sidebar Related Widget (Class Aliases) */
+.sidebar-related {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--clr-slate-200);
+  padding: 1.65rem;
+  box-shadow: 0 8px 24px rgba(15, 76, 92, 0.05);
+  margin-bottom: 1.75rem;
+}
+
+.sidebar-related h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--clr-slate-900);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 2px solid var(--clr-slate-100);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-related-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.sidebar-related-item:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-related-item:hover {
+  transform: translateX(4px);
+}
+
+.sidebar-related-item img {
+  width: 72px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--clr-slate-200);
+}
+
+.sidebar-related-item h5 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--clr-slate-900);
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.sidebar-related-item:hover h5 {
+  color: var(--clr-aqua-primary);
+}
+
+.sidebar-related-item .date {
+  font-size: 0.74rem;
+  color: var(--clr-slate-400);
+}
+
+/* Article Tags Footer */
+.article-tags-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--clr-slate-200);
+}
+
+.tag-pill {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-slate-700);
+  background: var(--clr-slate-100);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  background: var(--clr-aqua-primary);
+  color: #ffffff;
+}
+
+
+
+
+
+
+/* STICKY SIDEBAR ENHANCED FIX */
+html {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+body {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+.article-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 350px !important;
+  gap: 2.75rem !important;
+  align-items: start !important;
+}
+
+@media (max-width: 991.98px) {
+  .article-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+.article-main {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.article-sidebar,
+.article-sidebar.sidebar-sticky {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 95px !important;
+  align-self: start !important;
+  z-index: 30 !important;
+}
+
+@media (max-width: 991.98px) {
+  .article-sidebar,
+  .article-sidebar.sidebar-sticky {
+    position: static !important;
+    top: auto !important;
+  }
+}

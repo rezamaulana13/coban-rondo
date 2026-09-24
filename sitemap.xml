@@ -6,11 +6,11 @@
   <!-- 1. Halaman Beranda (Homepage) -->
   <url>
     <loc>https://cobanrondo.web.id/</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&amp;fit=crop&amp;w=1920&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/hero-coban-rondo.webp</image:loc>
       <image:title>Kawasan Outbound Hutan Pinus Coban Rondo Malang</image:title>
       <image:caption>Wisata Outbound &amp; Petualangan Alam Coban Rondo Pujon Malang</image:caption>
     </image:image>
@@ -19,21 +19,21 @@
   <!-- 2. Halaman Paket & Wahana Outbound -->
   <url>
     <loc>https://cobanrondo.web.id/paket</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/corporate-outbound.webp</image:loc>
       <image:title>Paket Corporate Gathering Team Building Coban Rondo</image:title>
       <image:caption>Simulasi game outbound dan team building di Coban Rondo Malang</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/paintball-battle.webp</image:loc>
       <image:title>Paket Paintball War Game Coban Rondo</image:title>
       <image:caption>Arena simulasi pertempuran taktis paintball di hutan pinus Coban Rondo</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/camping-ground.webp</image:loc>
       <image:title>Paket Camping Ground Hutan Pinus Coban Rondo</image:title>
       <image:caption>Perkemahan dan api unggun di bumi perkemahan Coban Rondo Malang</image:caption>
     </image:image>
@@ -42,171 +42,212 @@
   <!-- 3. Halaman Galeri Dokumentasi -->
   <url>
     <loc>https://cobanrondo.web.id/galeri</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=800&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/air-terjun-coban-rondo.webp</image:loc>
       <image:title>Air Terjun Coban Rondo 84 Meter</image:title>
       <image:caption>Dokumentasi keindahan air terjun dan kegiatan outbound Coban Rondo</image:caption>
     </image:image>
   </url>
 
-  <!-- 4. Halaman Tentang Kami (Profil & Safety K3) -->
+  <!-- 4. Halaman Tentang Kami -->
   <url>
     <loc>https://cobanrondo.web.id/tentang-kami</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- 5. Halaman Indeks Artikel & Tips Petualangan -->
+  <!-- 5. Halaman Indeks Artikel -->
   <url>
     <loc>https://cobanrondo.web.id/artikel</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- 6. Detail Artikel 1: Rundown Gathering -->
+  <!-- 6. Detail Paket 1: Corporate Outbound -->
   <url>
-    <loc>https://cobanrondo.web.id/artikel/rundown-company-gathering.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/paket/corporate-outbound</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/corporate-outbound.webp</image:loc>
+      <image:title>Paket Corporate Outbound Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 7. Detail Paket 2: Edukasi LDKS -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/outbound-edukasi</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/outbound-edukasi.webp</image:loc>
+      <image:title>Paket Outbound Edukasi Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 8. Detail Paket 3: Family Gathering -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/family-gathering</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/family-gathering.webp</image:loc>
+      <image:title>Paket Family Gathering Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 9. Detail Paket 4: Camping Ground -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/camping-ground</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/camping-ground.webp</image:loc>
+      <image:title>Paket Camping Ground Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 10. Detail Paket 5: Glamping Riverside -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/glamping-riverside</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/glamping-riverside.webp</image:loc>
+      <image:title>Paket Glamping Riverside Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 11. Detail Paket 6: Paintball Battle -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/paintball-battle</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/paintball-battle.webp</image:loc>
+      <image:title>Paket Paintball Battle Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 12. Detail Paket 7: Flying Fox & Labirin -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/flying-fox-labirin</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/flying-fox-labirin.webp</image:loc>
+      <image:title>Tiket Flying Fox dan Labirin Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 13. Detail Paket 8: Rafting Kasembon -->
+  <url>
+    <loc>https://cobanrondo.web.id/paket/rafting-kasembon</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cobanrondo.web.id/assets/img/rafting-kasembon.webp</image:loc>
+      <image:title>Paket Rafting Kasembon Coban Rondo</image:title>
+    </image:image>
+  </url>
+
+  <!-- 14. Detail Artikel 1: Rundown Gathering -->
+  <url>
+    <loc>https://cobanrondo.web.id/artikel/rundown-company-gathering</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/artikel-rundown-gathering.webp</image:loc>
       <image:title>Panduan Menyusun Rundown Company Gathering Coban Rondo</image:title>
-      <image:caption>Susunan acara outbound dan team building di Coban Rondo Malang</image:caption>
     </image:image>
   </url>
 
-  <!-- 7. Detail Artikel 2: Game Ice Breaking -->
+  <!-- 15. Detail Artikel 2: Game Ice Breaking -->
   <url>
-    <loc>https://cobanrondo.web.id/artikel/game-ice-breaking-tanpa-alat.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/artikel/game-ice-breaking-tanpa-alat</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-      <image:title>10 Game Ice Breaking Lucu Tanpa Alat Outbound Kantor</image:title>
-      <image:caption>Ide permainan pemecah kebekuan outbound kantor di Coban Rondo</image:caption>
+      <image:loc>https://cobanrondo.web.id/assets/img/artikel-ice-breaking.webp</image:loc>
+      <image:title>10 Game Ice Breaking Lucu Tanpa Alat Outbound</image:title>
     </image:image>
   </url>
 
-  <!-- 8. Detail Artikel 3: Panduan Camping Pemula -->
+  <!-- 16. Detail Artikel 3: Panduan Camping Pemula -->
   <url>
-    <loc>https://cobanrondo.web.id/artikel/panduan-camping-pemula.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/artikel/panduan-camping-pemula</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:loc>https://cobanrondo.web.id/assets/img/artikel-panduan-camping.webp</image:loc>
       <image:title>Panduan Lengkap Camping Pemula Hutan Pinus Coban Rondo</image:title>
-      <image:caption>Tips berkemah, persiapan suhu dingin, dan kavling tenda Coban Rondo</image:caption>
     </image:image>
   </url>
 
-  <!-- 9. Detail Artikel 4: Taktik Paintball Wargame -->
+  <!-- 17. Detail Artikel 4: Taktik Paintball -->
   <url>
-    <loc>https://cobanrondo.web.id/artikel/taktik-paintball-wargame.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/artikel/taktik-paintball-wargame</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-      <image:title>Taktik Formasi Paintball Wargame Coban Rondo</image:title>
-      <image:caption>Strategi bermain paintball wargame capture the flag di hutan pinus</image:caption>
+      <image:loc>https://cobanrondo.web.id/assets/img/artikel-taktik-paintball.webp</image:loc>
+      <image:title>Taktik Formasi Paintball Wargame Capture The Flag</image:title>
     </image:image>
   </url>
 
-  <!-- 10. Detail Artikel 5: Manfaat Team Building -->
+  <!-- 18. Detail Artikel 5: Manfaat Team Building -->
   <url>
-    <loc>https://cobanrondo.web.id/artikel/manfaat-team-building-karyawan.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/artikel/manfaat-team-building-karyawan</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-      <image:title>5 Manfaat Nyata Outbound Team Building Karyawan</image:title>
-      <image:caption>Pentingnya outbound team building untuk meningkatkan sinergi dan produktivitas kerja</image:caption>
+      <image:loc>https://cobanrondo.web.id/assets/img/artikel-team-building.webp</image:loc>
+      <image:title>Dampak Nyata Outbound Training Terhadap Produktivitas Tim</image:title>
     </image:image>
   </url>
 
-  <!-- 11. Detail Artikel 6: Tips Memilih Provider Outbound -->
+  <!-- 19. Detail Artikel 6: Tips Memilih Provider -->
   <url>
-    <loc>https://cobanrondo.web.id/artikel/tips-memilih-provider-outbound.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/artikel/tips-memilih-provider-outbound</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-      <image:title>Tips Memilih Provider Outbound Profesional di Malang</image:title>
-      <image:caption>Panduan memilih vendor outbound berlisensi BNSP dan standar keselamatan K3</image:caption>
+      <image:loc>https://cobanrondo.web.id/assets/img/artikel-tips-provider.webp</image:loc>
+      <image:title>5 Tips Memilih Provider Outbound Bersertifikasi BNSP</image:title>
     </image:image>
   </url>
 
-  <!-- Package Detail Pages -->
+  <!-- 20. Legal Pages -->
   <url>
-    <loc>https://cobanrondo.web.id/paket/corporate-outbound.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://cobanrondo.web.id/kebijakan-privasi</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://cobanrondo.web.id/paket/outbound-edukasi.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/paket/family-gathering.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/paket/camping-ground.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/paket/glamping-riverside.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/paket/paintball-battle.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/paket/flying-fox-labirin.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/paket/rafting-kasembon.html</loc>
-    <lastmod>2026-09-22T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://cobanrondo.web.id/syarat-ketentuan</loc>
+    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
-  <!-- Legal & Policy Pages -->
-  <url>
-    <loc>https://cobanrondo.web.id/kebijakan-privasi.html</loc>
-    <lastmod>2026-09-23T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cobanrondo.web.id/syarat-ketentuan.html</loc>
-    <lastmod>2026-09-23T00:00:00+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
