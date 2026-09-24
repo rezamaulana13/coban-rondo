@@ -48,7 +48,7 @@
   --grad-badge-aqua: linear-gradient(135deg, rgba(0, 210, 255, 0.15) 0%, rgba(8, 145, 178, 0.25) 100%);
 
   /* --- Typography --- */
-  --font-heading: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* --- Border Radius --- */
@@ -99,9 +99,10 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-size: 1.05rem;
   color: var(--clr-slate-800);
   background-color: var(--clr-bg-page);
-  line-height: 1.7;
+  line-height: 1.75;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
@@ -111,6 +112,23 @@ body {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
   min-height: 100vh;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--clr-slate-700);
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.02rem;
+  }
+  p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
 }
 
 /* Headings */
@@ -164,7 +182,26 @@ img {
 .text-teal { color: var(--clr-deep-teal) !important; }
 .text-emerald { color: var(--clr-emerald-soft) !important; }
 .text-gold { color: var(--clr-accent-gold) !important; }
+.text-slate-900 { color: var(--clr-slate-900) !important; }
+.text-slate-800 { color: var(--clr-slate-800) !important; }
+.text-slate-700 { color: var(--clr-slate-700) !important; }
+.text-slate-600 { color: var(--clr-slate-600) !important; }
+.text-slate-500 { color: var(--clr-slate-500) !important; }
+.text-slate-400 { color: var(--clr-slate-400) !important; }
+.text-slate-300 { color: #cbd5e1 !important; }
 .text-slate-muted { color: var(--clr-slate-500) !important; }
+
+.lead, .lead-text {
+  font-size: 1.18rem !important;
+  line-height: 1.75 !important;
+  color: var(--clr-slate-700);
+}
+@media (max-width: 768px) {
+  .lead, .lead-text {
+    font-size: 1.08rem !important;
+    line-height: 1.7 !important;
+  }
+}
 
 .bg-ice { background-color: var(--clr-bg-ice) !important; }
 .bg-soft { background-color: #f6fbfe !important; }
@@ -198,10 +235,6 @@ img {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-}
-
-.text-aqua {
-  color: var(--clr-aqua-fresh) !important;
 }
 
 .fs-xs {
@@ -246,11 +279,17 @@ img {
 
 .section-subtitle {
   color: var(--clr-slate-600);
-  font-size: 1.08rem;
-  max-width: 680px;
+  font-size: 1.15rem;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .section-subtitle {
+    font-size: 1.06rem;
+    line-height: 1.65;
+  }
 }
 
 /* ==========================================================================

@@ -23,7 +23,15 @@ htmlFiles.forEach(filePath => {
   let content = fs.readFileSync(filePath, 'utf8');
   let modified = false;
 
-  // 1. Optimize Google Fonts to non-blocking preload
+  // 1. Streamline Google Fonts to Plus Jakarta Sans only (remove unused Manrope & Outfit)
+  const heavyFontStr = 'family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@600;700;800&display=swap';
+  const cleanFontStr = 'family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap';
+  if (content.includes(heavyFontStr)) {
+    content = content.replaceAll(heavyFontStr, cleanFontStr);
+    modified = true;
+  }
+
+  // Optimize Google Fonts to non-blocking preload
   const gFontRegex = /<link href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+" rel="stylesheet">/g;
   if (gFontRegex.test(content)) {
     content = content.replace(gFontRegex, (match) => {
