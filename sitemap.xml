@@ -146,19 +146,6 @@
     </image:image>
   </url>
 
-  <!-- 12. Detail Artikel 7: Estimasi Biaya Outbound -->
-  <url>
-    <loc>https://cobanrondo.web.id/artikel/estimasi-biaya-outbound-malang.html</loc>
-    <lastmod>2026-09-23T00:00:00+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-      <image:title>Estimasi Biaya Outbound Gathering Kantor di Malang 2026</image:title>
-      <image:caption>Rincian estimasi biaya paket gathering dan team building Coban Rondo Malang</image:caption>
-    </image:image>
-  </url>
-
   <!-- Package Detail Pages -->
   <url>
     <loc>https://cobanrondo.web.id/paket/corporate-outbound.html</loc>
