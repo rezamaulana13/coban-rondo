@@ -39,19 +39,13 @@
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
 
   <!-- Google Fonts: Non-blocking Async Loading with Swap -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript></noscript>
 
   <!-- Bootstrap 5.3 CSS (Local, Non-blocking) -->
-  <link rel="preload" as="style" href="assets/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/bootstrap.min.css"></noscript>
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/plus-jakarta-sans-var.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
   <!-- FontAwesome 6 Icons: Non-blocking Async Loading -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript></noscript></noscript>
+  <link rel="stylesheet" href="assets/css/icons.min.css">
 
   <!-- Custom Theme Stylesheet (Local Minified, Non-blocking) -->
   <link rel="preload" as="style" href="assets/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -155,7 +149,10 @@
       border: none;
       border-radius: 9999px;
     }
-  </style>
+      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+    .dropdown-menu:not(.show) { display: none; }
+    .modal { display: none; }
+</style>
   <script>
     // Seamless Clean URL enforcement (AEO/GEO & PRD Compliance)
     (function() {
@@ -351,7 +348,7 @@
                 Layanan Kontak &amp; Hak Pengguna
               </h2>
               <p class="text-slate-600 mb-0" style="line-height: 1.75;">
-                Apabila Anda ingin mengajukan pertanyaan, memperbarui data kontak reservasi, atau memiliki klarifikasi terkait kebijakan privasi ini, silakan menghubungi tim admin kami melalui WhatsApp di <a href="https://wa.me/6288989643555" class="text-aqua-dark fw-bold text-decoration-none">+62 889-8964-3555</a> atau melalui email resmi <a href="mailto:info@cobanrondo.web.id" class="text-aqua-dark fw-bold text-decoration-none">info@cobanrondo.web.id</a>.
+                Apabila Anda ingin mengajukan pertanyaan, memperbarui data kontak reservasi, atau memiliki klarifikasi terkait kebijakan privasi ini, silakan menghubungi tim admin kami melalui WhatsApp di <a href="https://wa.me/6282211221909" class="text-aqua-dark fw-bold text-decoration-none">+62 822-1122-1909</a> atau melalui email resmi <a href="mailto:info@cobanrondo.web.id" class="text-aqua-dark fw-bold text-decoration-none">info@cobanrondo.web.id</a>.
               </p>
             </div>
 
@@ -386,7 +383,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -488,7 +485,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave -->
-  <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

@@ -14,23 +14,14 @@
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
 
   <!-- Resource Hints -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Google Fonts: Non-blocking Async Loading with Swap -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript></noscript>
 
   <!-- Bootstrap 5.3 CSS (Local, Non-blocking) -->
-  <link rel="preload" as="style" href="assets/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/bootstrap.min.css"></noscript>
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/plus-jakarta-sans-var.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
   <!-- FontAwesome 6 Icons: Non-blocking Async Loading -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript></noscript></noscript>
+  <link rel="stylesheet" href="assets/css/icons.min.css">
 
   <!-- Custom Theme Stylesheet (Local Minified, Non-blocking) -->
   <link rel="preload" as="style" href="assets/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -104,7 +95,10 @@
       border: none;
       border-radius: 9999px;
     }
-  </style>
+      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+    .dropdown-menu:not(.show) { display: none; }
+    .modal { display: none; }
+</style>
   <script>
     // Seamless Clean URL enforcement (AEO/GEO & PRD Compliance)
     (function() {
@@ -270,7 +264,7 @@
               <a href="paket" class="btn btn-outline-aqua px-4 py-3">
                 <i class="fa-solid fa-layer-group me-2"></i> Lihat Paket Outbound
               </a>
-              <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20tersesat%20di%20website%20dan%20ingin%20tanya%20info%20paket." 
+              <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20tersesat%20di%20website%20dan%20ingin%20tanya%20info%20paket." 
                  target="_blank" rel="noopener noreferrer" class="btn btn-success px-4 py-3 text-white fw-bold">
                 <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Chat Admin WhatsApp
               </a>
@@ -303,12 +297,12 @@
           </div>
         </div>
         <div class="col-lg-5 text-center text-lg-end">
-          <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20rencana%20kegiatan%20outbound%2Fgathering%20untuk%20rombongan%20kami." 
+          <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20rencana%20kegiatan%20outbound%2Fgathering%20untuk%20rombongan%20kami." 
              target="_blank" rel="noopener noreferrer" class="btn btn-aqua btn-lg px-5 py-3 d-inline-flex align-items-center justify-content-center gap-2 mb-2">
             <i class="fa-brands fa-whatsapp fs-4"></i>
             <span>Konsultasi WhatsApp Sekarang</span>
           </a>
-          <div class="text-white-50 small mt-1">Layanan Informasi &amp; Booking Hotline: +62 889-8964-3555</div>
+          <div class="text-white-50 small mt-1">Layanan Informasi &amp; Booking Hotline: +62 822-1122-1909</div>
         </div>
       </div>
     </div>
@@ -343,7 +337,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -445,7 +439,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA -->
-  <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

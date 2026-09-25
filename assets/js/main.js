@@ -17,7 +17,7 @@ if (window.location.pathname.endsWith('.html')) {
 
   // Global Config
   const CR_CONFIG = {
-    WA_NUMBER: "6288989643555",
+    WA_NUMBER: "6282211221909",
     BRAND_NAME: "Coban Rondo Outbound & Camping",
     LOCATION: "Kawasan Wisata Coban Rondo, Pandesari, Pujon, Malang, Jawa Timur"
   };

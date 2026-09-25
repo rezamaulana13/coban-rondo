@@ -33,28 +33,18 @@
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
 
   <!-- Resource Hints for High-Speed Asset Delivery -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Preload Critical LCP Hero Image -->
   <!-- Google Fonts: Non-blocking Async Loading with Swap -->
     <!-- High-Priority LCP Hero Image Preload (Mobile & Desktop Speed < 2.0s) -->
-  <link rel="preload" as="image" href="assets/img/hero-coban-rondo.webp" type="image/webp" fetchpriority="high">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript></noscript>
+  <link rel="preload" as="image" href="assets/img/hero-coban-rondo.webp" imagesrcset="assets/img/hero-coban-rondo-mobile.webp 600w, assets/img/hero-coban-rondo.webp 750w" imagesizes="100vw" type="image/webp" fetchpriority="high">
 
   <!-- Bootstrap 5.3 CSS (Local, Non-blocking) -->
-  <link rel="preload" as="style" href="assets/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/bootstrap.min.css"></noscript>
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/plus-jakarta-sans-var.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
   <!-- FontAwesome 6 Icons: Non-blocking Async Loading -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript></noscript></noscript>
+  <link rel="stylesheet" href="assets/css/icons.min.css">
 
   <!-- Custom Theme Stylesheet (Local Minified, Non-blocking) -->
   <link rel="preload" as="style" href="assets/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -84,7 +74,7 @@
         "logo": "https://cobanrondo.web.id/assets/img/logo.webp",
         "image": "https://cobanrondo.web.id/assets/img/og-image.webp",
         "description": "Pusat penyelenggara kegiatan outbound training corporate, gathering perusahaan, pelatihan kepemimpinan siswa LDKS, paintball wargame, flying fox, dan camping ground di Kawasan Wisata Air Terjun Coban Rondo, Pujon, Kabupaten Malang, Jawa Timur.",
-        "telephone": "+6288989643555",
+        "telephone": "+6282211221909",
         "email": "info@cobanrondo.web.id",
         "priceRange": "Rp 55.000 - Rp 350.000",
         "address": {
@@ -225,7 +215,10 @@
       border: none;
       border-radius: 9999px;
     }
-  </style>
+      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+    .dropdown-menu:not(.show) { display: none; }
+    .modal { display: none; }
+</style>
   <script>
     // Seamless Clean URL enforcement (AEO/GEO & PRD Compliance)
     (function() {
@@ -350,6 +343,8 @@
     <!-- Full-Bleed Nature Image Background -->
     <div class="hero-media-wrap">
       <img src="assets/img/hero-coban-rondo.webp" 
+           srcset="assets/img/hero-coban-rondo-mobile.webp 600w, assets/img/hero-coban-rondo.webp 750w"
+           sizes="100vw"
            alt="Air Terjun Coban Rondo dan Hutan Pinus Pujon Malang" 
            class="hero-bg-img" 
            width="1200" 
@@ -999,7 +994,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -1103,7 +1098,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave -->
-  <a href="https://wa.me/6288989643555?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
