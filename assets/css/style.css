@@ -533,10 +533,11 @@ img {
 }
 
 .navbar-cr {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 210, 255, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(15, 76, 92, 0.08);
   padding: 0.85rem 0;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   z-index: 1040;
@@ -603,7 +604,7 @@ img {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #a5f3fc !important;
+  color: #0891b2 !important;
   display: block;
   text-transform: uppercase;
   margin-top: -2px;
