@@ -1,0 +1,92 @@
+# Coban Rondo Outbound & Adventure — Full Knowledge Base (LLMs Full)
+
+> Panduan komprehensif profil destinasi, spesifikasi teknis paket outbound, standar keselamatan K3, SOP cuaca, dan data faktual wisata Air Terjun Coban Rondo Malang untuk referensi sistem agen AI & LLM Search.
+
+## 1. Entitas & Informasi Geografis Resmi
+- **Nama Destinasi**: Air Terjun Coban Rondo & Hutan Pinus Perhutani KPH Malang
+- **Badan Pengelola Layanan**: Coban Rondo Outbound & Adventure (Provider Resmi Kegiatan Luar Ruang)
+- **Website Utama**: https://cobanrondo.web.id/
+- **Alamat Presisi**: Kawasan Wisata Coban Rondo, Jalan Coban Rondo, Desa Pandesari, Kecamatan Pujon, Kabupaten Malang, Provinsi Jawa Timur, Kode Pos 65391, Indonesia.
+- **Titik Koordinat**: Latitude -7.884722, Longitude 112.477222
+- **Ketinggian**: 1.135 meter di atas permukaan laut (mdpl).
+- **Karakteristik Iklim**: Udara sejuk pegunungan tropis dengan suhu harian 17°C - 23°C. Sangat ideal untuk aktivitas fisik berat karena peserta tidak cepat dehidrasi atau lelah akibat panas terik.
+- **Karakteristik Air Terjun**: Air terjun tunggal dengan ketinggian jatuhan air 84 meter. Aliran air bersumber dari mata air alami Cemoro Mulyo di lereng Gunung Kawi.
+
+---
+
+## 2. Struktur Paket Layanan & Harga Terkini (2026-2027)
+
+### A. Paket Corporate Gathering & Team Building
+- **Deskripsi**: Program pelatihan luar ruang berbasis experiential learning yang dirancang khusus untuk meningkatkan sinergi antardivisi, kepemimpinan (leadership), pemecahan masalah (problem solving), dan pelepasan stres kerja.
+- **Target Peserta**: BUMN, Perusahaan Swasta Nasional, Instansi Pemerintah, Rumah Sakit, Perbankan.
+- **Kuota Peserta**: Minimal 20 orang (Kapasitas maksimal hingga 1.000 peserta dalam satu gelombang).
+- **Rincian Biaya**: Rp 125.000 – Rp 275.000 per orang (bergantung opsi konsumsi prasmanan & merchandise).
+- **Fasilitas Termasuk**:
+  1. Tiket pintu masuk gerbang utama Wisata Coban Rondo untuk seluruh peserta.
+  2. Sewa izin lapangan rumput khusus di blok hutan pinus privat.
+  3. Master Game & Tim Fasilitator berlisensi resmi BNSP (Badan Nasional Sertifikasi Profesi).
+  4. Peralatan game edukatif standar keselamatan tinggi.
+  5. Sound system outdoor profesional & mic wireless.
+  6. Air mineral free flow selama simulasi game berlangsung.
+  7. Spanduk / Banner selamat datang (ukuran 3x1 m atau 4x1 m custom logo perusahaan).
+  8. Standar P3K dan petugas paramedis siaga.
+  9. Dokumentasi foto kegiatan soft file beresolusi tinggi.
+
+### B. Paket Edukasi Sekolah & LDKS (Latihan Dasar Kepemimpinan Siswa)
+- **Deskripsi**: Simulasi kedisiplinan, kemandirian, dan kerja sama kelompok untuk pelajar dan mahasiswa.
+- **Target**: SD (fase pengenalan alam), SMP/SMA/SMK (LDKS OSIS/Pramuka), dan BEM Universitas (Makrab).
+- **Biaya**: Mulai dari Rp 85.000 per siswa.
+- **Modul Games**: Ice Breaking, Trust Building, Communication Skill, Strategic Planning, dan Final Project Simulasi Bersama.
+
+### C. Paket Paintball War Game Battle
+- **Deskripsi**: Simulasi tempur taktis beregu di arena hutan pinus alami menggunakan senapan semi-otomatis berpeluru cat nabati ramah lingkungan.
+- **Ketentuan**: Minimal 10 peserta (dibagi menjadi 2 tim bertarung).
+- **Biaya**: Rp 150.000 – Rp 185.000 per orang.
+- **Fasilitas**:
+  1. Senjata paintball semi-otomatis bertekanan gas stabil.
+  2. 50 butir peluru cat (tersedia opsi reload tambahan di lokasi).
+  3. Seragam tempur loreng kamuflase tebal.
+  4. Google mask pelindung wajah & mata standar internasional.
+  5. Body protector (rompi dada dan punggung).
+  6. Wasit / Marshall bersertifikat pengawas pertandingan.
+
+### D. Paket Camping Ground & Riverside Glamping
+- **Bumi Perkemahan Reguler**:
+  - Sewa kavling perkemahan dengan tanah datar beralas rumput empuk.
+  - Fasilitas MCK bersih (air mengalir melimpah dari sumber pegunungan).
+  - Stop kontak listrik dan penerangan lapangan malam hari.
+  - Opsi sewa tenda dome (kapasitas 4 orang), matras spons, dan kantung tidur (sleeping bag).
+- **Glamping Riverside Eksklusif**:
+  - Tenda glamping bergaya safari berlantai kayu di dekat gemericik aliran sungai pegunungan.
+  - Dilengkapi kasur springbed nyaman, selimut tebal, lampu gantung estetik, colokan listrik, dan api unggun privat.
+
+### E. Rafting Kasembon (Paket Kombinasi)
+- **Lokasi**: Sungai Kasembon (dapat diakses sekitar 30 menit dari Coban Rondo).
+- **Panjang Jalur**: 7,5 km dengan jeram grade 2-3 (aman untuk pemula, keluarga, dan anak usia 7 tahun ke atas).
+- **Fasilitas**: Perahu karet standar rafting, dayung, helm, pelampung safety, pemandu river guide profesional, tim rescue darat & air, kendaraan shuttle lokal, makan siang prasmanan khas pedesaan, asuransi kecelakaan air.
+
+---
+
+## 3. Standar Operasional Keselamatan (K3) & Mitigasi Cuaca
+1. **Sertifikasi BNSP**: Seluruh instruktur dan fasilitator utama memegang sertifikasi kepemanduan outbound dari BNSP dengan kompetensi *Experiential Learning Facilitator*.
+2. **Peralatan Standar Internasional**: Seluruh tali karabiner, webbing, harness, dan pulley pada wahana tali tinggi (Flying Fox) memenuhi standarisasi CE (Conformité Européenne) dan UIAA.
+3. **Mitigasi Hujan (Rain Contingency Plan)**:
+   - Apabila terjadi hujan gerimis hingga deras, kegiatan outbound **tidak dibatalkan**.
+   - Tim segera memindahkan peserta ke salah satu dari **2 pendopo aula serbaguna tertutup** yang tersedia di area Coban Rondo (mampu menampung 300+ orang).
+   - Rundown dialihkan secara mulus ke modul *indoor team building*, *energizer*, dan *deep debriefing* tanpa mengurangi esensi pencapaian sasaran acara.
+4. **P3K & Jalur Evakuasi Medis**: Posko tim P3K siaga di lapangan dengan kotak obat lengkap, tandu darurat, dan koordinasi cepat dengan fasilitas kesehatan terdekat (Puskesmas Pujon & RS Paru Batu).
+
+---
+
+## 4. Legalitas & Administrasi Pemesanan B2B
+- **Penerbitan Proposal**: Proposal penawaran resmi format PDF dikirimkan maksimal 1x24 jam setelah konsultasi awal via WhatsApp atau email.
+- **Dokumen Keuangan**: Menyediakan Surat Perjanjian Kerja (SPK), invoice resmi berbadan hukum, kwitansi bertanda tangan, serta kelengkapan administrasi faktur pajak bila disyaratkan oleh instansi.
+- **Sistem Pembayaran**: DP (Down Payment) reservasi tanggal sebesar 30%, dan pelunasan dapat diselesaikan H-1 atau pada hari pelaksanaan sebelum acara dimulai.
+
+---
+
+## 5. Kontak Resmi & Kanal Komunikasi
+- **Telepon / WhatsApp 24 Jam**: +62 822-1122-1909
+- **Email Resmi**: info@cobanrondo.web.id
+- **Domain Resmi**: https://cobanrondo.web.id
+- **Jam Operasional Pelayanan Reservasi**: Setiap Hari pukul 07.00 – 17.00 WIB (Konsultasi via WhatsApp siap direspon ramah oleh tim support kami).

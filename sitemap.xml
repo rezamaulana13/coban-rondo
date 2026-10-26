@@ -6,7 +6,7 @@
   <!-- 1. Halaman Beranda (Homepage) -->
   <url>
     <loc>https://cobanrondo.web.id/</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -19,7 +19,7 @@
   <!-- 2. Halaman Paket & Wahana Outbound -->
   <url>
     <loc>https://cobanrondo.web.id/paket</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -42,7 +42,7 @@
   <!-- 3. Halaman Galeri Dokumentasi -->
   <url>
     <loc>https://cobanrondo.web.id/galeri</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -55,7 +55,7 @@
   <!-- 4. Halaman Tentang Kami -->
   <url>
     <loc>https://cobanrondo.web.id/tentang-kami</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -63,7 +63,7 @@
   <!-- 5. Halaman Indeks Artikel -->
   <url>
     <loc>https://cobanrondo.web.id/artikel</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -71,7 +71,7 @@
   <!-- 6. Detail Paket 1: Corporate Outbound -->
   <url>
     <loc>https://cobanrondo.web.id/paket/corporate-outbound</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -83,7 +83,7 @@
   <!-- 7. Detail Paket 2: Edukasi LDKS -->
   <url>
     <loc>https://cobanrondo.web.id/paket/outbound-edukasi</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -95,7 +95,7 @@
   <!-- 8. Detail Paket 3: Family Gathering -->
   <url>
     <loc>https://cobanrondo.web.id/paket/family-gathering</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -107,7 +107,7 @@
   <!-- 9. Detail Paket 4: Camping Ground -->
   <url>
     <loc>https://cobanrondo.web.id/paket/camping-ground</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -119,7 +119,7 @@
   <!-- 10. Detail Paket 5: Glamping Riverside -->
   <url>
     <loc>https://cobanrondo.web.id/paket/glamping-riverside</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -131,7 +131,7 @@
   <!-- 11. Detail Paket 6: Paintball Battle -->
   <url>
     <loc>https://cobanrondo.web.id/paket/paintball-battle</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -143,7 +143,7 @@
   <!-- 12. Detail Paket 7: Flying Fox & Labirin -->
   <url>
     <loc>https://cobanrondo.web.id/paket/flying-fox-labirin</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -155,7 +155,7 @@
   <!-- 13. Detail Paket 8: Rafting Kasembon -->
   <url>
     <loc>https://cobanrondo.web.id/paket/rafting-kasembon</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -167,7 +167,7 @@
   <!-- 14. Detail Artikel 1: Rundown Gathering -->
   <url>
     <loc>https://cobanrondo.web.id/artikel/rundown-company-gathering</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -179,7 +179,7 @@
   <!-- 15. Detail Artikel 2: Game Ice Breaking -->
   <url>
     <loc>https://cobanrondo.web.id/artikel/game-ice-breaking-tanpa-alat</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -191,7 +191,7 @@
   <!-- 16. Detail Artikel 3: Panduan Camping Pemula -->
   <url>
     <loc>https://cobanrondo.web.id/artikel/panduan-camping-pemula</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -203,7 +203,7 @@
   <!-- 17. Detail Artikel 4: Taktik Paintball -->
   <url>
     <loc>https://cobanrondo.web.id/artikel/taktik-paintball-wargame</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -215,7 +215,7 @@
   <!-- 18. Detail Artikel 5: Manfaat Team Building -->
   <url>
     <loc>https://cobanrondo.web.id/artikel/manfaat-team-building-karyawan</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -227,7 +227,7 @@
   <!-- 19. Detail Artikel 6: Tips Memilih Provider -->
   <url>
     <loc>https://cobanrondo.web.id/artikel/tips-memilih-provider-outbound</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -239,13 +239,13 @@
   <!-- 20. Legal Pages -->
   <url>
     <loc>https://cobanrondo.web.id/kebijakan-privasi</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://cobanrondo.web.id/syarat-ketentuan</loc>
-    <lastmod>2026-09-24T00:00:00+07:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
