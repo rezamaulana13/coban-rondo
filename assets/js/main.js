@@ -104,13 +104,28 @@ if (window.location.pathname.endsWith('.html')) {
   }
 
   /* --------------------------------------------------------------------------
-     1b. MOBILE NAVBAR (CLEAN, MODERN & ZERO OVERLAP)
+     1b. MOBILE FULL-SCREEN NAVBAR & ZERO-ANIMATION (SATSET)
      -------------------------------------------------------------------------- */
   function initMobileNavbar() {
     const navCollapse = document.getElementById("navMain");
     if (!navCollapse) return;
 
-    // Body scroll lock & floating button toggle on mobile nav
+    // Close button handler (tombol X di dalam overlay)
+    const closeBtns = navCollapse.querySelectorAll(".btn-close-mobile");
+    closeBtns.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (window.bootstrap && bootstrap.Collapse) {
+          const instance = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse, { toggle: false });
+          instance.hide();
+        } else {
+          navCollapse.classList.remove("show");
+          document.body.classList.remove("mobile-nav-open");
+        }
+      });
+    });
+
+    // Body scroll lock saat menu terbuka
     navCollapse.addEventListener("show.bs.collapse", function () {
       document.body.classList.add("mobile-nav-open");
     });
@@ -124,7 +139,7 @@ if (window.location.pathname.endsWith('.html')) {
       document.body.classList.remove("mobile-nav-open");
     });
 
-    // Close on link click on mobile (except dropdown toggle)
+    // Tutup menu otomatis saat link diklik
     const links = navCollapse.querySelectorAll(".nav-link:not(.dropdown-toggle), .dropdown-card-item, .btn-mobile-wa-bottom");
     links.forEach(link => {
       link.addEventListener("click", function () {

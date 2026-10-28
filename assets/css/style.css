@@ -995,48 +995,93 @@ img {
 }
 
 /* ==========================================================================
-   MOBILE NAVBAR & DROPDOWN (CLEAN, MODERN & SATSET)
+   MOBILE NAVBAR FULL-SCREEN OVERLAY (SATSET & MEWAH)
    ========================================================================== */
 @media (max-width: 991.98px) {
-  /* Hilangkan animasi lambat agar menu responsif instan */
+  /* Matikan animasi transisi agar menu muncul instan */
+  .navbar-collapse,
   .navbar-collapse.collapsing,
-  .dropdown-menu.collapsing {
+  .dropdown-menu,
+  .dropdown-menu.collapsing,
+  .nav-link,
+  .dropdown-card-item {
     transition: none !important;
+    animation: none !important;
   }
 
-  /* Sembunyikan Tombol Floating WA Saat Menu Mobile Terbuka agar tidak tumpang tindih */
+  /* Hilangkan backdrop-filter pada navbar-cr mobile */
+  .navbar-cr {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .navbar-cr .container {
+    position: static !important;
+  }
+
+  /* Floating buttons tetap tampil di mobile, tapi tersembunyi saat menu terbuka */
+  .floating-wa-btn,
+  [data-wa-float] {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 20px !important;
+    width: 58px !important;
+    height: 58px !important;
+    font-size: 1.85rem !important;
+    z-index: 9990 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .back-to-top {
+    position: fixed !important;
+    bottom: 95px !important;
+    right: 27px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.05rem !important;
+    z-index: 9989 !important;
+  }
+
+  /* Sembunyikan tombol melayang saat menu full-screen terbuka */
   body.mobile-nav-open .floating-wa-btn,
   body.mobile-nav-open [data-wa-float],
-  body.mobile-nav-open .back-to-top,
-  .navbar-collapse.show ~ .floating-wa-btn,
-  .navbar-collapse.show ~ [data-wa-float],
-  .navbar-collapse.show ~ .back-to-top {
+  body.mobile-nav-open .back-to-top {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
   }
 
-  /* Container Dropdown Card Elegan Tepat di Bawah Navbar */
+  /* FULL-SCREEN OVERLAY — menutupi seluruh viewport */
   .navbar-collapse {
-    position: absolute !important;
-    top: calc(100% + 8px) !important;
-    left: 12px !important;
-    right: 12px !important;
-    width: auto !important;
-    max-height: calc(100vh - 95px) !important;
-    max-height: calc(100dvh - 95px) !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(8, 145, 178, 0.18) !important;
-    border-radius: 20px !important;
-    padding: 1rem 1.15rem 1.25rem !important;
-    box-shadow: 0 20px 45px -10px rgba(15, 76, 92, 0.22), 0 4px 14px rgba(0, 0, 0, 0.06) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    background: #042f2e !important;
+    background: linear-gradient(180deg, #042f2e 0%, #064e4b 60%, #083c39 100%) !important;
+    z-index: 9999999 !important;
+    padding: 1.25rem 1.5rem calc(2rem + env(safe-area-inset-bottom, 20px)) !important;
     display: none;
     flex-direction: column !important;
+    justify-content: flex-start !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
-    z-index: 1050 !important;
+    border: none !important;
+    border-radius: 0 !important;
     margin: 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
   }
 
   .navbar-collapse.show {
@@ -1045,45 +1090,96 @@ img {
 
   .navbar-collapse.collapsing {
     display: flex !important;
+    height: 100% !important;
+    transition: none !important;
   }
 
-  /* Pastikan header duplikat disembunyikan total */
+  body.mobile-nav-open {
+    overflow: hidden !important;
+  }
+
+  /* ── Header Bar: Logo + Tombol Close ── */
   .mobile-nav-header {
-    display: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-bottom: 1.15rem !important;
+    margin-bottom: 1.25rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
   }
 
-  /* Menu Links */
+  .mobile-nav-header .brand-title {
+    font-family: var(--font-body);
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1.15 !important;
+  }
+
+  .mobile-nav-header .brand-sub {
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    color: #2dd4bf !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .btn-close-mobile {
+    width: 44px !important;
+    height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    font-size: 1.35rem !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    transition: background 0.2s ease !important;
+  }
+
+  .btn-close-mobile:hover,
+  .btn-close-mobile:active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+  }
+
+  /* ── Nav Links (teks putih di atas overlay gelap) ── */
   .navbar-nav {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0.35rem !important;
+    gap: 0.4rem !important;
+    margin-bottom: auto !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
   .navbar-nav .nav-link {
-    font-size: 1.02rem !important;
+    font-size: 1.08rem !important;
     font-weight: 600 !important;
-    color: #1e293b !important;
-    padding: 0.75rem 1rem !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    padding: 0.85rem 1.1rem !important;
     border-radius: 12px !important;
+    margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     background: transparent !important;
-    transition: background 0.2s ease, color 0.2s ease !important;
   }
 
   .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link:focus {
-    background: rgba(8, 145, 178, 0.08) !important;
-    color: #0891b2 !important;
+  .navbar-nav .nav-link:active {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
   }
 
   .navbar-nav .nav-link.active {
-    background: linear-gradient(135deg, rgba(0, 210, 255, 0.16) 0%, rgba(8, 145, 178, 0.12) 100%) !important;
-    color: #0891b2 !important;
+    background: rgba(0, 0, 0, 0.24) !important;
+    color: #ffffff !important;
     font-weight: 700 !important;
   }
 
@@ -1091,20 +1187,15 @@ img {
     display: none !important;
   }
 
-  /* Mobile Dropdown Submenu (Paket) */
+  /* ── Dropdown Submenu (Paket) di dalam overlay ── */
   .dropdown-menu-cr.dropdown-mega-cr {
     width: 100% !important;
-    background: #f8fafc !important;
-    border: 1px solid #e2e8f0 !important;
+    background: rgba(0, 0, 0, 0.28) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 14px !important;
-    padding: 0.5rem !important;
+    padding: 0.6rem 0.75rem !important;
     margin-top: 0.35rem !important;
-    box-shadow: none !important;
-    display: none;
-  }
-
-  .dropdown-menu-cr.dropdown-mega-cr.show {
-    display: block !important;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2) !important;
   }
 
   .dropdown-header-bar {
@@ -1114,49 +1205,53 @@ img {
   .dropdown-grid-cr {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0.3rem !important;
+    gap: 0.35rem !important;
   }
 
   .dropdown-card-item {
-    background: #ffffff !important;
-    border: 1px solid #edf2f7 !important;
-    padding: 0.65rem 0.85rem !important;
-    border-radius: 10px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.6rem 0.75rem !important;
+    border-radius: 8px !important;
     display: flex !important;
     align-items: center !important;
-    border-left: 3px solid transparent !important;
+    gap: 0.5rem !important;
     text-decoration: none !important;
     box-shadow: none !important;
     transform: none !important;
-    transition: border-color 0.2s ease, background 0.2s ease !important;
   }
 
   .dropdown-card-item:hover,
   .dropdown-card-item:active {
-    background: #f0fdfa !important;
-    border-left-color: #0891b2 !important;
-    border-color: rgba(8, 145, 178, 0.2) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
   .dropdown-card-item .card-title {
-    color: #0f172a !important;
-    font-size: 0.95rem !important;
-    font-weight: 600 !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
     display: block !important;
     line-height: 1.3 !important;
   }
 
+  .dropdown-card-item .card-title::before {
+    display: none !important;
+    content: none !important;
+  }
+
   .dropdown-card-item .card-desc {
-    color: #64748b !important;
+    color: rgba(255, 255, 255, 0.65) !important;
     font-size: 0.78rem !important;
     display: block !important;
-    margin-top: 0.15rem !important;
+    margin-top: 0.1rem !important;
   }
 
   .dropdown-footer-promo {
-    border-top: 1px solid #e2e8f0 !important;
-    margin-top: 0.4rem !important;
-    padding-top: 0.4rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 0.5rem !important;
+    padding-top: 0.5rem !important;
   }
 
   .dropdown-footer-promo .promo-text {
@@ -1167,44 +1262,50 @@ img {
     width: 100% !important;
     display: block !important;
     text-align: center !important;
-    background: rgba(8, 145, 178, 0.1) !important;
-    color: #0891b2 !important;
-    border: 1px solid rgba(8, 145, 178, 0.25) !important;
-    padding: 0.45rem 0.85rem !important;
+    background: rgba(45, 212, 191, 0.15) !important;
+    color: #2dd4bf !important;
+    border: 1px solid rgba(45, 212, 191, 0.3) !important;
+    padding: 0.5rem 1rem !important;
     border-radius: 10px !important;
     font-size: 0.85rem !important;
-    font-weight: 600 !important;
   }
 
-  /* Bottom Full WhatsApp CTA inside menu */
+  /* ── Tombol WhatsApp di Bagian Bawah Overlay ── */
   .mobile-nav-footer {
-    margin-top: 0.85rem !important;
-    padding-top: 0.85rem !important;
-    border-top: 1px solid #e2e8f0 !important;
+    margin-top: auto !important;
+    padding-top: 1.75rem !important;
+    padding-bottom: 0.75rem !important;
     width: 100% !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    box-sizing: border-box !important;
   }
 
   .btn-mobile-wa-bottom {
     width: 100% !important;
-    background: #25d366 !important;
-    color: #ffffff !important;
+    background: #ffffff !important;
+    color: #042f2e !important;
+    font-family: var(--font-body);
     font-weight: 700 !important;
-    font-size: 0.98rem !important;
-    padding: 0.75rem 1rem !important;
+    font-size: 1.05rem !important;
+    height: 52px !important;
+    min-height: 52px !important;
     border-radius: 9999px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 0.5rem !important;
     text-decoration: none !important;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3) !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35) !important;
     border: none !important;
+    box-sizing: border-box !important;
   }
 
   .btn-mobile-wa-bottom:hover,
   .btn-mobile-wa-bottom:active {
-    background: #20ba5a !important;
-    color: #ffffff !important;
+    background: #f0fdf4 !important;
+    color: #042f2e !important;
+    transform: scale(0.98) !important;
   }
 }
 
