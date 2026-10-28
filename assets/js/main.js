@@ -591,7 +591,7 @@ if (window.location.pathname.endsWith('.html')) {
                       <option value="Pinus Forest Camping Ground">Pinus Forest Camping Ground (Rp 95.000/pax)</option>
                       <option value="Glamping Luxury Riverside">Glamping Luxury Riverside (Rp 350.000/pax)</option>
                       <option value="Paket Paintball Battle Wargame">Paket Paintball War Game (Rp 110.000/pax)</option>
-                      <option value="Wahana Flying Fox & Taman Labirin">Wahana Flying Fox & Labirin (Rp 55.000/pax)</option>
+                      <option value="Paket Offroad Jeep Adventure">Offroad Jeep Adventure (Rp 275.000/pax)</option>
                       <option value="Custom Outbound & Rafting Kasembon">Custom Package / Rafting Kasembon</option>
                     </select>
                   </div>
@@ -750,14 +750,15 @@ Mohon info paket & fasilitas ramah keluarga:
 Apakah ada rekomendasi rundown acara yang santai dan cocok untuk semua usia? Terima kasih!`;
     }
 
-    // 8. Wahana Flying Fox & Labirin
-    if (path.includes("flying-fox-labirin")) {
-      return `Halo Admin Coban Rondo, saya mau reservasi tiket rombongan Wahana Flying Fox & Taman Labirin Coban Rondo.
-Mohon info ketersediaan & tiket rombongan:
-- Nama Rombongan: 
-- Jumlah Peserta: 
-- Rencana Tanggal Kunjungan: 
-Apakah ada diskon rombongan dan bagaimana prosedur reservasinya? Terima kasih!`;
+    // 8. Paket Offroad Jeep Adventure 4x4
+    if (path.includes("offroad-jeep") || path.includes("offroad")) {
+      return `Halo Admin Coban Rondo, saya ingin booking Paket Offroad Jeep Adventure 4x4 di Hutan Pinus Coban Rondo.
+Mohon info ketersediaan unit & penawaran rombongan:
+- Nama Rombongan / Pemesan: 
+- Jumlah Peserta: (Min. 4 orang / 1 Jeep)
+- Rencana Tanggal & Sesi Jam: 
+- Pilihan Jalur: (Short Track 1.5 Jam / Medium Track 2.5 Jam / Combo Outbound)
+Boleh minta rincian rute dan ketersediaan armada di tanggal tersebut? Terima kasih!`;
     }
 
     // 9. Halaman Artikel Edukasi

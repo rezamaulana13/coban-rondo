@@ -140,15 +140,15 @@
     </image:image>
   </url>
 
-  <!-- 12. Detail Paket 7: Flying Fox & Labirin -->
+  <!-- 12. Detail Paket 7: Offroad Jeep Adventure -->
   <url>
-    <loc>https://cobanrondo.web.id/paket/flying-fox-labirin</loc>
-    <lastmod>2026-10-26T00:00:00+07:00</lastmod>
+    <loc>https://cobanrondo.web.id/paket/offroad-jeep</loc>
+    <lastmod>2026-10-29T00:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://cobanrondo.web.id/assets/img/flying-fox-labirin.webp</image:loc>
-      <image:title>Tiket Flying Fox dan Labirin Coban Rondo</image:title>
+      <image:loc>https://cobanrondo.web.id/assets/img/offroad-jeep.webp</image:loc>
+      <image:title>Paket Offroad Jeep Adventure 4x4 Coban Rondo Malang</image:title>
     </image:image>
   </url>
 
