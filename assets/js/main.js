@@ -104,60 +104,11 @@ if (window.location.pathname.endsWith('.html')) {
   }
 
   /* --------------------------------------------------------------------------
-     1b. MOBILE FULL-SCREEN NAVBAR & ZERO-ANIMATION (SATSET)
+     1b. MOBILE NAVBAR (CLEAN, MODERN & ZERO OVERLAP)
      -------------------------------------------------------------------------- */
   function initMobileNavbar() {
     const navCollapse = document.getElementById("navMain");
     if (!navCollapse) return;
-
-    // Progressive Enhancement: If mobile header is not yet injected, inject it
-    if (!navCollapse.querySelector(".mobile-nav-header")) {
-      const brandLogoImg = document.querySelector(".navbar-brand img");
-      const logoSrc = brandLogoImg ? brandLogoImg.getAttribute("src") : "assets/img/logo.svg";
-
-      const headerHtml = `
-        <div class="mobile-nav-header d-lg-none">
-          <div class="d-flex align-items-center gap-2">
-            <img src="${logoSrc}" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
-            <div class="brand-text-wrap">
-              <span class="brand-title">Coban Rondo</span>
-              <span class="brand-sub">Outbound &amp; Adventure</span>
-            </div>
-          </div>
-          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      `;
-      navCollapse.insertAdjacentHTML("afterbegin", headerHtml);
-    }
-
-    // Progressive Enhancement: If mobile footer is not yet injected, inject it
-    if (!navCollapse.querySelector(".mobile-nav-footer")) {
-      const footerHtml = `
-        <div class="mobile-nav-footer d-lg-none">
-          <a href="https://wa.me/6282211221909" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
-            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
-          </a>
-        </div>
-      `;
-      navCollapse.insertAdjacentHTML("beforeend", footerHtml);
-    }
-
-    // Close button handler
-    const closeBtns = navCollapse.querySelectorAll(".btn-close-mobile");
-    closeBtns.forEach(btn => {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (window.bootstrap && bootstrap.Collapse) {
-          const instance = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse, { toggle: false });
-          instance.hide();
-        } else {
-          navCollapse.classList.remove("show");
-          document.body.classList.remove("mobile-nav-open");
-        }
-      });
-    });
 
     // Body scroll lock & floating button toggle on mobile nav
     navCollapse.addEventListener("show.bs.collapse", function () {
@@ -173,7 +124,7 @@ if (window.location.pathname.endsWith('.html')) {
       document.body.classList.remove("mobile-nav-open");
     });
 
-    // Close on link click on mobile
+    // Close on link click on mobile (except dropdown toggle)
     const links = navCollapse.querySelectorAll(".nav-link:not(.dropdown-toggle), .dropdown-card-item, .btn-mobile-wa-bottom");
     links.forEach(link => {
       link.addEventListener("click", function () {

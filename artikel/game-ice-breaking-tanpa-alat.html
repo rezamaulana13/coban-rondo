@@ -169,8 +169,8 @@
   <link rel="stylesheet" href="../assets/css/icons.min.css">
 
   <!-- Custom Theme Stylesheet (Local Minified, Non-blocking) -->
-  <link rel="preload" as="style" href="../assets/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="../assets/css/style.min.css"></noscript>
+  <link rel="preload" as="style" href="../assets/css/style.min.css?v=20261029b" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../assets/css/style.min.css?v=20261029b"></noscript>
 
   
   <!-- Critical CSS for Instant Paint -->
@@ -246,8 +246,13 @@
     @media (max-width: 991.98px) {
       body.mobile-nav-open .floating-wa-btn,
       body.mobile-nav-open [data-wa-float],
-      body.mobile-nav-open .back-to-top {
+      body.mobile-nav-open .back-to-top,
+      .navbar-collapse.show ~ .floating-wa-btn,
+      .navbar-collapse.show ~ [data-wa-float],
+      .navbar-collapse.show ~ .back-to-top {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
       }
     }
     .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
@@ -289,19 +294,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
-        <!-- Mobile Menu Top Header -->
-        <div class="mobile-nav-header d-lg-none">
-          <div class="d-flex align-items-center gap-2">
-            <img src="../assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
-            <div class="brand-text-wrap">
-              <span class="brand-title">Coban Rondo</span>
-              <span class="brand-sub">Outbound &amp; Adventure</span>
-            </div>
-          </div>
-          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
+        
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="../">Beranda</a>
@@ -958,6 +951,6 @@
 
   <!-- SCRIPTS -->
   <script defer src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script defer src="../assets/js/main.min.js"></script>
+  <script defer src="../assets/js/main.min.js?v=20261029b"></script>
 </body>
 </html>
