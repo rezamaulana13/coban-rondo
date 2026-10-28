@@ -241,7 +241,15 @@
       border: none;
       border-radius: 9999px;
     }
-      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+      
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
+    .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
     .dropdown-menu:not(.show) { display: none; }
     .modal { display: none; }
 </style>
@@ -280,6 +288,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="../assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="../">Beranda</a>
@@ -292,41 +313,29 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="../paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <span class="dropdown-header-tag">Program Outbound Unggulan</span>
+                <a href="../paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="../paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -335,8 +344,8 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <span class="promo-text">Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -352,6 +361,12 @@
             <a class="nav-link" href="../galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%2210%20Game%20Ice%20Breaking%20Lucu%20Tanpa%20Alat%20untuk%20Menghidupkan%20Suasana%20Outbound%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -427,7 +442,7 @@
             <p>Seringkali panitia acara outbound merasa panik saat tidak membawa banyak peralatan atau properti di lokasi. Kabar baiknya: <strong>ice breaking terbaik justru adalah permainan yang tidak membutuhkan alat sama sekali!</strong> Permainan tanpa alat mengandalkan gerak tubuh, konsentrasi, vokal, dan spontanitas yang langsung menyalakan energi peserta dalam hitungan menit.</p>
 
             <h2 id="mengapa-ice-breaking-tanpa-alat-sangat-efektif">Mengapa Ice Breaking Tanpa Alat Sangat Efektif?</h2>
-            <p>Ketika peserta baru tiba di lokasi outbound Coban Rondo, sering kali masih terasa jarak sosial atau rasa canggung antar divisi. Permainan tanpa alat memaksa peserta untuk langsung berinteraksi mata, tertawa bersama atas kesalahan lucu, dan melepaskan sekat formalitas kantor.</p>
+            <p>Ketika peserta baru tiba di lokasi outbound Coban Rondo, sering kali masih terasa jarak sosial atau rasa canggung antar divisi. Dengan modul simulasi yang tepat seperti dalam <a href="../paket/corporate-outbound" class="text-aqua fw-bold">Paket Corporate Outbound</a>, permainan tanpa alat memaksa peserta untuk langsung berinteraksi mata, tertawa bersama atas kesalahan lucu, dan melepaskan sekat formalitas kantor.</p>
 
             <div class="baca-juga-box">
               <i class="bi bi-bookmark-star"></i>
@@ -469,16 +484,155 @@
               <li><strong>10. Tepuk Nyamuk Berpasangan:</strong> Uji refleks kecepatan tangan kanan menepuk telapak tangan rekan sementara tangan kiri berusaha menghindar.</li>
             </ul>
 
-            <div class="baca-juga-box">
-              <i class="bi bi-bookmark-star"></i>
-              <span class="label">Baca Juga:</span>
-              <a href="rundown-company-gathering">Panduan Menyusun Rundown Company Gathering 2 Hari 1 Malam</a>
+            <h2 id="tabel-komparasi-game-ice-breaking">Tabel Komparasi 10 Game Ice Breaking Tanpa Alat</h2>
+            <p>Untuk memudahkan panitia dan fasilitator memilih game yang paling relevan dengan kondisi fisik dan usia peserta, berikut adalah matriks perbandingan 10 modul permainan di atas:</p>
+
+            <div class="table-responsive my-4">
+              <table class="article-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Permainan</th>
+                    <th>Estimasi Durasi</th>
+                    <th>Tingkat Energi</th>
+                    <th>Fokus Nilai &amp; Soft Skill</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><strong>Simon Berkata</strong></td>
+                    <td>10 &ndash; 15 Menit</td>
+                    <td><span class="badge bg-success-subtle text-success">Sedang</span></td>
+                    <td>Active listening, kepatuhan instruksi, &amp; konsentrasi</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><strong>Samurai Konsentrasi</strong></td>
+                    <td>10 &ndash; 15 Menit</td>
+                    <td><span class="badge bg-primary-subtle text-primary">Tinggi</span></td>
+                    <td>Fokus angka, kecepatan refleks, &amp; pemecah kebekuan</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><strong>Angin Berhembus</strong></td>
+                    <td>15 &ndash; 20 Menit</td>
+                    <td><span class="badge bg-danger-subtle text-danger">Sangat Tinggi</span></td>
+                    <td>Kelincahan fisik, inklusivitas, &amp; spontanitas kelompok</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><strong>Tebak Gaya Berantai</strong></td>
+                    <td>15 &ndash; 20 Menit</td>
+                    <td><span class="badge bg-success-subtle text-success">Sedang</span></td>
+                    <td>Komunikasi non-verbal, empati, &amp; interpretasi visual</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td><strong>Bumi Itu Bulat</strong></td>
+                    <td>10 &ndash; 15 Menit</td>
+                    <td><span class="badge bg-info-subtle text-info">Rendah (Pikiran)</span></td>
+                    <td>Lateral thinking, pemecahan teka-teki, &amp; logika santai</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td><strong>Ikuti Suara Bukan Gerakan</strong></td>
+                    <td>10 &ndash; 15 Menit</td>
+                    <td><span class="badge bg-success-subtle text-success">Sedang</span></td>
+                    <td>Pengendalian impuls, disiplin auditif, &amp; fokus pikiran</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td><strong>Yel-Yel Kilat 3 Menit</strong></td>
+                    <td>15 &ndash; 25 Menit</td>
+                    <td><span class="badge bg-primary-subtle text-primary">Tinggi</span></td>
+                    <td>Kreativitas kelompok, rasa percaya diri, &amp; kebersamaan</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td><strong>Tali Kusut Manusia</strong></td>
+                    <td>15 &ndash; 20 Menit</td>
+                    <td><span class="badge bg-success-subtle text-success">Sedang</span></td>
+                    <td>Problem solving terpadu, kesabaran, &amp; kepemimpinan tim</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td><strong>Si Buta &amp; Si Pemandu</strong></td>
+                    <td>15 &ndash; 20 Menit</td>
+                    <td><span class="badge bg-warning-subtle text-warning">Sedang - Serius</span></td>
+                    <td>Membangun rasa saling percaya (trust building) &amp; komunikasi</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td><strong>Tepuk Nyamuk Berpasangan</strong></td>
+                    <td>10 &ndash; 15 Menit</td>
+                    <td><span class="badge bg-primary-subtle text-primary">Tinggi</span></td>
+                    <td>Kecepatan motorik tangan &amp; interaksi tatap muka personal</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
+            <h2 id="tips-master-game-sukses">Tips Master Game: 4 Kunci Memandu Ice Breaking Tanpa 'Garing'</h2>
+            <p>Banyak panitia internal mengeluhkan peserta yang pasif atau enggan bergerak saat sesi pembuka. Untuk mencegah hal tersebut, terapkan 4 prinsip fasilitasi berikut:</p>
+            <ul>
+              <li><strong>Pimpin dengan Bahasa Tubuh Energik:</strong> Fasilitator adalah cermin suasana. Jika pemandu berbicara datar di balik mik, peserta akan bersikap dingin. Gunakan artikulasi vokal dinamis, senyum terbuka, dan peragakan langsung gerakannya.</li>
+              <li><strong>Terapkan Hukuman Edukatif &amp; Lucu:</strong> Hindari hukuman yang mempermalukan fisik (<em>body shaming</em>) atau memberatkan. Berikan tantangan jenaka seperti bernyanyi lagu anak-anak dengan vokal diganti huruf 'O' atau menirukan gaya tokoh kartun.</li>
+              <li><strong>Kombinasikan Game Individu ke Kelompok:</strong> Mulailah dari game yang tidak menuntut sentuhan fisik (seperti Simon Berkata atau Samurai Konsentrasi), lalu tingkatkan secara bertahap menuju game yang membutuhkan kerja sama tim (seperti Tali Kusut Manusia).</li>
+              <li><strong>Hubungkan Makna Game ke Pekerjaan Sehari-Hari:</strong> Luangkan waktu 2-3 menit setelah game selesai untuk menyampaikan pesan nilai (<em>debriefing</em>), misalnya pentingnya mendengarkan arahan atasan secara teliti sebelum mengambil keputusan.</li>
+            </ul>
 
+            <h2 id="tabel-estimasi-paket-outbound">Tabel Estimasi Biaya &amp; Paket Outbound Coban Rondo</h2>
+            <p>Bagi perusahaan, instansi, atau sekolah yang ingin mendapatkan program outbound terstruktur lengkap dengan master game berlisensi BNSP, berikut adalah rincian estimasi paket resmi Coban Rondo:</p>
+
+            <div class="table-responsive my-4">
+              <table class="article-table">
+                <thead>
+                  <tr>
+                    <th>Paket Outbound</th>
+                    <th>Harga per Orang</th>
+                    <th>Fasilitas Unggulan</th>
+                    <th>Cocok untuk Target</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong><a href="../paket/corporate-outbound" class="text-aqua fw-bold">Corporate Outbound &amp; Gathering</a></strong></td>
+                    <td>Rp 185.000 &ndash; Rp 250.000</td>
+                    <td>Fasilitator BNSP, Sound System Lapangan, Modul Team Building, Makan Prasmanan, &amp; Tiket Wisata</td>
+                    <td>Perusahaan, BUMN, Instansi Pemerintah, &amp; Korporat</td>
+                  </tr>
+                  <tr>
+                    <td><strong><a href="../paket/outbound-edukasi" class="text-aqua fw-bold">Outbound Edukasi &amp; LDKS Siswa</a></strong></td>
+                    <td>Rp 135.000 &ndash; Rp 175.000</td>
+                    <td>Pemandu Karakter, Ice Breaking Siswa, Games Kepemimpinan, Makan Siang, &amp; Tiket Masuk</td>
+                    <td>Sekolah SD/SMP/SMA, Kampus, OSIS, &amp; Pramuka</td>
+                  </tr>
+                  <tr>
+                    <td><strong><a href="../paket/family-gathering" class="text-aqua fw-bold">Family Gathering Ceria</a></strong></td>
+                    <td>Rp 150.000 &ndash; Rp 210.000</td>
+                    <td>Fun Games Keluarga &amp; Anak, MC Acara, Panggung Mini, Konsumsi, &amp; Akses Kawasan Pinus</td>
+                    <td>Keluarga Karyawan, Komunitas, &amp; Paguyuban Alumni</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- REKOMENDASI PAKET TERKAIT CARD -->
+            <div class="card border-0 rounded-4 p-3 my-4 shadow-sm" style="background: rgba(8, 145, 178, 0.08); border-left: 4px solid #0891b2 !important;">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="fa-solid fa-layer-group text-aqua fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0 text-slate-800">Rekomendasi Paket Outbound Terkait</h4>
+              </div>
+              <p class="small text-slate-600 mb-2">Ingin kegiatan ice breaking dipandu fasilitator profesional BNSP lengkap dengan modul team building seru? Cek pilihan paket resminya:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="../paket/corporate-outbound" class="btn btn-sm btn-aqua"><i class="fa-solid fa-building-user me-1"></i> Paket Corporate Outbound</a>
+                <a href="../paket/outbound-edukasi" class="btn btn-sm btn-outline-aqua"><i class="fa-solid fa-graduation-cap me-1"></i> Paket Outbound Edukasi Sekolah</a>
+              </div>
+            </div>
 
             <h2 id="kesimpulan-ice-breaking">Kunci Keberhasilan Sesi Ice Breaking</h2>
-            <p>Kunci suksesnya ice breaking bukan terletak pada mahalnya alat yang digunakan, melainkan pada kemampuan pemandu membawakan suasana dengan ramah, komunikatif, dan penuh antusiasme. Dengan 10 ide di atas, acara gathering kantor Anda di Coban Rondo dijamin akan berlangsung meriah dan berkesan!</p>
+            <p>Kunci suksesnya ice breaking bukan terletak pada mahalnya alat yang digunakan, melainkan pada kemampuan pemandu membawakan suasana dengan ramah, komunikatif, dan penuh antusiasme. Dengan 10 ide permainan tanpa alat dan tabel panduan praktis di atas, acara gathering kantor maupun perkemahan Anda di Coban Rondo dijamin akan berlangsung meriah, hangat, dan berkesan mendalam bagi seluruh peserta!</p>
           </div>
 
           <!-- FAQ MINI ACCORDION -->
@@ -553,6 +707,14 @@
             <p class="desc">
               Reza Maulana Nehru adalah praktisi dan konsultan outbound di Coban Rondo dengan pengalaman lebih dari 7 tahun dalam merancang program team building, fun games interaktif, dan gathering perusahaan di Jawa Timur.
             </p>
+          </div>
+
+          <!-- SIDEBAR PROMO CARD -->
+          <div class="sidebar-cta-card mb-4">
+            <i class="fa-solid fa-building-user fs-2 text-aqua mb-2"></i>
+            <h4>Paket Corporate Outbound</h4>
+            <p>Program team building & fun games lengkap di Hutan Pinus Coban Rondo. Free tiket masuk &amp; fasilitator BNSP.</p>
+            <a href="../paket/corporate-outbound" class="btn btn-aqua btn-sm w-100">Lihat Detail Paket</a>
           </div>
 
           <!-- ARTIKEL TERKAIT DARI PENULIS -->
@@ -680,7 +842,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%2210%20Game%20Ice%20Breaking%20Lucu%20Tanpa%20Alat%20untuk%20Menghidupkan%20Suasana%20Outbound%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -782,7 +944,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave & Back to Top -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20sedang%20membaca%20artikel%20dan%20ingin%20konsultasi%20outbound." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%2210%20Game%20Ice%20Breaking%20Lucu%20Tanpa%20Alat%20untuk%20Menghidupkan%20Suasana%20Outbound%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

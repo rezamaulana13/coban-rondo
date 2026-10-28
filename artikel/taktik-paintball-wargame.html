@@ -232,7 +232,15 @@
       border: none;
       border-radius: 9999px;
     }
-      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+      
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
+    .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
     .dropdown-menu:not(.show) { display: none; }
     .modal { display: none; }
 </style>
@@ -271,6 +279,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="../assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="../">Beranda</a>
@@ -283,41 +304,29 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="../paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <span class="dropdown-header-tag">Program Outbound Unggulan</span>
+                <a href="../paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="../paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -326,8 +335,8 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <span class="promo-text">Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -343,6 +352,12 @@
             <a class="nav-link" href="../galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Taktik%20Formasi%20Paintball%20Wargame%3A%20Cara%20Memenangkan%20Skenario%20Capture%20The%20Flag%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -415,7 +430,7 @@
 
           <!-- BODY ARTIKEL -->
           <div class="article-body">
-            <p>Banyak pemain pemula beranggapan bahwa kunci memenangkan pertempuran <strong>Paintball Wargame</strong> adalah dengan menghabiskan peluru cat secepat mungkin secara membabi buta. Faktanya, di arena pertempuran alam terbuka seperti <strong>Hutan Pinus Coban Rondo</strong>, tim yang menang 90% ditentukan oleh <strong>formasi pergerakan terencana</strong>, <strong>komunikasi kode suara</strong>, dan <strong>eksekusi manuver flanking</strong>.</p>
+            <p>Banyak pemain pemula beranggapan bahwa kunci memenangkan pertempuran <strong>Paintball Wargame</strong> adalah dengan menghabiskan peluru cat secepat mungkin secara membabi buta. Faktanya, di arena pertempuran alam terbuka seperti <a href="../paket/paintball-battle" class="text-aqua fw-bold">Arena Paintball Hutan Pinus Coban Rondo</a>, tim yang menang 90% ditentukan oleh <strong>formasi pergerakan terencana</strong>, <strong>komunikasi kode suara</strong>, dan <strong>eksekusi manuver flanking</strong>.</p>
 
             <p>Dalam skenario paling populer yaitu <strong>Capture The Flag (Rebut Bendera Lawan)</strong>, berikut adalah taktik baku militer yang diadaptasi untuk tim korporat dan komunitas:</p>
 
@@ -448,17 +463,136 @@
             <h2 id="kode-suara-komunikasi">4. Komunikasi Kode Suara Singkat &amp; Jelas</h2>
             <p>Di balik masker goggle dan deru tembakan gas CO2, suara instruksi panjang tidak akan terdengar. Gunakan kode singkat seperti: <em>"BUNKER 2 KIRI!"</em>, <em>"COVER SAYA!"</em>, atau <em>"FLANK KANAN MAJU!"</em>. Selalu laporkan posisi musuh yang tereliminasi ke seluruh rekan.</p>
 
-            <h2 id="aturan-keselamatan-k3">Aturan Mutlak Keselamatan K3 Paintball</h2>
+            <!-- TABEL 1: MATRIKS FORMASI TAKTIS PAINTBALL -->
+            <h2 id="tabel-formasi-paintball">5. Matriks Formasi Pergerakan Skuad Paintball</h2>
+            <p>Memilih pola formasi pergerakan regu yang tepat sebelum pluit wasit dibunyikan merupakan faktor pembeda antara kemenangan telak atau kekalahan memalukan. Berikut adalah perbandingan formasi taktis yang terbukti efektif di medan perang hutan pinus Coban Rondo:</p>
+
+            <div class="table-responsive my-4">
+              <table class="table table-bordered table-striped article-table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 130px;">Nama Formasi</th>
+                    <th scope="col" style="min-width: 150px;">Komposisi Skuad</th>
+                    <th scope="col" style="min-width: 170px;">Keunggulan Taktis</th>
+                    <th scope="col" style="min-width: 160px;">Titik Kelemahan</th>
+                    <th scope="col" style="min-width: 140px;">Skenario Ideal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Formasi 'V' Wedge (Mata Panah)</strong></td>
+                    <td>1 Pointman terdepan, 2 Flanker kiri-kanan, 2 Support di belakang</td>
+                    <td>Daya penetrasi garis tengah sangat kuat dan bidang tembak menyebar luas</td>
+                    <td>Rentan terhadap serangan jebakan silang dari arah sayap belakang (<em>crossfire</em>)</td>
+                    <td>Penyerbuan cepat merebut bunker netral tengah di awal ronde</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dual-Wing Flanking (Penyisiran Sayap)</strong></td>
+                    <td>1 Umpan penahan di tengah, 2 Penyerbu sayap kiri, 2 Penyerbu sayap kanan</td>
+                    <td>Mengepung musuh dalam jepitan dua arah saat musuh fokus menembak ke tengah</td>
+                    <td>Umpan di tengah mudah tertekan jika kedua sayap terlambat bermanuver</td>
+                    <td>Membongkar pertahanan lawan yang bersembunyi rapat di base</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Turtle Defense (Benteng Berlapis)</strong></td>
+                    <td>3 Penjaga perimeter base, 2 Penembak jitu jarak menengah</td>
+                    <td>Sangat sulit ditembus dan konsumsi peluru cat sangat hemat dan efisien</td>
+                    <td>Kehilangan kontrol wilayah arena; musuh leluasa merekrut posisi strategis</td>
+                    <td>Mempertahankan bendera saat tim Anda sudah unggul perolehan poin</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Guerrilla Ambush (Jebakan Silang)</strong></td>
+                    <td>2 Penembak tersembunyi, 3 Petarung pancingan mundur perlahan</td>
+                    <td>Efek kejut psikologis tinggi; mengeliminasi lawan dalam jarak tembak ideal</td>
+                    <td>Membutuhkan kedisiplinan tinggi menahan tembakan hingga musuh masuk zona jebakan</td>
+                    <td>Skenario VIP Escort atau eliminasi tim dengan amunisi terbatas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="skenario-wargame-populer">6. Tiga Skenario Wargame Paling Seru di Coban Rondo</h2>
+            <p>Untuk menjaga dinamika kompetisi agar tidak monoton, instruktur <a href="../paket/paintball-battle" class="text-aqua fw-bold">Paintball Battle Coban Rondo</a> biasanya membagi sesi pertempuran menjadi beberapa mode permainan bertingkat:</p>
             <ul>
-              <li><strong>Dilarang keras melepas Goggle Mask</strong> selama masih berada di dalam garis perimeter arena wargame dengan alasan apa pun!</li>
-              <li>Gunakan mode <em>Safety Lock</em> dan penutup laras saat berada di luar arena atau saat wasit meniup peluit jeda.</li>
-              <li>Jarak tembak minimal aman adalah 5 meter. Jika musuh berada lebih dekat, ucapkan kata "SURRENDER" (Menyerah).</li>
+              <li><strong>Skenario 1 &ndash; Capture The Flag (CTF):</strong> Setiap tim memiliki bendera di pangkalan masing-masing. Misi utama adalah menyusup ke base lawan, mencabut bendera musuh, dan membawanya kembali ke base sendiri tanpa tertembak amunisi cat. Kunci skenario ini adalah kecepatan runner dan akurasi cover gunner.</li>
+              <li><strong>Skenario 2 &ndash; VIP Escort / Protection:</strong> Salah satu peserta (biasanya pimpinan divisi, manajer, atau direktur) berperan sebagai VIP tanpa senjata. Tim pengawal wajib menuntun VIP melintasi zona pertempuran hutan menuju titik ekstraksi aman (<em>safe zone</em>), sementara tim lawan bertindak sebagai insurgent penyergap. Mode ini melatih loyalitas dan pengorbanan tim!</li>
+              <li><strong>Skenario 3 &ndash; Elimination Deathmatch:</strong> Mode pertempuran terbuka tanpa misi objek bendera. Pemenang ditentukan oleh tim yang berhasil mengeliminasi seluruh anggota lawan atau memiliki sisa anggota hidup terbanyak saat batas waktu 15 menit berakhir.</li>
+            </ul>
+
+            <!-- TABEL 2: SPESIFIKASI DAN PAKET HARGA PAINTBALL -->
+            <h2 id="tabel-harga-paintball">7. Rincian Fasilitas &amp; Paket Harga Paintball Coban Rondo</h2>
+            <p>Berikut adalah perbandingan pilihan paket paintball battle resmi di kawasan wisata hutan pinus Coban Rondo Malang yang dapat disesuaikan dengan anggaran gathering perusahaan maupun komunitas Anda:</p>
+
+            <div class="table-responsive my-4">
+              <table class="table table-bordered table-striped article-table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 140px;">Paket Paintball</th>
+                    <th scope="col" style="min-width: 110px;">Estimasi Biaya</th>
+                    <th scope="col" style="min-width: 100px;">Amunisi Cat</th>
+                    <th scope="col" style="min-width: 180px;">Perlengkapan Standar K3</th>
+                    <th scope="col" style="min-width: 170px;">Fasilitas Tambahan &amp; Wisata</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Paintball Skirmish</strong></td>
+                    <td><strong class="text-aqua">Rp 150.000</strong> / orang</td>
+                    <td>50 Butir Peluru Cat</td>
+                    <td>Semi-Auto Tippmann, Goggle Mask Anti-Fog, Body Vest Proteksi, Seragam Loreng</td>
+                    <td>Tiket Masuk Coban Rondo, Wasit &amp; Marshal, Mineral Water, P3K Lapangan</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Paintball Battle Royale</strong></td>
+                    <td><strong class="text-aqua">Rp 225.000</strong> / orang</td>
+                    <td>100 Butir Peluru Cat</td>
+                    <td>Semi-Auto Tippmann Custom, Dual Lens Goggle, Rompi Taktis, Seragam Camo</td>
+                    <td>Tiket Coban Rondo, Free Akses Air Terjun, 3 Mode Skenario Battle, Dokumentasi Foto</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Combo Outbound + Paintball</strong></td>
+                    <td><strong class="text-aqua">Rp 285.000</strong> / orang</td>
+                    <td>50 Butir Peluru Cat</td>
+                    <td>Full Safety Gear Paintball K3 + Perlengkapan Game Fun Outbound</td>
+                    <td>Master Game BNSP, Fun Games Team Building, Tiket Coban Rondo, Makan Siang Prasmanan 1x</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ultimate Adventure (Paintball + Rafting)</strong></td>
+                    <td><strong class="text-aqua">Rp 435.000</strong> / orang</td>
+                    <td>50 Butir Peluru Cat</td>
+                    <td>Full Safety Gear Paintball + Rescue Rafting Kasembon (Dayung, Pelampung, Helm)</td>
+                    <td>Rafting 7.5 KM Kasembon, Paintball Hutan Pinus, Makan Siang Tradisional, Transport Lokal</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="aturan-keselamatan-k3">8. Aturan Mutlak Keselamatan K3 Paintball</h2>
+            <p>Di balik serunya adrenalin memburu lawan, keselamatan peserta merupakan prioritas nomor satu. Standar Operasional Prosedur (SOP) keselamatan yang wajib ditaati meliputi:</p>
+            <ul>
+              <li><strong>Dilarang Keras Melepas Goggle Mask:</strong> Selama masih berada di dalam batas garis perimeter arena pertempuran, masker pelindung wajah pantang dibuka walau berembun atau terkena noda cat. Segera panggil marshal lapangan untuk pembersihan aman.</li>
+              <li><strong>Gunakan Safety Lock &amp; Barrel Plug:</strong> Kunci pengaman senjata semi-otomatis wajib dipasang saat keluar arena, di ruang briefing, atau saat wasit meniup peluit panjang tanda jeda ronde.</li>
+              <li><strong>Jarak Tembak Minimal 5 Meter:</strong> Demi menghindari cedera lebam berlebih, tembakan di bawah jarak 5 meter dilarang. Pemain cukup mengarahkan laras dan berteriak <em>"FREEZE / SURRENDER"</em>.</li>
+              <li><strong>Hentikan Tembakan ke Pemain yang Mengangkat Senjata:</strong> Pemain yang terkena peluru cat (<em>hit</em>) wajib mengangkat senjata di atas kepala dan berteriak <em>"HIT / KELUAR"</em>, dan pemain lawan dilarang menembaknya lagi.</li>
             </ul>
 
             <div class="baca-juga-box">
               <i class="bi bi-bookmark-star"></i>
               <span class="label">Baca Juga:</span>
               <a href="rundown-company-gathering">Panduan Rundown Gathering Kantor &amp; Outbound 2 Hari 1 Malam</a>
+            </div>
+
+            <!-- REKOMENDASI PAKET TERKAIT CARD -->
+            <div class="card border-0 rounded-4 p-3 my-4 shadow-sm" style="background: rgba(8, 145, 178, 0.08); border-left: 4px solid #0891b2 !important;">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="fa-solid fa-crosshairs text-aqua fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0 text-slate-800">Booking Slot Arena Paintball Coban Rondo</h4>
+              </div>
+              <p class="small text-slate-600 mb-2">Rasakan sensasi simulasi perang hutan pinus dengan senjata semi-otomatis Tippmann, peluru cat lengkap, goggle mask, dan body vest K3:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="../paket/paintball-battle" class="btn btn-sm btn-aqua"><i class="fa-solid fa-crosshairs me-1"></i> Paket Paintball Battle</a>
+                <a href="../paket/rafting-kasembon" class="btn btn-sm btn-outline-aqua"><i class="fa-solid fa-water me-1"></i> Paket Rafting &amp; Outbound</a>
+              </div>
             </div>
 
 
@@ -526,6 +660,14 @@
             <p class="desc">
               Reza Maulana Nehru adalah koordinator program petualangan outdoor dan instruktur strategi simulasi wargame di arena alam terbuka Coban Rondo Malang.
             </p>
+          </div>
+
+          <!-- SIDEBAR PROMO CARD -->
+          <div class="sidebar-cta-card mb-4">
+            <i class="fa-solid fa-crosshairs fs-2 text-aqua mb-2"></i>
+            <h4>Paket Paintball Battle</h4>
+            <p>Simulasi perang strategi hutan pinus dengan marker Tippmann semi-otomatis & full safety gear K3.</p>
+            <a href="../paket/paintball-battle" class="btn btn-aqua btn-sm w-100">Lihat Detail Paket</a>
           </div>
 
           <!-- ARTIKEL TERKAIT DARI PENULIS -->
@@ -653,7 +795,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Taktik%20Formasi%20Paintball%20Wargame%3A%20Cara%20Memenangkan%20Skenario%20Capture%20The%20Flag%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -755,7 +897,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave & Back to Top -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20sedang%20membaca%20artikel%20dan%20ingin%20konsultasi%20outbound." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Taktik%20Formasi%20Paintball%20Wargame%3A%20Cara%20Memenangkan%20Skenario%20Capture%20The%20Flag%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

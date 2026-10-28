@@ -43,7 +43,9 @@ if (window.location.pathname.endsWith('.html')) {
   document.addEventListener("DOMContentLoaded", function () {
     // Immediate critical init
     initNavbarScroll();
+    initMobileNavbar();
     initQuickWaTriggers();
+    initBackToTop();
     
     // Defer non-critical calculations to idle time to prevent Forced Reflow & layout thrashing
     const deferInit = window.requestIdleCallback || function (cb) { setTimeout(cb, 1); };
@@ -56,7 +58,6 @@ if (window.location.pathname.endsWith('.html')) {
       initBookingModal();
       initArticleFeatures();
       initArticleDetailInteractions();
-      initBackToTop();
       initTestimonialSlider();
       initNetworkModal();
     });
@@ -100,6 +101,93 @@ if (window.location.pathname.endsWith('.html')) {
     } else {
       setTimeout(updateNavbar, 60);
     }
+  }
+
+  /* --------------------------------------------------------------------------
+     1b. MOBILE FULL-SCREEN NAVBAR & ZERO-ANIMATION (SATSET)
+     -------------------------------------------------------------------------- */
+  function initMobileNavbar() {
+    const navCollapse = document.getElementById("navMain");
+    if (!navCollapse) return;
+
+    // Progressive Enhancement: If mobile header is not yet injected, inject it
+    if (!navCollapse.querySelector(".mobile-nav-header")) {
+      const brandLogoImg = document.querySelector(".navbar-brand img");
+      const logoSrc = brandLogoImg ? brandLogoImg.getAttribute("src") : "assets/img/logo.svg";
+
+      const headerHtml = `
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="${logoSrc}" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      `;
+      navCollapse.insertAdjacentHTML("afterbegin", headerHtml);
+    }
+
+    // Progressive Enhancement: If mobile footer is not yet injected, inject it
+    if (!navCollapse.querySelector(".mobile-nav-footer")) {
+      const footerHtml = `
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
+      `;
+      navCollapse.insertAdjacentHTML("beforeend", footerHtml);
+    }
+
+    // Close button handler
+    const closeBtns = navCollapse.querySelectorAll(".btn-close-mobile");
+    closeBtns.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (window.bootstrap && bootstrap.Collapse) {
+          const instance = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse, { toggle: false });
+          instance.hide();
+        } else {
+          navCollapse.classList.remove("show");
+          document.body.classList.remove("mobile-nav-open");
+        }
+      });
+    });
+
+    // Body scroll lock & floating button toggle on mobile nav
+    navCollapse.addEventListener("show.bs.collapse", function () {
+      document.body.classList.add("mobile-nav-open");
+    });
+    navCollapse.addEventListener("shown.bs.collapse", function () {
+      document.body.classList.add("mobile-nav-open");
+    });
+    navCollapse.addEventListener("hide.bs.collapse", function () {
+      document.body.classList.remove("mobile-nav-open");
+    });
+    navCollapse.addEventListener("hidden.bs.collapse", function () {
+      document.body.classList.remove("mobile-nav-open");
+    });
+
+    // Close on link click on mobile
+    const links = navCollapse.querySelectorAll(".nav-link:not(.dropdown-toggle), .dropdown-card-item, .btn-mobile-wa-bottom");
+    links.forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth < 992) {
+          if (window.bootstrap && bootstrap.Collapse) {
+            const instance = bootstrap.Collapse.getInstance(navCollapse);
+            if (instance) instance.hide();
+          } else {
+            navCollapse.classList.remove("show");
+            document.body.classList.remove("mobile-nav-open");
+          }
+        }
+      });
+    });
   }
 
   /* --------------------------------------------------------------------------
@@ -577,30 +665,166 @@ if (window.location.pathname.endsWith('.html')) {
   }
 
   /* --------------------------------------------------------------------------
-     8. QUICK WA BUTTONS & FLOATING WA
+     8. SMART CONTEXTUAL WA PROMPT GENERATOR & QUICK TRIGGERS
      -------------------------------------------------------------------------- */
+  function getContextualWaMessage() {
+    const path = window.location.pathname.toLowerCase();
+
+    // 1. Paket Corporate Outbound
+    if (path.includes("corporate-outbound")) {
+      return `Halo Tim Admin Coban Rondo, saya tertarik dengan Paket Corporate Gathering & Outbound Training di Hutan Pinus.
+Mohon info penawaran resmi & ketersediaan tanggal:
+- Nama Perusahaan / Instansi: 
+- Estimasi Jumlah Peserta: 
+- Rencana Tanggal Kegiatan: 
+- Pilihan Durasi: (1 Hari / 2 Hari 1 Malam)
+- Kebutuhan Tambahan: (Paintball / Rafting / Penginapan / Bus)
+Apakah bisa dikirimkan proposal penawaran PDF dan rincian rundown-nya? Terima kasih!`;
+    }
+
+    // 2. Paket Paintball Battle
+    if (path.includes("paintball-battle") || path.includes("taktik-paintball")) {
+      return `Halo Admin Coban Rondo, saya ingin reservasi slot Arena Paintball Wargame di Hutan Pinus Coban Rondo.
+Mohon info ketersediaan jadwal & detail paket:
+- Nama Komunitas / Tim: 
+- Estimasi Jumlah Pemain: (Min. 10 orang)
+- Rencana Tanggal & Jam Main: 
+- Pilihan Paket: (Skirmish 50 Peluru / Battle 100 Peluru / Combo Outbound)
+Apakah slot arena di tanggal tersebut masih tersedia? Terima kasih!`;
+    }
+
+    // 3. Paket Camping Ground
+    if (path.includes("camping-ground") || path.includes("panduan-camping")) {
+      return `Halo Admin Coban Rondo, saya ingin reservasi lahan Camping Ground di Hutan Pinus Coban Rondo.
+Mohon informasi kavling lahan & fasilitas:
+- Nama Pemesan / Komunitas: 
+- Estimasi Jumlah Peserta: 
+- Rencana Tanggal Camp: 
+- Kebutuhan Perlengkapan: (Bawa tenda sendiri / Paket Sewa All-In)
+- Tambahan: (Api Unggun / Kambing Guling / Fun Games)
+Mohon info ketersediaan slot kavling camp. Terima kasih!`;
+    }
+
+    // 4. Paket Glamping Riverside VIP
+    if (path.includes("glamping-riverside")) {
+      return `Halo Admin Coban Rondo, saya tertarik reservasi Tenda Glamping Luxury Riverside VIP Coban Rondo.
+Mohon info ketersediaan unit:
+- Nama Tamu: 
+- Jumlah Orang: (Dewasa ... org, Anak ... org)
+- Tanggal Check-in & Check-out: 
+- Kebutuhan Khusus: (BBQ Dinner / Rafting / Api Unggun)
+Boleh minta foto interior unit dan info harga terbarunya? Terima kasih!`;
+    }
+
+    // 5. Paket Rafting Kasembon
+    if (path.includes("rafting-kasembon")) {
+      return `Halo Admin Coban Rondo, saya ingin booking Paket Rafting Kasembon + Outbound Coban Rondo.
+Mohon info jadwal pengarungan & penawaran rombongan:
+- Nama Rombongan / Instansi: 
+- Estimasi Jumlah Peserta: 
+- Rencana Tanggal Pengarungan: 
+- Kebutuhan: (Rafting 7.5 KM / Combo Fun Outbound / Makan Siang Tradisional)
+Apakah debit air dan jadwal di tanggal tersebut aman untuk rafting? Terima kasih!`;
+    }
+
+    // 6. Paket Edukasi & LDKS Sekolah
+    if (path.includes("outbound-edukasi")) {
+      return `Halo Admin Coban Rondo, saya dari pihak Sekolah / Kampus ingin konsultasi Paket Outbound Edukasi & LDKS Karakter Siswa.
+Mohon info proposal resmi & rincian biaya:
+- Asal Sekolah / Kampus: 
+- Jenjang: (SD / SMP / SMA / Mahasiswa)
+- Estimasi Jumlah Siswa: 
+- Rencana Bulan / Tanggal Pelaksanaan: 
+- Fokus Materi: (Kepemimpinan / Kedisiplinan / Fun Character Building)
+Boleh kirimkan proposal penawaran resmi untuk diajukan ke kepala sekolah / panitia? Terima kasih!`;
+    }
+
+    // 7. Paket Family Gathering
+    if (path.includes("family-gathering")) {
+      return `Halo Admin Coban Rondo, saya ingin merencanakan acara Family Gathering / Reuni Keluarga di Coban Rondo.
+Mohon info paket & fasilitas ramah keluarga:
+- Nama Keluarga / Komunitas: 
+- Estimasi Peserta: (Dewasa ... org, Anak ... org)
+- Rencana Tanggal Acara: 
+- Kebutuhan: (Fun Games Keluarga / Prasmanan / Wisata Air Terjun)
+Apakah ada rekomendasi rundown acara yang santai dan cocok untuk semua usia? Terima kasih!`;
+    }
+
+    // 8. Wahana Flying Fox & Labirin
+    if (path.includes("flying-fox-labirin")) {
+      return `Halo Admin Coban Rondo, saya mau reservasi tiket rombongan Wahana Flying Fox & Taman Labirin Coban Rondo.
+Mohon info ketersediaan & tiket rombongan:
+- Nama Rombongan: 
+- Jumlah Peserta: 
+- Rencana Tanggal Kunjungan: 
+Apakah ada diskon rombongan dan bagaimana prosedur reservasinya? Terima kasih!`;
+    }
+
+    // 9. Halaman Artikel Edukasi
+    if (path.includes("/artikel/") || path.includes("artikel")) {
+      const articleHeading = document.querySelector("h1.article-title, h1.hero-title, h1");
+      const articleTitle = articleHeading ? articleHeading.textContent.trim() : document.title.split("|")[0].trim();
+      return `Halo Tim Coban Rondo, saya baru saja membaca artikel "${articleTitle}" di website Anda.
+Saya ingin konsultasi lebih lanjut terkait materi tersebut untuk rencana kegiatan kami:
+- Nama / Instansi: 
+- Topik yang Ingin Dikonsultasikan: 
+- Rencana Kegiatan: 
+Boleh dibantu konsultasi dengan tim fasilitator Coban Rondo? Terima kasih!`;
+    }
+
+    // 10. Halaman Beranda (index.html) & Umum
+    return `Halo Admin Coban Rondo Outbound & Adventure, saya sedang mencari informasi kegiatan wisata & outbound di Coban Rondo Malang.
+Mohon info rekomendasi paket untuk rencana kegiatan kami:
+- Nama Instansi / Pemesan: 
+- Jenis Kegiatan: (Gathering Kantor / Outbound / Camping / Paintball / Rafting)
+- Estimasi Jumlah Peserta: 
+- Rencana Tanggal: 
+Boleh minta katalog penawaran lengkap dan estimasi biayanya? Terima kasih!`;
+  }
+  window.getContextualWaMessage = getContextualWaMessage;
+
   function initQuickWaTriggers() {
+    const contextualMsg = getContextualWaMessage();
+    const contextualUrl = buildWaUrl(contextualMsg);
+
     // Floating WA button target
     const floatingWaElements = document.querySelectorAll("[data-wa-float], .floating-wa-btn");
     floatingWaElements.forEach(floatingWa => {
-      const pageTitle = document.title.split("|")[0].trim();
-      const defaultMsg = `Halo Admin ${CR_CONFIG.BRAND_NAME}, saya sedang mengunjungi website (${pageTitle}) dan ingin konsultasi seputar kegiatan outbound & camping di Coban Rondo.`;
-      const waUrl = buildWaUrl(defaultMsg);
-      floatingWa.href = waUrl;
+      floatingWa.href = contextualUrl;
       floatingWa.setAttribute("target", "_blank");
       floatingWa.setAttribute("rel", "noopener noreferrer");
       floatingWa.onclick = function (e) {
-        // Fallback in case default navigation is intercepted
         if (!floatingWa.href || floatingWa.href.endsWith("#")) {
           e.preventDefault();
-          window.open(waUrl, "_blank");
+          window.open(contextualUrl, "_blank");
         }
       };
     });
 
+    // Mobile Navigation & Navbar WhatsApp buttons
+    document.querySelectorAll(".btn-mobile-wa-bottom, .btn-navbar-cta").forEach(btn => {
+      btn.href = contextualUrl;
+      btn.setAttribute("target", "_blank");
+      btn.setAttribute("rel", "noopener noreferrer");
+    });
+
+    // Package booking CTA buttons & proposal links
+    document.querySelectorAll(".btn-book-wa-now, .btn-proposal-link").forEach(btn => {
+      btn.href = contextualUrl;
+      btn.setAttribute("target", "_blank");
+      btn.setAttribute("rel", "noopener noreferrer");
+    });
+
+    // Footer WA links & Social WA circles
+    document.querySelectorAll(".footer-social-circle[aria-label*='WhatsApp'], a.footer-social-circle[href*='wa.me']").forEach(btn => {
+      btn.href = contextualUrl;
+      btn.setAttribute("target", "_blank");
+      btn.setAttribute("rel", "noopener noreferrer");
+    });
+
     // Quick WA links with custom attributes
     document.querySelectorAll("[data-wa-quick]").forEach(el => {
-      const msg = el.getAttribute("data-wa-quick") || `Halo Admin ${CR_CONFIG.BRAND_NAME}, saya ingin informasi paket outbound Coban Rondo.`;
+      const msg = el.getAttribute("data-wa-quick") || contextualMsg;
       const waUrl = buildWaUrl(msg);
       el.href = waUrl;
       el.setAttribute("target", "_blank");
@@ -718,21 +942,27 @@ if (window.location.pathname.endsWith('.html')) {
   }
 
   /* --------------------------------------------------------------------------
-     10. BACK TO TOP BUTTON
+     10. BACK TO TOP (ROLLBACK) BUTTON
      -------------------------------------------------------------------------- */
   function initBackToTop() {
     const btn = document.querySelector(".back-to-top");
     if (!btn) return;
 
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 300) {
+    function checkScroll() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+      if (scrollY > 150) {
         btn.classList.add("show");
       } else {
         btn.classList.remove("show");
       }
-    });
+    }
 
-    btn.addEventListener("click", function () {
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll, { passive: true });
+    checkScroll();
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: "smooth"

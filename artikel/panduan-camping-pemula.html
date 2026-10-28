@@ -241,7 +241,15 @@
       border: none;
       border-radius: 9999px;
     }
-      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+      
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
+    .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
     .dropdown-menu:not(.show) { display: none; }
     .modal { display: none; }
 </style>
@@ -280,6 +288,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="../assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="../">Beranda</a>
@@ -292,41 +313,29 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="../paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <span class="dropdown-header-tag">Program Outbound Unggulan</span>
+                <a href="../paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="../paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -335,8 +344,8 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <span class="promo-text">Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -352,6 +361,12 @@
             <a class="nav-link" href="../galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Panduan%20Lengkap%20Camping%20Pemula%20di%20Hutan%20Pinus%20Coban%20Rondo%3A%20Perlengkapan%20%26%20Suhu%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -408,7 +423,7 @@
               <li>Wajib menerapkan pakaian 3 lapis (<em>3-Layer Clothing</em>) untuk mengatasi udara dingin malam.</li>
               <li>Gunakan matras insulasi aluminium foil sebelum menggelar sleeping bag.</li>
               <li>Pilih kavling tenda di kontur tanah rata yang bebas genangan air dan jauh dari dahan lapuk.</li>
-              <li>Tersedia persewaan tenda dome lengkap dan glamping riverside tanpa repot membawa perlengkapan sendiri.</li>
+              <li>Tersedia <a href="../paket/camping-ground" class="text-aqua fw-bold">Paket Camping Ground 2D1N</a> lengkap dan <a href="../paket/glamping-riverside" class="text-aqua fw-bold">Glamping Riverside VIP</a> tanpa repot membawa perlengkapan sendiri.</li>
             </ul>
           </div>
 
@@ -424,7 +439,7 @@
 
           <!-- BODY ARTIKEL -->
           <div class="article-body">
-            <p>Berkemah (<em>camping</em>) di alam terbuka kini menjadi salah satu pilihan favorit untuk <em>healing</em>, mempererat silaturahmi komunitas, maupun kegiatan pramuka dan gathering kantor. <strong>Coban Rondo di Pujon, Malang</strong> yang berada di ketinggian sekitar 1.135 mdpl menawarkan suasana hutan pinus yang tenang dengan akses jalan aspal mulus dan fasilitas sanitasi lengkap 24 jam.</p>
+            <p>Berkemah (<em>camping</em>) di alam terbuka kini menjadi salah satu pilihan favorit untuk <em>healing</em>, mempererat silaturahmi komunitas, maupun kegiatan pramuka dan gathering kantor. Melalui <a href="../paket/camping-ground" class="text-aqua fw-bold">Bumi Perkemahan Coban Rondo di Pujon, Malang</a> yang berada di ketinggian sekitar 1.135 mdpl, Anda dapat menikmati suasana hutan pinus yang tenang dengan akses jalan aspal mulus dan fasilitas sanitasi lengkap 24 jam.</p>
 
             <h2 id="waspada-suhu-malam">Suhu Udara dan Iklim di Camping Ground Coban Rondo</h2>
             <p>Suhu siang hari di Coban Rondo berkisar antara 22&deg;C &ndash; 25&deg;C, namun saat malam hari (pukul 23.00 &ndash; 05.00 WIB) suhu udara dapat turun drastis hingga <strong>14&deg;C &ndash; 16&deg;C</strong>. Oleh karena itu, persiapan perlengkapan tidur dan pakaian sangat menentukan kualitas istirahat Anda.</p>
@@ -465,6 +480,117 @@
               <i class="bi bi-bookmark-star"></i>
               <span class="label">Baca Juga:</span>
               <a href="game-ice-breaking-tanpa-alat">10 Game Ice Breaking Lucu Tanpa Alat untuk Memeriahkan Camping</a>
+            </div>
+
+            <h2 id="tabel-checklist-perlengkapan">Tabel Checklist Perlengkapan Wajib Camping Pemula</h2>
+            <p>Agar agenda berkemah di kawasan pegunungan Pujon tidak terganggu oleh dingin malam atau perlengkapan yang tertinggal, gunakan checklist panduan berikut sebelum berangkat:</p>
+
+            <div class="table-responsive my-4">
+              <table class="article-table">
+                <thead>
+                  <tr>
+                    <th>Kategori</th>
+                    <th>Item Perlengkapan</th>
+                    <th>Prioritas</th>
+                    <th>Tips Khusus Suhu Dingin 14&deg;C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Shelter &amp; Tidur</strong></td>
+                    <td>Tenda Double-Layer &amp; Flysheet</td>
+                    <td><span class="badge bg-danger-subtle text-danger">Wajib Mutlak</span></td>
+                    <td>Mencegah kondensasi embun menetes ke dalam ruang tidur</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Insulasi Dingin</strong></td>
+                    <td>Matras Foil &amp; Sleeping Bag</td>
+                    <td><span class="badge bg-danger-subtle text-danger">Wajib Mutlak</span></td>
+                    <td>Lapisi matras foil di bawah sleeping bag untuk menahan dingin tanah</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pakaian Pribadi</strong></td>
+                    <td>Jaket Windbreaker, Kupluk, Kaos Kaki</td>
+                    <td><span class="badge bg-danger-subtle text-danger">Wajib Mutlak</span></td>
+                    <td>Gunakan kaos kaki wol kering khusus untuk waktu tidur malam</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Penerangan</strong></td>
+                    <td>Headlamp &amp; Lampu Tenda LED</td>
+                    <td><span class="badge bg-danger-subtle text-danger">Wajib Mutlak</span></td>
+                    <td>Headlamp memudahkan tangan tetap bebas bergerak saat malam</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Masak &amp; Logistik</strong></td>
+                    <td>Kompor Portabel &amp; Nesting</td>
+                    <td><span class="badge bg-warning-subtle text-warning">Disarankan</span></td>
+                    <td>Bawa gas kaleng ekstra karena tekanan gas menurun di suhu dingin</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Kesehatan &amp; K3</strong></td>
+                    <td>Obat Masuk Angin, Minyak Kayu Putih</td>
+                    <td><span class="badge bg-danger-subtle text-danger">Wajib Mutlak</span></td>
+                    <td>Hangatkan telapak kaki dan leher sebelum masuk ke dalam tenda</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="manajemen-makanan-hangat">Manajemen Logistik &amp; Pilihan Menu Makanan Hangat di Hutan Pinus</h2>
+            <p>Suhu dingin membakar kalori tubuh jauh lebih cepat dibandingkan aktivitas perkotaan. Pastikan menu konsumsi yang dibawa berkuah hangat dan kaya karbohidrat kompleks:</p>
+            <ul>
+              <li><strong>Suki / Steamboat Portabel:</strong> Bawa bakso, sosis, sayuran sawi, dan bumbu tomyum instan. Menikmati kuah pedas hangat di tengah kabut pinus malam hari adalah pengalaman camping paling berkesan.</li>
+              <li><strong>Minuman Tradisional Penghangat:</strong> Siapkan seduhan jahe merah, serai, gula aren, atau teh hangat untuk menjaga temperatur tubuh tetap stabil saat obrolan api unggun.</li>
+              <li><strong>Manajemen Sampah (Leave No Trace):</strong> Selalu sediakan kantong sampah (<em>trash bag</em>) tebal di dekat tenda. Ikat rapat sisa makanan agar tidak mengundang satwa monyet ekor panjang yang hidup alami di sekitar kawasan Coban Rondo.</li>
+            </ul>
+
+            <h2 id="tabel-biaya-paket-camping">Tabel Rincian Biaya &amp; Paket Berkemah Coban Rondo</h2>
+            <p>Bagi Anda yang tidak memiliki perlengkapan sendiri atau ingin berkemah tanpa ribet mendirikan pasak, pengelola menyediakan opsi sewa all-in siap huni:</p>
+
+            <div class="table-responsive my-4">
+              <table class="article-table">
+                <thead>
+                  <tr>
+                    <th>Opsi Paket Camping</th>
+                    <th>Tarif Biaya</th>
+                    <th>Kapasitas</th>
+                    <th>Fasilitas Termasuk Lengkap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong><a href="../paket/camping-ground" class="text-aqua fw-bold">Paket Camping Ground 2D1N</a></strong></td>
+                    <td>Rp 225.000 / pax</td>
+                    <td>Min. 20 Orang</td>
+                    <td>Tenda dome terpasang, matras spon, sleeping bag, api unggun malam, 3x makan prasmanan, tiket wisata, &amp; toilet 24 jam</td>
+                  </tr>
+                  <tr>
+                    <td><strong><a href="../paket/glamping-riverside" class="text-aqua fw-bold">Glamping Luxury Riverside</a></strong></td>
+                    <td>Rp 450.000 / pax</td>
+                    <td>Min. 10 Orang</td>
+                    <td>Tenda safari premium tepi sungai, kasur springbed, bantal selimut, colokan listrik, BBQ dinner, &amp; sarapan pagi</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sewa Kavling Mandiri</strong></td>
+                    <td>Rp 45.000 / tenda</td>
+                    <td>1 Tenda</td>
+                    <td>Spot kavling rumput datar, akses toilet &amp; mushola, penerangan jalan utama kawasan pinus (membawa tenda sendiri)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- REKOMENDASI PAKET TERKAIT CARD -->
+            <div class="card border-0 rounded-4 p-3 my-4 shadow-sm" style="background: rgba(8, 145, 178, 0.08); border-left: 4px solid #0891b2 !important;">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="fa-solid fa-campground text-aqua fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0 text-slate-800">Pilihan Paket Berkemah Coban Rondo</h4>
+              </div>
+              <p class="small text-slate-600 mb-2">Ingin berkemah tanpa ribet membawa perlengkapan sendiri? Pilih paket camping all-in siap huni berikut:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="../paket/camping-ground" class="btn btn-sm btn-aqua"><i class="fa-solid fa-campground me-1"></i> Paket Camping Ground 2D1N</a>
+                <a href="../paket/glamping-riverside" class="btn btn-sm btn-outline-aqua"><i class="fa-solid fa-gem me-1"></i> Paket Glamping Riverside VIP</a>
+              </div>
             </div>
 
 
@@ -542,6 +668,14 @@
             <p class="desc">
               Reza Maulana Nehru adalah pemandu outdoor dan konsultan kegiatan alam bebas di Coban Rondo yang aktif membagikan panduan keamanan berkemah dan pelestarian ekosistem alam pegunungan.
             </p>
+          </div>
+
+          <!-- SIDEBAR PROMO CARD -->
+          <div class="sidebar-cta-card mb-4">
+            <i class="fa-solid fa-campground fs-2 text-aqua mb-2"></i>
+            <h4>Paket Camping Ground 2D1N</h4>
+            <p>Pengalaman berkemah seru di Hutan Pinus Coban Rondo. Tenda dome, matras, api unggun, dan toilet 24 jam.</p>
+            <a href="../paket/camping-ground" class="btn btn-aqua btn-sm w-100">Lihat Detail Paket</a>
           </div>
 
           <!-- ARTIKEL TERKAIT DARI PENULIS -->
@@ -669,7 +803,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Panduan%20Lengkap%20Camping%20Pemula%20di%20Hutan%20Pinus%20Coban%20Rondo%3A%20Perlengkapan%20%26%20Suhu%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -771,7 +905,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave & Back to Top -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20sedang%20membaca%20artikel%20dan%20ingin%20konsultasi%20outbound." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Panduan%20Lengkap%20Camping%20Pemula%20di%20Hutan%20Pinus%20Coban%20Rondo%3A%20Perlengkapan%20%26%20Suhu%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

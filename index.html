@@ -441,6 +441,14 @@
       border-radius: 9999px;
     }
 
+    
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
     .collapse:not(.show),
     .navbar-collapse:not(.show) {
       display: none;
@@ -497,6 +505,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link active" href="/">Beranda</a>
@@ -510,43 +531,30 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound
+                <span class="dropdown-header-tag">Program Outbound
                   Unggulan</span>
-                <a href="paket" class="view-all-link">Lihat Semua Paket <i
-                    class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <a href="paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -555,10 +563,9 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya
+                  <span class="promo-text">Butuh estimasi biaya
                     &amp; rundown khusus?</span>
-                  <a href="paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i
-                      class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <a href="paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -574,6 +581,12 @@
             <a class="nav-link" href="galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%20Outbound%20%26%20Adventure%2C%20saya%20sedang%20mencari%20informasi%20kegiatan%20wisata%20%26%20outbound%20di%20Coban%20Rondo%20Malang.%0AMohon%20info%20rekomendasi%20paket%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20Instansi%20%2F%20Pemesan%3A%20%0A-%20Jenis%20Kegiatan%3A%20(Gathering%20Kantor%20%2F%20Outbound%20%2F%20Camping%20%2F%20Paintball%20%2F%20Rafting)%0A-%20Estimasi%20Jumlah%20Peserta%3A%20%0A-%20Rencana%20Tanggal%3A%20%0ABoleh%20minta%20katalog%20penawaran%20lengkap%20dan%20estimasi%20biayanya%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -597,11 +610,10 @@
         <div class="row justify-content-center text-center">
           <div class="col-lg-10 col-xl-9">
             <h1 class="hero-title mb-3">
-              Jelajahi Keseruan Outbound &amp; Petualangan <span class="gradient-text-light">Alam Segar Pujon</span>
+              Bikin Tim Makin Kompak &amp; Fresh di Sejuknya <span class="gradient-text-light">Hutan Pinus Coban Rondo</span>
             </h1>
             <p class="hero-desc mx-auto mb-0">
-              Rasakan segarnya hawa pegunungan 1.135 mdpl, gemuruh air terjun alami 84 meter, dan pengalaman gathering
-              &amp; team building terbaik di Hutan Pinus Coban Rondo Malang.
+              Lepaskan penat rutinitas kantor di ketinggian sejuk 1.135 mdpl dengan udara segar 18&deg;C. Nikmati serunya game team building interaktif bersama Master Game BNSP, megahnya Air Terjun Coban Rondo 84 meter, dan hangatnya kebersamaan di Pujon, Malang. Paket lengkap all-in, praktis, dan anti-ribet!
             </p>
 
             <!-- Coban Rondo Action Buttons -->
@@ -645,41 +657,19 @@
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
-            <span class="section-eyebrow"><i class="fa-solid fa-mountain"></i> Tentang Kami</span>
-            <h2 class="section-title mb-3">Mitra Resmi Outbound &amp; Petualangan Alam Coban Rondo</h2>
+            <span class="section-eyebrow"><i class="fa-solid fa-mountain"></i> Mitra Petualangan Resmi</span>
+            <h2 class="section-title mb-3">Tempat Terbaik Merajut Solidaritas &amp; Semangat Baru di Alam Sejuk Pujon</h2>
             <p class="text-slate-600 mb-3">
-              Kami adalah penyelenggara kegiatan <em>outdoor training</em>, gathering perusahaan, edukasi sekolah, dan
-              perkemahan resmi di kawasan wisata Coban Rondo, Pandesari, Kecamatan Pujon, Kabupaten Malang, Jawa Timur.
-              Berada di ketinggian sejuk 1.135 mdpl dengan suhu rata-rata 18&deg;C, kami memadukan panorama asri hutan
-              pinus dengan rancangan modul simulasi tim yang dinamis.
+              Bosan dengan meeting formal atau acara kantor yang kaku? Di <strong>Coban Rondo Outbound &amp; Adventure</strong>, kami mengubah alam bebas menjadi arena belajar dan bermain yang penuh tawa! Berlokasi di kawasan sejuk 1.135 mdpl Desa Pandesari, Kecamatan Pujon, Kabupaten Malang (hanya 15-20 menit dari Kota Wisata Batu), kami memadukan segarnya udara pegunungan 18&deg;C dengan simulasi outbound kreatif yang mempererat rasa saling percaya.
             </p>
-            <p class="text-slate-600 mb-3">
-              Didukung instruktur tersertifikasi BNSP, standar keselamatan K3 ketat, serta sarana venue terlengkap
-              (kapasitas s.d 1.000 peserta), kami siap mendampingi setiap momen petualangan Anda menjadi pengalaman yang
-              solid dan tak terlupakan.
+            <p class="text-slate-600 mb-4">
+              Didampingi fasilitator berlisensi resmi BNSP dan standar keamanan K3 ketat, setiap agenda corporate gathering, LDKS siswa, hingga family outing dijamin berlangsung seru, aman, dan berkesan mendalam. Tersedia 2 aula pendopo tertutup berkapasitas 1.000 peserta untuk antisipasi cuaca hujan, sehingga acara Anda dipastikan berjalan lancar tanpa kendala. Yuk, rencanakan momen terbaik tim Anda bersama kami!
             </p>
-
-            <!-- AEO & GEO Direct Answer Factual Snapshot for AI Overviews & Search Snippets -->
-            <div class="card border-0 rounded-4 shadow-sm p-3 mb-4" style="background: rgba(8, 145, 178, 0.06); border-left: 4px solid #0891b2 !important;">
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <i class="fa-solid fa-circle-info text-aqua fs-5"></i>
-                <h3 class="fs-6 fw-bold mb-0 text-slate-800">Fakta Kunci &amp; Informasi Wisata Coban Rondo</h3>
-              </div>
-              <ul class="list-unstyled mb-0 small text-slate-600 d-grid gap-1">
-                <li><i class="fa-solid fa-check text-teal me-1"></i> <strong>Lokasi:</strong> Jl. Coban Rondo, Pandesari, Pujon, Kab. Malang (15-20 menit dari Kota Batu).</li>
-                <li><i class="fa-solid fa-check text-teal me-1"></i> <strong>Ketinggian &amp; Udara:</strong> 1.135 mdpl dengan suhu sejuk rata-rata 18&deg;C.</li>
-                <li><i class="fa-solid fa-check text-teal me-1"></i> <strong>Tinggi Air Terjun:</strong> 84 meter bersumber dari mata air Cemoro Mulyo.</li>
-                <li><i class="fa-solid fa-check text-teal me-1"></i> <strong>Wahana Utama:</strong> Taman Labirin, Flying Fox Hutan Pinus, Paintball War Game, &amp; Camping Ground.</li>
-                <li><i class="fa-solid fa-check text-teal me-1"></i> <strong>Paket Outbound:</strong> Tersedia Corporate Team Building &amp; LDKS Siswa (Semua paket All-In Tiket Masuk).</li>
-              </ul>
-            </div>
 
             <div class="d-flex flex-wrap align-items-center gap-3">
               <a href="tentang-kami" class="btn btn-aqua">
-                Baca Profil Lengkap <i class="fa-solid fa-arrow-right ms-1"></i>
+                Baca Selengkapnya <i class="fa-solid fa-arrow-right ms-1"></i>
               </a>
-              <a href="paket" class="btn btn-outline-aqua">
-                Lihat Pilihan Paket </a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -711,9 +701,8 @@
       <div class="container">
         <div class="text-center mb-5">
           <span class="section-eyebrow"><i class="fa-solid fa-sparkles"></i> Keunggulan Layanan</span>
-          <h2 class="section-title">Mengapa Memilih Kami untuk Agenda Outbound Anda?</h2>
-          <p class="section-subtitle">Kami memadukan keindahan alam hutan pinus Coban Rondo dengan manajemen acara
-            berstandar korporasi tingkat tinggi.</p>
+          <h2 class="section-title">Kenapa Ratusan Perusahaan &amp; Sekolah Memilih Outbound di Sini?</h2>
+          <p class="section-subtitle">Bukan sekadar kumpul biasa, kami hadirkan pengalaman gathering yang menyegarkan pikiran, menyatukan hati, dan bebas dari rasa khawatir.</p>
         </div>
 
         <div class="row g-4">
@@ -722,9 +711,8 @@
               <div class="stat-icon mb-4">
                 <i class="fa-solid fa-user-shield"></i>
               </div>
-              <h3 class="font-heading fs-5 fw-bold mb-2">Trainer &amp; Fasilitator BNSP</h3>
-              <p class="text-slate-500 mb-0">Dipandu oleh master games berpengalaman bersertifikasi Badan Nasional
-                Sertifikasi Profesi (BNSP) dengan metode experiential learning yang interaktif.</p>
+              <h3 class="font-heading fs-5 fw-bold mb-2">Fasilitator &amp; Master Game BNSP</h3>
+              <p class="text-slate-500 mb-0">Dipandu langsung oleh master trainer berlisensi BNSP yang ramah, komunikatif, dan jago mencairkan suasana kaku jadi penuh tawa tanpa ada peserta yang merasa canggung.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -732,9 +720,8 @@
               <div class="stat-icon mb-4">
                 <i class="fa-solid fa-tree-city"></i>
               </div>
-              <h3 class="font-heading fs-5 fw-bold mb-2">Venue Hutan Pinus Terluas</h3>
-              <p class="text-slate-500 mb-0">Memiliki 4 blok lapangan rumput luas, dikelilingi hutan pinus rindang
-                bersuhu dingin (18&deg;C) yang mampu menampung grup hingga 1.000 orang.</p>
+              <h3 class="font-heading fs-5 fw-bold mb-2">Hamparan Pinus Luas 1.000+ Orang</h3>
+              <p class="text-slate-500 mb-0">Tersedia 4 blok lapangan rumput asri berhawa dingin 18&deg;C di bawah naungan pinus Cemoro Mulyo. Leluasa untuk team building akbar, fun wargame, hingga konser mini.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -742,9 +729,8 @@
               <div class="stat-icon mb-4">
                 <i class="fa-solid fa-cubes-stacked"></i>
               </div>
-              <h3 class="font-heading fs-5 fw-bold mb-2">Modul Games Terkustomisasi</h3>
-              <p class="text-slate-500 mb-0">Program outbound disesuaikan dengan tujuan acara (corporate value,
-                leadership training, refresh fun gathering, atau team cohesion building).</p>
+              <h3 class="font-heading fs-5 fw-bold mb-2">Modul Game Custom &amp; Tepat Sasaran</h3>
+              <p class="text-slate-500 mb-0">Bebas diskusikan konsep acara Anda: mulai dari pembentukan leadership, penguatan komunikasi tim, character building, hingga rekreasi santai pelepas penat.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -752,9 +738,8 @@
               <div class="stat-icon mb-4">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="font-heading fs-5 fw-bold mb-2">Konsumsi Higienis &amp; Lezat</h3>
-              <p class="text-slate-500 mb-0">Sajian makan siang prasmanan khas pedesaan Jawa Timuran, coffee break teh
-                poci pinus, dan snack tradisional segar dari dapur higienis.</p>
+              <h3 class="font-heading fs-5 fw-bold mb-2">Prasmanan Khas Desa &amp; Kopi Hangat</h3>
+              <p class="text-slate-500 mb-0">Nikmati sedapnya menu makan siang prasmanan tradisional Jawa Timuran, ditemani teh poci hangat aroma pinus dan aneka camilan gurih yang bikin energi tim selalu terisi penuh.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -763,8 +748,7 @@
                 <i class="fa-solid fa-helmet-safety"></i>
               </div>
               <h3 class="font-heading fs-5 fw-bold mb-2">Standar K3 &amp; Tim Medis Siaga</h3>
-              <p class="text-slate-500 mb-0">Seluruh peralatan wargame Paintball &amp; Flying Fox menggunakan standar
-                UIAA/CE bersertifikat dengan tim rescue dan P3K siaga di lokasi.</p>
+              <p class="text-slate-500 mb-0">Keselamatan peserta adalah prioritas utama. Seluruh peralatan wargame &amp; flying fox berstandar safety UIAA/CE internasional, didukung tim medis P3K yang selalu siaga di lokasi.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -772,9 +756,8 @@
               <div class="stat-icon mb-4">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
               </div>
-              <h3 class="font-heading fs-5 fw-bold mb-2">Harga Transparan &amp; Fleksibel</h3>
-              <p class="text-slate-500 mb-0">Paket all-in tanpa biaya tersembunyi. Sudah mencakup tiket masuk kawasan
-                wisata, parkir resmi, banner kegiatan, dan dokumentasi foto kegiatan.</p>
+              <h3 class="font-heading fs-5 fw-bold mb-2">Paket All-In Bebas Pusing &amp; Jelas</h3>
+              <p class="text-slate-500 mb-0">Panitia tinggal duduk tenang! Seluruh paket sudah all-in mencakup tiket gerbang Coban Rondo, akses air terjun, parkir resmi, banner acara, sound system, hingga dokumentasi foto.</p>
             </div>
           </div>
         </div>
@@ -916,10 +899,9 @@
     <section class="section-py bg-deep-teal">
       <div class="container">
         <div class="text-center mb-5">
-          <span class="section-eyebrow section-eyebrow-light">Wahana Unggulan</span>
-          <h2 class="section-title text-white">Petualangan Lengkap di Satu Lokasi</h2>
-          <p class="section-subtitle text-white-50">Dari ketinggian flying fox hingga serunya memecahkan teka-teki taman
-            labirin hijau Coban Rondo.</p>
+          <span class="section-eyebrow section-eyebrow-light"><i class="fa-solid fa-compass"></i> Wahana Petualangan &amp; Spot Ikonik</span>
+          <h2 class="section-title text-white">Satu Lokasi, Segudang Keseruan Petualangan di Alam Bebas</h2>
+          <p class="section-subtitle text-white-50">Mulai dari tantangan adrenalin meluncur di kanopi pinus, duel strategi paintball wargame, hingga kesegaran alami percikan air terjun legendaris setinggi 84 meter.</p>
         </div>
 
         <div class="row g-4">
@@ -929,8 +911,7 @@
                 <i class="fa-solid fa-wind text-aqua-dark"></i>
               </div>
               <h3 class="font-heading text-white fw-bold fs-5 mb-2">Flying Fox Lintasan Pinus</h3>
-              <p class="text-white-50 small mb-0">Meluncur di atas rimbunnya pohon pinus dengan ketinggian 15 meter dan
-                tali baja bersertifikasi safety internasional.</p>
+              <p class="text-white-50 small mb-0">Rasakan sensasi meluncur bebas di atas kanopi hutan pinus pada ketinggian 15 meter! Dilengkapi lintasan kawat baja ganda dan double harness standar internasional, super aman dinikmati pemula hingga profesional.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -939,8 +920,7 @@
                 <i class="fa-solid fa-puzzle-piece text-aqua-dark"></i>
               </div>
               <h3 class="font-heading text-white fw-bold fs-5 mb-2">Taman Labirin Hijau</h3>
-              <p class="text-white-50 small mb-0">Spot ikonik dinding tanaman setinggi 2 meter. Uji kecerdikan tim Anda
-                menemukan air mancur di titik tengah labirin.</p>
+              <p class="text-white-50 small mb-0">Spot legendaris labirin tanaman setinggi 2 meter yang menantang! Uji kekompakan dan kecepatan tim Anda memecahkan rute misterius hingga menemukan air mancur estetik di pusat labirin.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -949,8 +929,7 @@
                 <i class="fa-solid fa-crosshairs text-aqua-dark"></i>
               </div>
               <h3 class="font-heading text-white fw-bold fs-5 mb-2">Paintball Arena Battle</h3>
-              <p class="text-white-50 small mb-0">Simulasi perang strategi di hutan terbuka dengan bunker kayu alami dan
-                perlindungan rompi anti-benturan.</p>
+              <p class="text-white-50 small mb-0">Simulasi tempur taktis di medan hutan pinus berbukit. Dilengkapi bunker kayu alami, senjata semi-otomatis, rompi pelindung, dan goggle mask anti-fog untuk duel strategi paling menegangkan!</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -959,8 +938,7 @@
                 <i class="fa-solid fa-water text-aqua-dark"></i>
               </div>
               <h3 class="font-heading text-white fw-bold fs-5 mb-2">Air Terjun Coban Rondo</h3>
-              <p class="text-white-50 small mb-0">Keindahan air terjun alami setinggi 84 meter yang memancarkan ion
-                negatif segar untuk relaksasi tubuh dan pikiran.</p>
+              <p class="text-white-50 small mb-0">Mahakarya alam setinggi 84 meter bersumber dari mata air Cemoro Mulyo. Udara bersih kaya ion negatif dengan semburan kabut alami yang seketika meluruhkan penat dan stres rutinitas kerja.</p>
             </div>
           </div>
         </div>
@@ -1186,10 +1164,9 @@
     <section class="section-py">
       <div class="container" style="max-width: 850px;">
         <div class="text-center mb-5">
-          <span class="section-eyebrow"><i class="fa-solid fa-circle-question"></i> Pertanyaan Umum</span>
-          <h2 class="section-title">Hal yang Sering Ditanyakan (FAQ)</h2>
-          <p class="section-subtitle">Temukan jawaban cepat seputar pemesanan, teknis kegiatan, dan fasilitas di Coban
-            Rondo.</p>
+          <span class="section-eyebrow"><i class="fa-solid fa-circle-question"></i> Tanya Jawab Seputar Outbound</span>
+          <h2 class="section-title">Paling Sering Ditanyakan (FAQ)</h2>
+          <p class="section-subtitle">Jawaban lengkap dan transparan seputar reservasi, fasilitas all-in, keamanan K3, hingga skenario cuaca di Coban Rondo.</p>
         </div>
 
         <div class="accordion accordion-cr" id="faqAccordionHome">
@@ -1197,15 +1174,13 @@
             <h3 class="accordion-header" id="faqH1">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqC1"
                 aria-expanded="true" aria-controls="faqC1">
-                Berapa minimal jumlah peserta untuk mengadakan kegiatan outbound?
+                Berapa minimal jumlah peserta untuk mengadakan kegiatan outbound di Coban Rondo?
               </button>
             </h3>
             <div id="faqC1" class="accordion-collapse collapse show" aria-labelledby="faqH1"
               data-bs-parent="#faqAccordionHome">
               <div class="accordion-body">
-                Minimal peserta untuk paket outbound team building standar adalah 20 orang. Namun untuk paket Paintball
-                battle minimal 10 orang, dan wahana Flying Fox / Labirin dapat dinikmati satuan tanpa batasan kuota
-                minimal.
+                Untuk paket <strong>Corporate Gathering &amp; Team Building</strong> serta <strong>Outbound Edukasi LDKS</strong>, minimal peserta adalah <strong>20 orang</strong> agar skenario dinamika kelompok dan kompetisi berjalan optimal. Khusus untuk paket <strong>Paintball Battle War Game</strong> minimal <strong>10 orang</strong>, sedangkan wahana perorangan seperti Flying Fox dan Tiket Taman Labirin dapat dinikmati secara fleksibel tanpa batasan kuota minimal.
               </div>
             </div>
           </div>
@@ -1214,14 +1189,13 @@
             <h3 class="accordion-header" id="faqH2">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2"
                 aria-expanded="false" aria-controls="faqC2">
-                Apakah paket outbound sudah termasuk tiket masuk Coban Rondo?
+                Apakah harga paket outbound sudah termasuk tiket masuk wisata Coban Rondo?
               </button>
             </h3>
             <div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2"
               data-bs-parent="#faqAccordionHome">
               <div class="accordion-body">
-                Ya, seluruh paket terpadu kami (Corporate, Edukasi, Camping) sudah ALL-IN mencakup tiket masuk pintu
-                gerbang utama wisata Coban Rondo, akses ke air terjun, lapangan kegiatan, dan parkir resmi.
+                <strong>Ya, 100% All-In tanpa biaya tersembunyi!</strong> Semua paket terpadu kami sudah mencakup tiket masuk gerbang utama wisata Coban Rondo, akses ke spot ikonik air terjun 84 meter, izin sewa kavling lapangan rumput kegiatan, sound system portable lapangan, banner selamat datang bertuliskan nama instansi Anda, hingga parkir kendaraan bus dan mobil resmi.
               </div>
             </div>
           </div>
@@ -1230,15 +1204,13 @@
             <h3 class="accordion-header" id="faqH3">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC3"
                 aria-expanded="false" aria-controls="faqC3">
-                Bagaimana jika terjadi hujan saat pelaksanaan outbound?
+                Bagaimana jika tiba-tiba turun hujan saat kegiatan outbound berlangsung?
               </button>
             </h3>
             <div id="faqC3" class="accordion-collapse collapse" aria-labelledby="faqH3"
               data-bs-parent="#faqAccordionHome">
               <div class="accordion-body">
-                Kami memiliki SOP mitigasi cuaca. Kawasan Coban Rondo dilengkapi dengan 2 aula pendopo berkapasitas
-                besar. Jika cuaca gerimis/hujan lebat, games dialihkan ke sesi indoor fun games interaktif tanpa
-                mengurangi tujuan acara.
+                Kenyamanan Anda adalah prioritas kami. Kami memiliki SOP mitigasi cuaca yang sangat matang. Area Coban Rondo dilengkapi dengan <strong>2 pendopo aula pertemuan tertutup berkapasitas besar hingga 1.000 peserta</strong>. Jika turun hujan, tim Master Game BNSP kami secara sigap memindahkan permainan ke sesi <em>Indoor Fun Team Building</em> yang interaktif, hangat, dan penuh tawa tanpa mengurangi esensi tujuan acara Anda.
               </div>
             </div>
           </div>
@@ -1247,15 +1219,43 @@
             <h3 class="accordion-header" id="faqH4">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC4"
                 aria-expanded="false" aria-controls="faqC4">
-                Bisa buatkan proposal resmi dan invoice untuk instansi/kantor?
+                Apakah bisa menerbitkan proposal resmi, SPK, dan invoice untuk LPJ kantor?
               </button>
             </h3>
             <div id="faqC4" class="accordion-collapse collapse" aria-labelledby="faqH4"
               data-bs-parent="#faqAccordionHome">
               <div class="accordion-body">
-                Tentu bisa. Tim marketing kami siap mengirimkan proposal penawaran resmi berformat PDF lengkap dengan
-                susunan rundown acara, rincian biaya resmi, dan invoice bertanda tangan legal untuk keperluan LPJ
-                perusahaan Anda.
+                <strong>Sangat bisa!</strong> Kami berpengalaman menangani ratusan instansi pemerintah, BUMN, dan korporasi multinasional. Kami siap menerbitkan proposal penawaran resmi format PDF (lengkap dengan profil trainer, detail rundown acara, rincian biaya transparan), Surat Perintah Kerja (SPK), kuitansi resmi, serta invoice berbadan hukum legal untuk memudahkan kelengkapan administrasi dan Laporan Pertanggungjawaban (LPJ) Anda.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqH5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC5"
+                aria-expanded="false" aria-controls="faqC5">
+                Di mana lokasi persis Coban Rondo dan bagaimana akses jalannya?
+              </button>
+            </h3>
+            <div id="faqC5" class="accordion-collapse collapse" aria-labelledby="faqH5"
+              data-bs-parent="#faqAccordionHome">
+              <div class="accordion-body">
+                Kawasan Wisata Air Terjun Coban Rondo berlokasi di <strong>Desa Pandesari, Kecamatan Pujon, Kabupaten Malang, Jawa Timur</strong> (berada pada ketinggian 1.135 mdpl dengan suhu udara sejuk 18°C). Lokasinya sangat strategis, hanya <strong>15–20 menit berkendara dari pusat Kota Wisata Batu</strong>. Akses jalan aspal sangat mulus dan dapat dilalui dengan mudah oleh bus pariwisata besar (Big Bus 60 seat) dengan area parkir yang sangat luas dan aman.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqH6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC6"
+                aria-expanded="false" aria-controls="faqC6">
+                Apakah tersedia paket tambahan seperti Offroad Jeep 4x4 dan Rafting?
+              </button>
+            </h3>
+            <div id="faqC6" class="accordion-collapse collapse" aria-labelledby="faqH6"
+              data-bs-parent="#faqAccordionHome">
+              <div class="accordion-body">
+                Tentu tersedia! Kami menyediakan paket petualangan kombo yang sangat populer, seperti <strong>Offroad Jeep Adventure 4x4</strong> menyusuri trek lumpur hutan pinus dan perkebunan apel lereng pegunungan Pujon, serta <strong>Rafting Kasembon Malang</strong> sepanjang 7,5 km dengan jeram grade III-IV yang menantang namun sangat aman untuk pemula.
               </div>
             </div>
           </div>
@@ -1270,16 +1270,14 @@
       <div class="container position-relative" style="z-index: 2;">
         <div class="row align-items-center justify-content-between g-4 text-center text-lg-start">
           <div class="col-lg-8">
-            <span class="section-eyebrow section-eyebrow-light"><i class="fa-solid fa-headset"></i> Respon Cepat
-              24/7</span>
-            <h2 class="section-title text-white mb-2">Siap Merancang Petualangan Tak Terlupakan?</h2>
-            <p class="text-white-50 mb-0 fs-5">Konsultasikan kebutuhan tanggal, jumlah peserta, dan anggaran Anda
-              bersama tim profesional kami sekarang.</p>
+            <span class="section-eyebrow section-eyebrow-light"><i class="fa-solid fa-headset"></i> Respon Cepat &amp; Konsultasi Gratis</span>
+            <h2 class="section-title text-white mb-2">Wujudkan Momen Gathering &amp; Outbound Terbaik Tim Anda!</h2>
+            <p class="text-white-50 mb-0 fs-5">Diskusikan kebutuhan tanggal, perkiraan peserta, dan konsep acara yang diinginkan bersama tim event planner profesional kami.</p>
           </div>
           <div class="col-lg-4 text-lg-end">
             <a href="#" class="btn btn-aqua btn-lg px-4"
-              data-wa-quick="Halo Admin Coban Rondo, saya ingin proposal resmi dan konsultasi jadwal kegiatan.">
-              <i class="fa-brands fa-whatsapp fs-5"></i> Hubungi WhatsApp Admin
+              data-wa-quick="Halo Tim Admin Coban Rondo, saya tertarik dengan Paket Corporate Gathering & Outbound Training di Hutan Pinus. Mohon info penawaran resmi & ketersediaan tanggal.">
+              <i class="fa-brands fa-whatsapp fs-5 me-1"></i> Konsultasi WhatsApp Sekarang
             </a>
           </div>
         </div>
@@ -1317,7 +1315,7 @@
                 program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound."
+                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%20Outbound%20%26%20Adventure%2C%20saya%20sedang%20mencari%20informasi%20kegiatan%20wisata%20%26%20outbound%20di%20Coban%20Rondo%20Malang.%0AMohon%20info%20rekomendasi%20paket%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20Instansi%20%2F%20Pemesan%3A%20%0A-%20Jenis%20Kegiatan%3A%20(Gathering%20Kantor%20%2F%20Outbound%20%2F%20Camping%20%2F%20Paintball%20%2F%20Rafting)%0A-%20Estimasi%20Jumlah%20Peserta%3A%20%0A-%20Rencana%20Tanggal%3A%20%0ABoleh%20minta%20katalog%20penawaran%20lengkap%20dan%20estimasi%20biayanya%3F%20Terima%20kasih!"
                   target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i
                     class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i
@@ -1433,7 +1431,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping."
+  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%20Outbound%20%26%20Adventure%2C%20saya%20sedang%20mencari%20informasi%20kegiatan%20wisata%20%26%20outbound%20di%20Coban%20Rondo%20Malang.%0AMohon%20info%20rekomendasi%20paket%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20Instansi%20%2F%20Pemesan%3A%20%0A-%20Jenis%20Kegiatan%3A%20(Gathering%20Kantor%20%2F%20Outbound%20%2F%20Camping%20%2F%20Paintball%20%2F%20Rafting)%0A-%20Estimasi%20Jumlah%20Peserta%3A%20%0A-%20Rencana%20Tanggal%3A%20%0ABoleh%20minta%20katalog%20penawaran%20lengkap%20dan%20estimasi%20biayanya%3F%20Terima%20kasih!"
     target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

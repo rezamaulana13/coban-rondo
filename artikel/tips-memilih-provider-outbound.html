@@ -232,7 +232,15 @@
       border: none;
       border-radius: 9999px;
     }
-      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+      
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
+    .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
     .dropdown-menu:not(.show) { display: none; }
     .modal { display: none; }
 </style>
@@ -271,6 +279,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="../assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="../">Beranda</a>
@@ -283,41 +304,29 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="../paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <span class="dropdown-header-tag">Program Outbound Unggulan</span>
+                <a href="../paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="../paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -326,8 +335,8 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <span class="promo-text">Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -343,6 +352,12 @@
             <a class="nav-link" href="../galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%225%20Tips%20Memilih%20Provider%20Outbound%20%26%20Fasilitator%20Bersertifikasi%20BNSP%20di%20Malang%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -438,7 +453,7 @@
             </figure>
 
             <h2 id="transparansi-harga-all-in">3. Transparansi Penawaran Harga (All-In Package)</h2>
-            <p>Waspadai penawaran paket murah yang ternyata belum termasuk tiket masuk kawasan wisata, sewa ground/lapangan, listrik, atau sound system. Provider terpercaya memberikan proposal resmi transparan <em>all-in package</em> tanpa biaya siluman di hari H.</p>
+            <p>Waspadai penawaran paket murah yang ternyata belum termasuk tiket masuk kawasan wisata, sewa ground/lapangan, listrik, atau sound system. Provider terpercaya seperti tim kami di Coban Rondo memberikan proposal resmi transparan <a href="../paket/corporate-outbound" class="text-aqua fw-bold">paket corporate outbound all-in</a> tanpa biaya siluman di hari H.</p>
 
             <h2 id="portofolio-klien-korporat">4. Cek Portofolio Klien Korporasi &amp; Testimoni Nyata</h2>
             <p>Lihat rekam jejak dokumentasi foto dan video kegiatan yang pernah mereka tangani. Provider berpengalaman memiliki galeri kegiatan instansi ternama, kementerian, hingga bank BUMN dengan jumlah peserta puluhan hingga ratusan orang.</p>
@@ -446,10 +461,124 @@
             <h2 id="desain-modul-kustom">5. Fleksibilitas Konsep &amp; Desain Modul Kustom</h2>
             <p>Setiap perusahaan memiliki <em>core values</em> (nilai budaya) yang unik. Provider yang baik tidak menerapkan program "copy-paste", melainkan siap berdiskusi menyusun skenario modul games yang selaras dengan tema tahunan instansi Anda.</p>
 
+            <!-- TABEL 1: SCORING SHEET HRD -->
+            <h2 id="scoring-sheet-vendor">6. Lembar Penilaian &amp; Scoring Sheet Evaluasi Vendor Outbound</h2>
+            <p>Bagi tim HRD, Procurement, dan Panitia Internal, membuat keputusan berbasis data sangat penting untuk menghindari subjektivitas. Gunakan tabel matriks audit penilaian vendor outbound berikut saat proses tender pengadaan:</p>
+
+            <div class="table-responsive my-4">
+              <table class="table table-bordered table-striped article-table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 140px;">Komponen Evaluasi</th>
+                    <th scope="col" style="min-width: 80px;">Bobot</th>
+                    <th scope="col" style="min-width: 180px;">Standar Minimum Wajib Lolos</th>
+                    <th scope="col" style="min-width: 200px;">Pertanyaan Kunci Audit Lapangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Legalitas &amp; Lisensi BNSP</strong></td>
+                    <td><span class="badge bg-aqua text-white">25%</span></td>
+                    <td>Lead Facilitator memiliki sertifikat BNSP/AELI aktif tingkat Fasilitator Madya</td>
+                    <td><em>"Bisa lampirkan salinan kartu lisensi BNSP Master Game yang akan memandu acara kami?"</em></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Standar K3 &amp; Manajemen Risiko</strong></td>
+                    <td><span class="badge bg-aqua text-white">20%</span></td>
+                    <td>Peralatan safety berstandar UIAA/CE, P3K kit medis lengkap, asuransi kecelakaan diri</td>
+                    <td><em>"Bagaimana SOP penanganan evakuasi darurat jika ada peserta cedera di medan outdoor?"</em></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Transparansi Penawaran All-In</strong></td>
+                    <td><span class="badge bg-aqua text-white">20%</span></td>
+                    <td>Rincian mencakup tiket kawasan, sewa ground eksklusif, sound system, konsumsi, banner</td>
+                    <td><em>"Apakah ada potensi biaya tambahan di lapangan di luar surat penawaran resmi ini?"</em></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Kualitas Debriefing &amp; Modul</strong></td>
+                    <td><span class="badge bg-aqua text-white">20%</span></td>
+                    <td>Alur permainan dirancang runtut (Ice Breaking &rarr; Group Dynamic &rarr; Final Synergy &rarr; Review)</td>
+                    <td><em>"Bagaimana fasilitator menghubungkan hasil simulasi game dengan KPI kinerja divisi kami?"</em></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Portofolio &amp; Reputasi Klien</strong></td>
+                    <td><span class="badge bg-aqua text-white">15%</span></td>
+                    <td>Pengalaman minimal 3 tahun menangani gathering BUMN, korporat swasta, atau kementerian</td>
+                    <td><em>"Bisa berikan 3 kontak panitia HRD perusahaan klien yang pernah Anda tangani sebelumnya?"</em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="pertanyaan-kritis-technical-meeting">7. Pertanyaan Kritis saat Technical Meeting (TM)</h2>
+            <p>Sebelum menandatangani perjanjian kerja sama (MoU) dan menyetorkan uang muka (DP), agendakan <em>Technical Meeting</em> secara daring atau tatap muka. Ajukan 4 pertanyaan krusial berikut untuk memvalidasi kredibilitas vendor:</p>
+            <ul>
+              <li><strong>Rasio Fasilitator Per Peserta:</strong> Tanyakan berapa perbandingan staf pemandu dengan peserta. Rasio ideal adalah 1 fasilitator mendampingi maksimal 15&ndash;20 peserta agar pengawasan simulasi tetap intensif dan aman.</li>
+              <li><strong>Rencana Kontinjensi Cuaca Hujan (Rain Contingency):</strong> Coban Rondo berada di kawasan pegunungan sejuk yang bisa sewaktu-waktu diguyur hujan kabut. Pastikan provider memiliki aula transit tertutup, jas hujan darurat, atau variasi game indoor pendukung tanpa membatalkan esensi pembelajaran.</li>
+              <li><strong>Kelayakan Konsumsi &amp; Prasmanan:</strong> Pastikan vendor bekerja sama dengan katering higienis lokal yang menyajikan hidangan hangat, variasi sayur berkuah, lauk berprotein cukup, dan <em>free-flow</em> teh/kopi jahe hangat untuk menghangatkan suhu tubuh peserta di ketinggian 1.135 mdpl.</li>
+              <li><strong>Legalitas Perpajakan (Faktur Pajak):</strong> Untuk perusahaan berstatus PKP atau instansi pemerintah, pastikan vendor mampu menerbitkan Invoice resmi berstempel dan Faktur Pajak PPh/PPN yang sah.</li>
+            </ul>
+
+            <!-- TABEL 2: PERBANDINGAN PROVIDER RESMI VS CALO -->
+            <h2 id="tabel-perbandingan-provider">8. Perbandingan Provider Resmi Berlisensi vs Vendor Calo (Freelance)</h2>
+            <p>Memahami perbedaan mendasar antara pengelola resmi berlisensi dengan calo perantara akan menyelamatkan anggaran dan reputasi Anda sebagai panitia:</p>
+
+            <div class="table-responsive my-4">
+              <table class="table table-bordered table-striped article-table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 140px;">Parameter Pembanding</th>
+                    <th scope="col" style="min-width: 220px;" class="bg-aqua-subtle text-dark">Provider Resmi Berlisensi (Coban Rondo)</th>
+                    <th scope="col" style="min-width: 200px;">Vendor Calo / Perantara Lepas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Lisensi Instruktur</strong></td>
+                    <td>Sertifikasi BNSP &amp; AELI berbadan hukum PT/CV resmi dengan tim tetap</td>
+                    <td>Instruktur lepas (freelance) tanpa standardisasi kompetensi teruji</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Akses Lapangan &amp; Venue</strong></td>
+                    <td>Akses langsung ground eksklusif hutan pinus, camping site, dan labirin</td>
+                    <td>Menumpang ground publik tanpa kepastian slot reservasi resmi</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Peralatan Permainan &amp; K3</strong></td>
+                    <td>Alat terawat berkala, log book uji beban, helm &amp; harness sertifikasi CE</td>
+                    <td>Peralatan sewa pihak ketiga dengan kondisi fisik sering kali usang</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Transparansi Tagihan</strong></td>
+                    <td>Paket all-in tertulis resmi, kuitansi bermaterai, dan faktur pajak lengkap</td>
+                    <td>Kerap muncul biaya mendadak (parkir bus, sewa terpal, tips kru liar)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Manajemen Darurat (SOP)</strong></td>
+                    <td>Tim medis internal standby, ambulans rujukan cepat, tercover asuransi</td>
+                    <td>Hanya mengandalkan kotak P3K standar tanpa personil medis terlatih</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <div class="baca-juga-box">
               <i class="bi bi-bookmark-star"></i>
               <span class="label">Baca Juga:</span>
               <a href="rundown-company-gathering">7 Langkah Menyusun Rundown Company Gathering yang Membekas</a>
+            </div>
+
+            <!-- REKOMENDASI PAKET TERKAIT CARD -->
+            <div class="card border-0 rounded-4 p-3 my-4 shadow-sm" style="background: rgba(8, 145, 178, 0.08); border-left: 4px solid #0891b2 !important;">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="fa-solid fa-certificate text-aqua fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0 text-slate-800">Layanan Outbound Resmi Coban Rondo</h4>
+              </div>
+              <p class="small text-slate-600 mb-2">Seluruh program outbound kami dipandu fasilitator BNSP berlisensi, bersertifikat K3 resmi, dengan venue terlengkap di kawasan wisata Malang:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="../paket/corporate-outbound" class="btn btn-sm btn-aqua"><i class="fa-solid fa-building-user me-1"></i> Paket Corporate Outbound</a>
+                <a href="../paket" class="btn btn-sm btn-outline-aqua"><i class="fa-solid fa-layer-group me-1"></i> Lihat Semua Paket &amp; Wahana</a>
+              </div>
             </div>
 
 
@@ -517,6 +646,14 @@
             <p class="desc">
               Reza Maulana Nehru adalah konsultan kegiatan outdoor dan B2B gathering specialist di Coban Rondo yang telah mendampingi ratusan divisi HRD instansi BUMN dan swasta di Indonesia.
             </p>
+          </div>
+
+          <!-- SIDEBAR PROMO CARD -->
+          <div class="sidebar-cta-card mb-4">
+            <i class="fa-solid fa-certificate fs-2 text-aqua mb-2"></i>
+            <h4>Provider Outbound Resmi</h4>
+            <p>Fasilitator berlisensi BNSP, SOP keselamatan K3 ketat, dan venue berkapasitas s.d 1.000 peserta.</p>
+            <a href="../paket/corporate-outbound" class="btn btn-aqua btn-sm w-100">Lihat Paket Outbound</a>
           </div>
 
           <!-- ARTIKEL TERKAIT DARI PENULIS -->
@@ -644,7 +781,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%225%20Tips%20Memilih%20Provider%20Outbound%20%26%20Fasilitator%20Bersertifikasi%20BNSP%20di%20Malang%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -746,7 +883,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave & Back to Top -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20sedang%20membaca%20artikel%20dan%20ingin%20konsultasi%20outbound." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%225%20Tips%20Memilih%20Provider%20Outbound%20%26%20Fasilitator%20Bersertifikasi%20BNSP%20di%20Malang%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

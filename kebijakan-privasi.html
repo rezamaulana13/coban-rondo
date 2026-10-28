@@ -154,7 +154,15 @@
       border: none;
       border-radius: 9999px;
     }
-      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+      
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
+    .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
     .dropdown-menu:not(.show) { display: none; }
     .modal { display: none; }
 </style>
@@ -195,6 +203,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="/">Beranda</a>
@@ -207,41 +228,29 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <span class="dropdown-header-tag">Program Outbound Unggulan</span>
+                <a href="paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -250,8 +259,8 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <span class="promo-text">Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -267,6 +276,12 @@
             <a class="nav-link" href="galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%20Outbound%20%26%20Adventure%2C%20saya%20sedang%20mencari%20informasi%20kegiatan%20wisata%20%26%20outbound%20di%20Coban%20Rondo%20Malang.%0AMohon%20info%20rekomendasi%20paket%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20Instansi%20%2F%20Pemesan%3A%20%0A-%20Jenis%20Kegiatan%3A%20(Gathering%20Kantor%20%2F%20Outbound%20%2F%20Camping%20%2F%20Paintball%20%2F%20Rafting)%0A-%20Estimasi%20Jumlah%20Peserta%3A%20%0A-%20Rencana%20Tanggal%3A%20%0ABoleh%20minta%20katalog%20penawaran%20lengkap%20dan%20estimasi%20biayanya%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -388,7 +403,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%20Outbound%20%26%20Adventure%2C%20saya%20sedang%20mencari%20informasi%20kegiatan%20wisata%20%26%20outbound%20di%20Coban%20Rondo%20Malang.%0AMohon%20info%20rekomendasi%20paket%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20Instansi%20%2F%20Pemesan%3A%20%0A-%20Jenis%20Kegiatan%3A%20(Gathering%20Kantor%20%2F%20Outbound%20%2F%20Camping%20%2F%20Paintball%20%2F%20Rafting)%0A-%20Estimasi%20Jumlah%20Peserta%3A%20%0A-%20Rencana%20Tanggal%3A%20%0ABoleh%20minta%20katalog%20penawaran%20lengkap%20dan%20estimasi%20biayanya%3F%20Terima%20kasih!" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -490,7 +505,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20seputar%20kegiatan%20outbound%20%26%20camping." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%20Outbound%20%26%20Adventure%2C%20saya%20sedang%20mencari%20informasi%20kegiatan%20wisata%20%26%20outbound%20di%20Coban%20Rondo%20Malang.%0AMohon%20info%20rekomendasi%20paket%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20Instansi%20%2F%20Pemesan%3A%20%0A-%20Jenis%20Kegiatan%3A%20(Gathering%20Kantor%20%2F%20Outbound%20%2F%20Camping%20%2F%20Paintball%20%2F%20Rafting)%0A-%20Estimasi%20Jumlah%20Peserta%3A%20%0A-%20Rencana%20Tanggal%3A%20%0ABoleh%20minta%20katalog%20penawaran%20lengkap%20dan%20estimasi%20biayanya%3F%20Terima%20kasih!" 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>

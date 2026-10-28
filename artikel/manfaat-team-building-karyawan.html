@@ -232,7 +232,15 @@
       border: none;
       border-radius: 9999px;
     }
-      .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
+      
+    @media (max-width: 991.98px) {
+      body.mobile-nav-open .floating-wa-btn,
+      body.mobile-nav-open [data-wa-float],
+      body.mobile-nav-open .back-to-top {
+        display: none !important;
+      }
+    }
+    .collapse:not(.show), .navbar-collapse:not(.show) { display: none; }
     .dropdown-menu:not(.show) { display: none; }
     .modal { display: none; }
 </style>
@@ -271,6 +279,19 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
+        <!-- Mobile Menu Top Header -->
+        <div class="mobile-nav-header d-lg-none">
+          <div class="d-flex align-items-center gap-2">
+            <img src="../assets/img/logo.svg" alt="Coban Rondo" width="38" height="38" class="brand-logo-mobile">
+            <div class="brand-text-wrap">
+              <span class="brand-title">Coban Rondo</span>
+              <span class="brand-sub">Outbound &amp; Adventure</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close-mobile" aria-label="Tutup navigasi" data-bs-toggle="collapse" data-bs-target="#navMain">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link" href="../">Beranda</a>
@@ -283,41 +304,29 @@
             </a>
             <div class="dropdown-menu dropdown-menu-cr dropdown-mega-cr shadow-2xl" aria-labelledby="navDropdownPaket">
               <div class="dropdown-header-bar">
-                <span class="dropdown-header-tag"><i class="fa-solid fa-sparkles text-aqua me-1"></i> Program Outbound Unggulan</span>
-                <a href="../paket" class="view-all-link">Lihat Semua Paket <i class="fa-solid fa-arrow-right-long fs-xs"></i></a>
+                <span class="dropdown-header-tag">Program Outbound Unggulan</span>
+                <a href="../paket" class="view-all-link">Lihat Semua Paket</a>
               </div>
               <div class="dropdown-grid-cr">
                 <a class="dropdown-card-item" href="../paket#corporate">
-                  <div class="card-icon-circle bg-teal-gradient">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Corporate Outbound</span>
                     <span class="card-desc">Team Building, Gathering &amp; LDKS</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#edukasi">
-                  <div class="card-icon-circle bg-cyan-gradient">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Edukasi &amp; Sekolah</span>
                     <span class="card-desc">Karakter Siswa &amp; Pramuka</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#camping">
-                  <div class="card-icon-circle bg-emerald-gradient">
-                    <i class="fa-solid fa-campground"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Camping &amp; Glamping</span>
                     <span class="card-desc">Bumi Perkemahan Hutan Pinus</span>
                   </div>
                 </a>
                 <a class="dropdown-card-item" href="../paket#wahana">
-                  <div class="card-icon-circle bg-amber-gradient">
-                    <i class="fa-solid fa-person-falling-burst"></i>
-                  </div>
                   <div class="card-text-wrap">
                     <span class="card-title">Wahana Petualangan</span>
                     <span class="card-desc">Paintball, Flying Fox &amp; Labirin</span>
@@ -326,8 +335,8 @@
               </div>
               <div class="dropdown-footer-promo">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <span class="promo-text"><i class="fa-solid fa-calculator text-aqua me-1"></i> Butuh estimasi biaya &amp; rundown khusus?</span>
-                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                  <span class="promo-text">Butuh estimasi biaya &amp; rundown khusus?</span>
+                  <a href="../paket#calculator" class="btn-aqua-subtle">Cek Kalkulator</a>
                 </div>
               </div>
             </div>
@@ -343,6 +352,12 @@
             <a class="nav-link" href="../galeri">Galeri</a>
           </li>
         </ul>
+        <!-- Mobile Menu Bottom CTA -->
+        <div class="mobile-nav-footer d-lg-none">
+          <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Dampak%20Nyata%20Outbound%20Training%20Terhadap%20Produktivitas%20%26%20Solidaritas%20Tim%20Kerja%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener" class="btn-mobile-wa-bottom">
+            <i class="fa-brands fa-whatsapp text-success me-2 fs-5"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -417,7 +432,7 @@
           <div class="article-body">
             <p>Di era kerja serba cepat dan hybrid, tantangan terbesar bagi para pemimpin perusahaan bukanlah kemampuan teknis (<em>hard skills</em>), melainkan <strong>terciptanya sekat komunikasi (silo mentality)</strong>, penurunan empati antar rekan kerja, dan tingkat kelelahan mental (<em>burnout</em>) yang tinggi.</p>
 
-            <p>Pelatihan di dalam ruangan (indoor seminar) sering kali hanya menyentuh aspek kognitif teoritis. Sebaliknya, metode <strong>Experiential Learning</strong> di alam terbuka Coban Rondo mengajak peserta untuk merasakan langsung dinamika komunikasi nyata:</p>
+            <p>Pelatihan di dalam ruangan (indoor seminar) sering kali hanya menyentuh aspek kognitif teoritis. Sebaliknya, metode <strong>Experiential Learning</strong> dalam <a href="../paket/corporate-outbound" class="text-aqua fw-bold">Program Corporate Outbound Coban Rondo</a> mengajak peserta untuk merasakan langsung dinamika komunikasi nyata:</p>
 
             <h2 id="meruntuhkan-sekat-silo">1. Meruntuhkan Sekat Silo Antar-Divisi &amp; Hirarki Jabatan</h2>
             <p>Saat berada di lapangan rumput hijau mengenakan kaos outbound yang sama, batas formal antara atasan dan bawahan melebur. Manajer dan staf junior saling berpegangan tangan menyelesaikan tantangan, menciptakan ruang dialog terbuka yang sehat saat kembali ke kantor.</p>
@@ -447,6 +462,119 @@
               <i class="bi bi-bookmark-star"></i>
               <span class="label">Baca Juga:</span>
               <a href="rundown-company-gathering">7 Langkah Menyusun Rundown Company Gathering yang Membekas</a>
+            </div>
+
+            <h2 id="komparasi-indoor-vs-outdoor">Tabel Komparasi: Seminar Indoor vs Experiential Outbound Coban Rondo</h2>
+            <p>Banyak pimpinan manajemen ragu apakah alokasi anggaran lebih baik dialokasikan untuk sewa ballroom hotel atau kegiatan outdoor. Berikut perbandingan komparatif berdasarkan efektivitas pembelajaran orang dewasa (<em>Andragogi</em>):</p>
+
+            <div class="table-responsive my-4">
+              <table class="article-table">
+                <thead>
+                  <tr>
+                    <th>Aspek Evaluasi</th>
+                    <th>Seminar Indoor Konvensional</th>
+                    <th>Experiential Outbound Coban Rondo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Metode Pembelajaran</strong></td>
+                    <td>Satu arah (presentasi slide, ceramah teoritis, kognitif)</td>
+                    <td>Aksi nyata dua arah (<em>Learn by doing</em>, dinamika simulasi fisik)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tingkat Keterlibatan</strong></td>
+                    <td>Pasif, rentan kantuk dan distraksi gadget (30% - 40%)</td>
+                    <td>Aktif penuh, melibatkan fisik, mental, &amp; emosi (90% - 100%)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Retensi Ingatan Jangka Panjang</strong></td>
+                    <td>Rendah (kurang dari 20% diingat setelah 3 bulan)</td>
+                    <td>Tinggi (di atas 75% diingat berkat jangkar memori emosional)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Peleburan Hirarki Silo</strong></td>
+                    <td>Rendah (posisi duduk dan interaksi tetap kaku formal)</td>
+                    <td>Maksimal (semua peserta sederajat dalam seragam tim yang sama)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Efek Terhadap Kesehatan Mental</strong></td>
+                    <td>Minim, ruangan tertutup pendingin udara buatan</td>
+                    <td>Sangat tinggi, udara pinus 18&deg;C meredakan kortisol stres</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Keluaran (Output) Akhir</strong></td>
+                    <td>Pemahaman konsep di atas kertas</td>
+                    <td>Perubahan perilaku nyata dan komitmen sinergi tim</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="model-tuckman-outbound">Korelasi Outbound dengan 4 Tahap Pembentukan Tim (Model Bruce Tuckman)</h2>
+            <p>Dalam psikologi organisasi, setiap kelompok kerja wajib melewati 4 siklus alami agar mampu berkinerja unggul (<em>High Performing Team</em>). Simulasi outbound di Coban Rondo mengakselerasi siklus ini dalam hitungan jam:</p>
+            <ul>
+              <li><strong>1. Forming (Pengenalan):</strong> Peserta saling membaca karakter rekan melalui sesi pembuka ice breaking tanpa alat yang cair dan penuh tawa lepas.</li>
+              <li><strong>2. Storming (Resolusi Konflik):</strong> Saat menghadapi rintangan tali atau problem solving bertekanan waktu, gesekan ide akan muncul. Di sinilah tim belajar mengelola ego dan mendengar masukan.</li>
+              <li><strong>3. Norming (Konsensus Tim):</strong> Kelompok mulai menyepakati pembagian peran (siapa yang memimpin, siapa yang mengeksekusi) serta menyusun strategi bersama yang disepakati bersama.</li>
+              <li><strong>4. Performing (Eksekusi Unggul):</strong> Tim berhasil menyelesaikan modul rintangan paling sulit secara harmonis dan kompak, menciptakan rasa bangga kolektif yang dibawa kembali ke kantor.</li>
+            </ul>
+
+            <h2 id="analisis-roi-finansial">Dampak Finansial &amp; ROI (Return on Investment) Kegiatan Outbound</h2>
+            <p>Investasi kegiatan outbound gathering bukan sekadar pos biaya pengeluaran rekreasi, melainkan strategi bisnis terukur yang menghasilkan keuntungan finansial nyata:</p>
+            <ul>
+              <li><strong>Penurunan Biaya Turnover Karyawan:</strong> Riset manajemen SDM menunjukkan bahwa kegiatan kebersamaan yang teratur mampu menekan tingkat pengunduran diri karyawan hingga 30%, menghemat biaya rekrutmen dan pelatihan karyawan baru.</li>
+              <li><strong>Peningkatan Kecepatan Eksekusi Proyek:</strong> Hambatan birokrasi dan sekat komunikasi antar-divisi yang runtuh di lapangan memotong waktu koordinasi email dan rapat kerja hingga 20%.</li>
+              <li><strong>Penurunan Angka Absensi (Sick Leave):</strong> Relaksasi mental di kawasan hutan pinus 1.135 mdpl efektif merevitalisasi kebugaran fisik dan menjauhkan karyawan dari kejenuhan kerja (<em>burnout</em>).</li>
+            </ul>
+
+            <h2 id="tabel-paket-team-building">Tabel Estimasi Paket Outbound Team Building Coban Rondo</h2>
+            <p>Untuk membantu panitia merencanakan alokasi anggaran gathering tahunan secara akurat, berikut adalah daftar paket outbound resmi yang tersedia:</p>
+
+            <div class="table-responsive my-4">
+              <table class="article-table">
+                <thead>
+                  <tr>
+                    <th>Jenis Paket</th>
+                    <th>Biaya per Pax</th>
+                    <th>Fasilitas Termasuk</th>
+                    <th>Rekomendasi Peserta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong><a href="../paket/corporate-outbound" class="text-aqua fw-bold">Corporate Outbound 1 Hari</a></strong></td>
+                    <td>Rp 185.000</td>
+                    <td>Tiket kawasan, Instruktur BNSP, Modul Team Building, Makan Siang Prasmanan, &amp; Sound System</td>
+                    <td>Gathering tahunan kantor, perbankan, BUMN, &amp; korporasi</td>
+                  </tr>
+                  <tr>
+                    <td><strong><a href="../paket/corporate-outbound" class="text-aqua fw-bold">Corporate Outbound &amp; Paintball</a></strong></td>
+                    <td>Rp 265.000</td>
+                    <td>Semua fasilitas outbound 1 hari + 50 peluru paintball battle, body vest, &amp; goggle mask</td>
+                    <td>Divisi sales marketing, tim operasional lapangan, &amp; milenial</td>
+                  </tr>
+                  <tr>
+                    <td><strong><a href="../paket/family-gathering" class="text-aqua fw-bold">Family Gathering Harmoni</a></strong></td>
+                    <td>Rp 150.000</td>
+                    <td>MC ramah anak, games interaktif keluarga, venue eksklusif, &amp; makan siang prasmanan</td>
+                    <td>Rombongan keluarga besar karyawan, reuni akbar, &amp; komunitas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- REKOMENDASI PAKET TERKAIT CARD -->
+            <div class="card border-0 rounded-4 p-3 my-4 shadow-sm" style="background: rgba(8, 145, 178, 0.08); border-left: 4px solid #0891b2 !important;">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="fa-solid fa-layer-group text-aqua fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0 text-slate-800">Rekomendasi Paket Outbound Terkait</h4>
+              </div>
+              <p class="small text-slate-600 mb-2">Tingkatkan performa, sinergi, dan kekompakan tim kerja Anda dengan paket outbound profesional berstandar K3 &amp; didampingi fasilitator BNSP:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="../paket/corporate-outbound" class="btn btn-sm btn-aqua"><i class="fa-solid fa-building-user me-1"></i> Paket Corporate Outbound</a>
+                <a href="../paket/family-gathering" class="btn btn-sm btn-outline-aqua"><i class="fa-solid fa-people-roof me-1"></i> Paket Family Gathering</a>
+              </div>
             </div>
 
 
@@ -514,6 +642,14 @@
             <p class="desc">
               Reza Maulana Nehru adalah konsultan outbound dan fasilitator pengembangan tim di Coban Rondo yang memfokuskan pendekatan experiential learning untuk meningkatkan kinerja SDM perusahaan.
             </p>
+          </div>
+
+          <!-- SIDEBAR PROMO CARD -->
+          <div class="sidebar-cta-card mb-4">
+            <i class="fa-solid fa-building-user fs-2 text-aqua mb-2"></i>
+            <h4>Paket Corporate Outbound</h4>
+            <p>Simulasi team building & experiential learning untuk meningkatkan sinergi kerja tim perusahaan Anda.</p>
+            <a href="../paket/corporate-outbound" class="btn btn-aqua btn-sm w-100">Lihat Detail Paket</a>
           </div>
 
           <!-- ARTIKEL TERKAIT DARI PENULIS -->
@@ -641,7 +777,7 @@
                 Membantu perusahaan, instansi, dan lembaga menghadirkan kegiatan outbound berkelas melalui kurasi program team building, gathering, edukasi karakter, dan camping ground bernilai tinggi.
               </p>
               <div class="footer-social-row">
-                <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20ingin%20konsultasi%20outbound." target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Dampak%20Nyata%20Outbound%20Training%20Terhadap%20Produktivitas%20%26%20Solidaritas%20Tim%20Kerja%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-circle" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -743,7 +879,7 @@
   </footer>
 
   <!-- Floating WhatsApp CTA with Pulse Wave & Back to Top -->
-  <a href="https://wa.me/6282211221909?text=Halo%20Admin%20Coban%20Rondo%2C%20saya%20sedang%20membaca%20artikel%20dan%20ingin%20konsultasi%20outbound." 
+  <a href="https://wa.me/6282211221909?text=Halo%20Tim%20Coban%20Rondo%2C%20saya%20baru%20saja%20membaca%20artikel%20%22Dampak%20Nyata%20Outbound%20Training%20Terhadap%20Produktivitas%20%26%20Solidaritas%20Tim%20Kerja%22%20di%20website%20Anda.%0ASaya%20ingin%20konsultasi%20lebih%20lanjut%20terkait%20materi%20tersebut%20untuk%20rencana%20kegiatan%20kami%3A%0A-%20Nama%20%2F%20Instansi%3A%20%0A-%20Topik%20yang%20Ingin%20Dikonsultasikan%3A%20%0A-%20Rencana%20Kegiatan%3A%20%0ABoleh%20dibantu%20konsultasi%20dengan%20tim%20fasilitator%20Coban%20Rondo%3F%20Terima%20kasih!" 
      target="_blank" rel="noopener noreferrer" class="floating-wa-btn" data-wa-float aria-label="Konsultasi WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
